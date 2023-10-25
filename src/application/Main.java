@@ -12,6 +12,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			primaryStage.setMinHeight(500);
+			primaryStage.setMinWidth(650);
 			Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerConsoleScene.fxml"));
 			//BorderPane root = new BorderPane();
 			Scene scene = new Scene(root);
