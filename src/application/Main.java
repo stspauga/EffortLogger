@@ -14,7 +14,7 @@ public class Main extends Application {
 		try {
 			primaryStage.setMinHeight(500);
 			primaryStage.setMinWidth(650);
-			Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerConsoleScene.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerLogin.fxml"));
 			//BorderPane root = new BorderPane();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

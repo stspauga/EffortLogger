@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" prefHeight="492.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
    <center>
       <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
@@ -41,7 +40,7 @@
                </padding>
             </HBox>
             <Label text="3. Press the &quot;Stop this Activity&quot; button to generate an effort log entry using the attributes above." />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Stop this Activity" />
+            <Button mnemonicParsing="false" onAction="#stopActivity" prefHeight="25.0" prefWidth="150.0" text="Stop this Activity" />
             <Label text="4. Unless you are done for the day, it is best to perform steps 1 and 2 above before resuming work." />
          </children>
          <padding>
@@ -54,7 +53,7 @@
          <children>
             <ButtonBar prefHeight="130.0" prefWidth="545.0">
                <buttons>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Effort Editor" textAlignment="CENTER">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToEditor" text="Effort Editor" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -95,7 +94,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="ClockLight" alignment="CENTER" prefHeight="34.0" prefWidth="570.0" style="-fx-background-color: green; -fx-background-color: red;" text="Clock is Stopped" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="clockLight" alignment="CENTER" prefHeight="34.0" prefWidth="570.0" style="-fx-background-color: red;" text="Clock is Stopped" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
