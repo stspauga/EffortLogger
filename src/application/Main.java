@@ -13,7 +13,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			primaryStage.setMinHeight(500);
-			primaryStage.setMinWidth(650);
+			primaryStage.setMinWidth(670);
 			Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerLogin.fxml"));
 			//BorderPane root = new BorderPane();
 			Scene scene = new Scene(root);

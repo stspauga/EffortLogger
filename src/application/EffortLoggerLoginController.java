@@ -1,3 +1,7 @@
+/* Controller Class for the Effort Logger Login screen
+ * Contributions :
+ * Zachary Weber
+*/
 package application;
 
 import java.io.IOException;
