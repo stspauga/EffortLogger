@@ -27,8 +27,7 @@ public class Password {
 		return false;
 	}
 
-	// Password must be at least 7 chars and have one of the following phrases:
-	// "CSE", "360", "TH24", or "ELV2"
+	// Password must be at least 7 chars and has the phrase "TH24"
 	public boolean checkContents(String pswrd) {
 		String accepts = ".*TH24.*";
 		
