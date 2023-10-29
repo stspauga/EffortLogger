@@ -28,6 +28,7 @@ public class EffortLoggerLoginController {
 	
 	public void logIn(ActionEvent e) throws IOException {
 
+
 		String enteredPassword = passwordField.getText();
 	    checker = new Password(enteredPassword);
 	    boolean contentsPass = checker.checkContents(enteredPassword);
@@ -46,11 +47,12 @@ public class EffortLoggerLoginController {
 			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 			// allow user to access the console
 			switchToConsole(stage);
-		}
+			}
 		else {
 			System.out.println("Wrong password");
-		}
+			}
 	}
+
 		
 	
 	public void switchToConsole(Stage stage) throws IOException {
