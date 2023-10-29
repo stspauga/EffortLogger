@@ -15,7 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import application.UserModel;
-//import application.UserSession;
+import application.UserSession;
 
 
 public class EffortLoggerLoginController {
