@@ -39,6 +39,7 @@ public class EffortLoggerLoginController {
 	
 	public void logIn(ActionEvent e) throws IOException {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 			//checking if user name is valid
 			String enteredUsername = usernameField.getText();
@@ -106,6 +107,11 @@ public class EffortLoggerLoginController {
 =======
 
 		if (true) {
+=======
+		UserSession userTest = new UserSession();
+		boolean test = userTest.checkUserID("TuliloaPauga");
+		if (test) {
+>>>>>>> 298cb2e (Updated UserSession)
 			System.out.println("User Authenticated");
 			// do some things
 			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
