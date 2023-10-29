@@ -10,6 +10,7 @@ public class UserSession {
 
 	public boolean checkUserID(String userName) {
 		userName = userName.toLowerCase();
+
 		String file = "test.txt";
 		File readFile = new File(file);
 		if (readFile.exists()) {
