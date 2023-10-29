@@ -24,7 +24,7 @@ public class EffortLoggerLoginController {
 	
 	
 	public void logIn(ActionEvent e) throws IOException {
-
+		
 		if (true) {
 			System.out.println("User Authenticated");
 			// do some things
