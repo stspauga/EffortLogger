@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import application.UserModel;
+import application.UserSession;
 
 
 public class EffortLoggerLoginController {
@@ -28,27 +29,30 @@ public class EffortLoggerLoginController {
 	
 	public void logIn(ActionEvent e) throws IOException {
 
-		String enteredPassword = passwordField.getText();
-	    checker = new Password(enteredPassword);
-	    boolean contentsPass = checker.checkContents(enteredPassword);
-	    if(contentsPass) {
-	    	System.out.println("contents passed");
-	    }
-	    boolean lengthPass = checker.checkLength(enteredPassword);
-	    if(lengthPass) {
-	    	System.out.println("length passed");
-	    }
-	    boolean accepted = contentsPass && lengthPass;
-
-		if (accepted) {
-			System.out.println("User Authenticated");
-			// do some things
-			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-			// allow user to access the console
-			switchToConsole(stage);
-		}
-		else {
-			System.out.println("Wrong password");
+		if (true) {
+			String enteredPassword = passwordField.getText();
+		    checker = new Password(enteredPassword);
+		    boolean contentsPass = checker.checkContents(enteredPassword);
+		    if(contentsPass) {
+		    	System.out.println("contents passed");
+		    }
+		    boolean lengthPass = checker.checkLength(enteredPassword);
+		    if(lengthPass) {
+		    	System.out.println("length passed");
+		    }
+		    boolean accepted = contentsPass && lengthPass;
+	
+			if (accepted) {
+	
+				System.out.println("User Authenticated");
+				// do some things
+				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+				// allow user to access the console
+				switchToConsole(stage);
+			}
+			else {
+				System.out.println("Wrong password");
+			}
 		}
 	}
 		
