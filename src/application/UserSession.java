@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class UserSession {
+
 	public boolean checkUserID(String userName) {
+
 		File readFile = new File("/Users/tuliloapauga/eclipse-workspace/EffortLogger/bin/application/test.txt");
 		if (readFile.exists()) {
 			System.out.println("yup");
@@ -14,6 +16,7 @@ public class UserSession {
 			Scanner scanner = new Scanner(readFile);
 			while (scanner.hasNextLine()) {
 				String data = scanner.nextLine();
+
 //				System.out.println(data);
 				int spaceIndex = data.indexOf(" ");
                 String name = data.substring(0, spaceIndex);
@@ -27,13 +30,15 @@ public class UserSession {
                 		return true;
                 	}
                 }
+                scanner.close();
 			}
-			scanner.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occured");
 			e.printStackTrace();
 		}
+
 		System.out.println("hi");
 		return false;
+
 	}
 }
