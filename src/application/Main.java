@@ -18,13 +18,6 @@ public class Main extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerLogin.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			
-			//load the next FXML file
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("EffortLoggerSchedule.fxml"));
-			Parent secondRoot = loader.load();
-			Scene secondScene = new Scene(secondRoot);
-			secondScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
