@@ -39,7 +39,7 @@ public class EffortLoggerConsoleController {
 	
 	//Switch to the EffortLogger Schedule Scene
 	public void switchToSchedule(ActionEvent e) throws IOException {
-		System.out.println("Switching to Schedule Calendar!");
+		System.out.println("Switching to Schedule Calendar");
 		
 		Parent root2 = FXMLLoader.load(getClass().getResource("EffortLoggerSchedule.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();

@@ -78,7 +78,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button alignment="CENTER" layoutX="459.0" layoutY="39.0" mnemonicParsing="false" text="Schedule" textAlignment="CENTER">
+                  <Button alignment="CENTER" layoutX="459.0" layoutY="39.0" mnemonicParsing="false" onAction="#switchToSchedule" text="Schedule" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
