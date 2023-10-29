@@ -7,6 +7,7 @@ package application;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -14,24 +15,30 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import application.UserModel;
-
+import EffortLogger.Password;
 
 public class EffortLoggerLoginController {
 	private Stage stage;
 	private Scene scene;
 	//private Parent root;
 	
+	@FXML
+	private PasswordField passwordField;
 	
 	public void logIn(ActionEvent e) throws IOException {
-		UserModel userModel = new UserModel();
+		/*UserModel userModel = new UserModel();
 		// Need to properly validate identity 
 		userModel.createTestUser();
 		// User Authentication is Madeleinne's Prototype task
 		
 	    PasswordField passwordField = null;
 	    String enteredPassword = passwordField.getText();
-	    //detectValidPassword(enteredPassword);
-		if (true) {
+	    //detectValidPassword(enteredPassword);*/
+	    // verify the password
+		//PasswordField passwordField = null;
+	    String enteredPassword = passwordField.getText();
+	    boolean accepted = (Password.checkContents(enteredPassword) && Password.checkLength(enteredPassword));
+		if (accepted == true) {
 			System.out.println("User Authenticated");
 			// do some things
 			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
