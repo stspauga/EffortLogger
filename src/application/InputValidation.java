@@ -1,14 +1,15 @@
 package application;
 
-public class InputValidation {
-	String input = "";
+import java.util.Scanner;
+
+public class InputValidation{
 	
-	public InputValidation(String input) 
+	public InputValidation() 
 	{
-		this.input = input;
+		
 	}
 	
-	public static boolean isValidInput(String input)
+	public boolean isValidInput(String input)
 	{
 		for (char c : input.toCharArray()) {
             if (!Character.isLetter(c) && !Character.isDigit(c)) {
@@ -16,5 +17,15 @@ public class InputValidation {
             }
         }
         return true;
+	}
+	
+	public boolean isValidEmail(String input)
+	{
+		String sub = input.substring(input.length() - 10);
+		if(sub.equals("@gmail.com"))
+		{
+			return true;
+		}
+		return false;
 	}
 }

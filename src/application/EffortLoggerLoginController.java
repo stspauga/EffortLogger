@@ -23,13 +23,13 @@ public class EffortLoggerLoginController {
 	
 	
 	public void logIn(ActionEvent e) throws IOException {
-		UserModel userModel = new UserModel();
+		//UserModel userModel = new UserModel();
 		// Need to properly validate identity 
-		userModel.createTestUser();
+		//userModel.createTestUser();
 		// User Authentication is Madeleinne's Prototype task
 		
-	    PasswordField passwordField = null;
-	    String enteredPassword = passwordField.getText();
+	   // PasswordField passwordField = null;
+	   // String enteredPassword = passwordField.getText();
 	    //detectValidPassword(enteredPassword);
 		if (true) {
 			System.out.println("User Authenticated");
