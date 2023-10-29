@@ -63,7 +63,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Definitions" textAlignment="CENTER">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToDefinitions" text="Definitions" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

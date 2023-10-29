@@ -21,6 +21,7 @@ public class EffortLoggerConsoleController {
 	@FXML
 	Label clockLight;
 	
+	
 	private Stage stage;
 	private Scene scene;
 	public boolean activityCheck;
@@ -31,6 +32,16 @@ public class EffortLoggerConsoleController {
 		System.out.println("Switching to Editor");
 		
 		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerEditor.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	// Switch to the Effort Logger Editor Scene 
+	public void switchToDefinitions(ActionEvent e) throws IOException {
+		System.out.println("Switching to Definitions");
+		
+		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerDefinitions.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);

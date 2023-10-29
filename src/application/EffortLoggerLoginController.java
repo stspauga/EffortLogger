@@ -47,6 +47,9 @@ public class EffortLoggerLoginController {
 			if (accepted) {
 	
 				System.out.println("User Authenticated");
+				
+				System.out.println("Demo Data for Prototype");
+				Main.setNewUserData();
 				// do some things
 				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 				// allow user to access the console

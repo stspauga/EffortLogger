@@ -9,6 +9,10 @@ import javafx.scene.Scene;
 
 
 public class Main extends Application {
+	
+	// --------------------------------------------- New thing in Main -> Main.getUserData().doWhatever
+	public static UserData userData;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -27,5 +31,11 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+	public static UserData getUserData() {
+		return userData;
+	}
+	public static void setNewUserData() {
+		userData = new UserData();
 	}
 }
