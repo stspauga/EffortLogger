@@ -16,10 +16,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-//import application.UserModel;
-//import application.UserSession;
-
-
 
 public class EffortLoggerLoginController {
 	private Stage stage;
@@ -33,7 +29,6 @@ public class EffortLoggerLoginController {
 	private InputValidation inputValidation;
 	
 	public void logIn(ActionEvent e) throws IOException {
-			
 		
 			//checking if user name is valid
 			String enteredUsername = usernameField.getText();
