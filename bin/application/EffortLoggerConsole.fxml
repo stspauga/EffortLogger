@@ -8,8 +8,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+
 
 <BorderPane maxHeight="-Infinity" prefHeight="492.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
    <center>
@@ -87,19 +89,28 @@
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
    <top>
-      <VBox alignment="CENTER" prefHeight="118.0" prefWidth="766.0">
+      <StackPane>
          <children>
-            <Label contentDisplay="CENTER" text="Effort Logger Console" textAlignment="CENTER">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-            <Label fx:id="clockLight" alignment="CENTER" prefHeight="34.0" prefWidth="570.0" style="-fx-background-color: red;" text="Clock is Stopped" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
+            <VBox alignment="CENTER" prefHeight="118.0" prefWidth="766.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Effort Logger Console" textAlignment="CENTER">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="clockLight" alignment="CENTER" prefHeight="34.0" prefWidth="570.0" style="-fx-background-color: red;" text="Clock is Stopped" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#consoleTutorial" text="Need Help?" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </StackPane.margin>
+            </Button>
          </children>
-      </VBox>
+      </StackPane>
    </top>
 </BorderPane>

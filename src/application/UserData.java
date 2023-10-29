@@ -21,8 +21,6 @@ public class UserData {
 	// 10 Projects -> 1 User
 	private ProjectData[] projectArr = new ProjectData[10];
 	
-	// Functionality
-	public boolean tutor = false;
 	
 	// This constructor will be used in the case of a new user sign in
 	// lets the new user input data
@@ -32,7 +30,7 @@ public class UserData {
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
-		tutor = true;
+
 		// default demo project
 		projectArr[0] = new ProjectData();
 	}
