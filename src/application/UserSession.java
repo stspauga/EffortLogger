@@ -11,6 +11,7 @@ public class UserSession {
 	public boolean checkUserID(String userName) {
 		userName = userName.toLowerCase();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		String file = "test.txt";
 		File readFile = new File(file);
@@ -18,6 +19,9 @@ public class UserSession {
 			//System.out.println("yup");
 =======
 		String file = "/Users/tuliloapauga/eclipse-workspace/EffortLogger/src/application/test.txt";
+=======
+		String file = "test.txt";
+>>>>>>> 3666816 (Testing)
 		File readFile = new File(file);
 		if (readFile.exists()) {
 			System.out.println("yup");
