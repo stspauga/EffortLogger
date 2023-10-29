@@ -37,6 +37,17 @@ public class EffortLoggerConsoleController {
 		stage.show();
 	}
 	
+	//Switch to the EffortLogger Schedule Scene
+	public void switchToSchedule(ActionEvent e) throws IOException {
+		System.out.println("Switching to Schedule Calendar!");
+		
+		Parent root2 = FXMLLoader.load(getClass().getResource("EffortLoggerSchedule.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root2);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
 	// This will need to start the activity logging
 	// or notify the user that activity is already being logged
 	public void startActivity(ActionEvent e) {

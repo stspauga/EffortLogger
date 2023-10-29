@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" prefHeight="492.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
+<BorderPane maxHeight="-Infinity" prefHeight="496.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
    <center>
-      <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="287.0" prefWidth="699.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="1. When you start a new activity, press the &quot;Start an Activity&quot; button." />
             <Button mnemonicParsing="false" onAction="#startActivity" prefHeight="25.0" prefWidth="150.0" text="Start an Activity" />
@@ -51,14 +51,19 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="83.0" prefWidth="766.0" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar prefHeight="130.0" prefWidth="545.0">
+            <ButtonBar prefHeight="83.0" prefWidth="652.0">
                <buttons>
+                  <Button alignment="CENTER" mnemonicParsing="false" text="Planning Poker" textAlignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToEditor" text="Effort Editor" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Defect Console" textAlignment="CENTER">
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Defect Console" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -73,12 +78,15 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Planning Poker" textAlignment="CENTER">
+                  <Button alignment="CENTER" layoutX="459.0" layoutY="39.0" mnemonicParsing="false" text="Schedule" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
                </buttons>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </ButtonBar>
          </children>
       </HBox>
