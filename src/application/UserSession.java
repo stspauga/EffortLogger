@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class UserSession {
 	public void checkUserID() {
-		File readFile = new File("/Users/tuliloapauga/eclipse-workspace/EffortLogger/bin/application/test.txt");
+		File readFile = new File("test.txt"); // also had /Users/tuliloapauga/eclipse-workspace/EffortLogger/bin/application/
 		if (readFile.exists()) {
 			System.out.println("yup");
 		}
