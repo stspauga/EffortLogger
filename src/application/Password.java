@@ -1,4 +1,4 @@
-//package application;
+package application;
 //import javafx.application.Application;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -18,7 +18,7 @@ public class Password {
 	}
 	
 	// password must be at least 7 chars long
-	public static boolean checkLength(String pswrd) {
+	public boolean checkLength(String pswrd) {
 		if(pswrd.length() >= 7) {
 			return true;
 		}
@@ -27,7 +27,7 @@ public class Password {
 
 	// Password must be at least 7 chars and have one of the following phrases:
 	// "CSE", "360", "TH24", or "ELV2"
-	public static boolean checkContents(String pswrd) {
+	public boolean checkContents(String pswrd) {
 		String accepts = "(a-z)*(A-Z)*(CSE|360|TH24|ELV2)(a-z)*(A-Z)*";
 		
 		Pattern pattern = Pattern.compile(accepts);
