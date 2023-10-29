@@ -23,18 +23,38 @@ public class EffortLoggerLoginController {
 	private Scene scene;
 	//private Parent root;
 	
+
 	// FXML elements
 	@FXML
 	private PasswordField passwordField;
+	private Password checker;
 	
 	public void logIn(ActionEvent e) throws IOException {
-		String enterPassword = passwordField.getText();
+
 		if (true) {
-			System.out.println("User Authenticated");
-			// do some things
-			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-			// allow user to access the console
-			switchToConsole(stage);
+			String enteredPassword = passwordField.getText();
+		    checker = new Password(enteredPassword);
+		    boolean contentsPass = checker.checkContents(enteredPassword);
+		    if(contentsPass) {
+		    	System.out.println("contents passed");
+		    }
+		    boolean lengthPass = checker.checkLength(enteredPassword);
+		    if(lengthPass) {
+		    	System.out.println("length passed");
+		    }
+		    boolean accepted = contentsPass && lengthPass;
+	
+			if (accepted) {
+	
+				System.out.println("User Authenticated");
+				// do some things
+				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+				// allow user to access the console
+				switchToConsole(stage);
+			}
+			else {
+				System.out.println("Wrong password");
+			}
 		}
 	}
 		
