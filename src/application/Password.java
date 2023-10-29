@@ -28,7 +28,7 @@ public class Password {
 	// Password must be at least 7 chars and have one of the following phrases:
 	// "CSE", "360", "TH24", or "ELV2"
 	public boolean checkContents(String pswrd) {
-		String accepts = "(a-z)*(A-Z)*(CSE|360|TH24|ELV2)(a-z)*(A-Z)*";
+		String accepts = ".*TH24.*";
 		
 		Pattern pattern = Pattern.compile(accepts);
 		Matcher match = pattern.matcher(pswrd);

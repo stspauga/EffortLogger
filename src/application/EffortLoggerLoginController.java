@@ -29,7 +29,7 @@ public class EffortLoggerLoginController {
 	public void logIn(ActionEvent e) throws IOException {
 
 		String enteredPassword = passwordField.getText();
-	    
+	    checker = new Password(enteredPassword);
 	    boolean contentsPass = checker.checkContents(enteredPassword);
 	    if(contentsPass) {
 	    	System.out.println("contents passed");
