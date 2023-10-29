@@ -17,6 +17,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+<<<<<<< HEAD
+=======
+import application.UserModel;
+import application.UserSession;
+>>>>>>> e8d074e (Another)
 
 
 public class EffortLoggerLoginController {
@@ -33,6 +38,7 @@ public class EffortLoggerLoginController {
 	private InputValidation inputValidation;
 	
 	public void logIn(ActionEvent e) throws IOException {
+<<<<<<< HEAD
 		
 			//checking if user name is valid
 			String enteredUsername = usernameField.getText();
@@ -97,6 +103,15 @@ public class EffortLoggerLoginController {
 				System.out.println("Wrong password");
 			}
 
+=======
+
+		if (true) {
+			System.out.println("User Authenticated");
+			// do some things
+			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+			// allow user to access the console
+			switchToConsole(stage);
+>>>>>>> e8d074e (Another)
 		}
 	
 
