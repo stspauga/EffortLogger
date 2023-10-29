@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-/module-info.class
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-/module-info.class
->>>>>>> 7632f5b406846fe5f2bbe6b984d0198a59a2fa04
-=======
->>>>>>> 01100cccd9d9afbd3024ff19850335fe04949075
->>>>>>> master
 /application/
+/console/
 /.DS_Store
