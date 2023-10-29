@@ -16,8 +16,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import application.UserModel;
-import application.UserSession;
+//import application.UserModel;
+//import application.UserSession;
+
 
 
 public class EffortLoggerLoginController {
@@ -32,14 +33,18 @@ public class EffortLoggerLoginController {
 	private InputValidation inputValidation;
 	
 	public void logIn(ActionEvent e) throws IOException {
-
-		if (true) {
+			
+		
 			//checking if user name is valid
 			String enteredUsername = usernameField.getText();
 			inputValidation = new InputValidation();
+			
 			boolean validUsername = inputValidation.isValidInput(enteredUsername);
 			boolean validEmail = inputValidation.isValidEmail(enteredUsername);
 			
+			//checking if user has already logged in
+			UserSession sesh = new UserSession();
+			boolean check = sesh.checkUserID(enteredUsername);
 			boolean acceptedUser = validUsername || validEmail;
 			if(!(acceptedUser))
 			{
@@ -48,6 +53,7 @@ public class EffortLoggerLoginController {
 			
 			
 			//checking if password is right
+
 			String enteredPassword = passwordField.getText();
 		    checker = new Password(enteredPassword);
 		    boolean contentsPass = checker.checkContents(enteredPassword);
@@ -60,14 +66,21 @@ public class EffortLoggerLoginController {
 		    }
 		    boolean accepted = contentsPass && lengthPass;
 	
+
+			if (accepted) {
+
 		    //if password and user name are valid
 			if (accepted && acceptedUser) {
-	
-				System.out.println("User Authenticated");
-				// do some things
-				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-				// allow user to access the console
-				switchToConsole(stage);
+				if (check) {
+					System.out.println("User Authenticated");
+					// do some things
+					stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+					// allow user to access the console
+					switchToConsole(stage);
+				}
+				else {
+					System.out.println(enteredUsername + " is already logged in");
+				}
 			}
 			else {
 				System.out.println("Wrong password");
