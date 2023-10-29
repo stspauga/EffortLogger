@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import application.UserModel;
+//import application.UserSession;
 
 
 public class EffortLoggerLoginController {
@@ -27,14 +28,7 @@ public class EffortLoggerLoginController {
 	private PasswordField passwordField;
 	
 	public void logIn(ActionEvent e) throws IOException {
-		UserModel userModel = new UserModel();
-		// Need to properly validate identity 
-		userModel.createTestUser();
-		// User Authentication is Madeleinne's Prototype task
 		
-	    //PasswordField passwordField = null;
-	    String enteredPassword = passwordField.getText();
-	    //detectValidPassword(enteredPassword);
 		if (true) {
 			System.out.println("User Authenticated");
 			// do some things
