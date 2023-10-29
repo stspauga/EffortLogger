@@ -28,7 +28,7 @@ public class EffortLoggerLoginController {
 	private PasswordField passwordField;
 	
 	public void logIn(ActionEvent e) throws IOException {
-		
+		String enterPassword = passwordField.getText();
 		if (true) {
 			System.out.println("User Authenticated");
 			// do some things
