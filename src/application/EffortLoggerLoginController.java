@@ -22,7 +22,7 @@ public class EffortLoggerLoginController {
 	private Scene scene;
 	//private Parent root;
 	
-	// FXML 
+	// FXML elements
 	@FXML
 	private PasswordField passwordField;
 	
