@@ -1,6 +1,12 @@
+/* Input validation class for checking if user input is correct or not
+ * Contributions :
+ * Sindhu Rallabhandi
+*/
+
 package application;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class InputValidation{
 	
@@ -11,21 +17,14 @@ public class InputValidation{
 	
 	public boolean isValidInput(String input)
 	{
-		for (char c : input.toCharArray()) {
-            if (!Character.isLetter(c) && !Character.isDigit(c)) {
-                return false;
-            }
-        }
-        return true;
+		// Allow letters, numbers, underscores, and hyphens
+        String regex = "^[a-zA-Z0-9_\\-]*$";
+        return Pattern.matches(regex, input);
 	}
 	
-	public boolean isValidEmail(String input)
-	{
-		String sub = input.substring(input.length() - 10);
-		if(sub.equals("@gmail.com"))
-		{
-			return true;
-		}
-		return false;
-	}
+	public boolean isValidEmail(String input) {
+        // Use a regular expression to check for a valid email
+        String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+        return Pattern.matches(regex, input);
+    }
 }
