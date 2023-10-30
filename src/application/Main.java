@@ -8,6 +8,10 @@ import javafx.scene.Scene;
 
 
 public class Main extends Application {
+	
+	// --------------------------------------------- New thing in Main -> Main.getUserData().doWhatever
+	public static UserData userData;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -27,5 +31,15 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+	
+	// For each scene to access User's Data
+	public static UserData getUserData() {
+		return userData;
+	}
+	// Set data for a new user
+	// Need to implement reading/writing to a file for returning users next phase
+	public static void setNewUserData() {
+		userData = new UserData();
 	}
 }
