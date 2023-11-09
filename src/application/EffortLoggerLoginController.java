@@ -2,6 +2,7 @@
  * Contributions :
  * Zachary Weber
  * Sindhu Rallabhandi
+ * Madeleinne Tan
 */
 package application;
 
