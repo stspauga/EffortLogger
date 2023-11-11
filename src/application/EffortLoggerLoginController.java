@@ -16,8 +16,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-//import application.UserModel;
-//import application.UserSession;
 
 
 
@@ -75,7 +73,7 @@ public class EffortLoggerLoginController {
 
 		    //if password and user name are valid
 			if (accepted && acceptedUser) {
-				if (check) {
+				//if (check) {
 					System.out.println("User Authenticated");
 					
 					// Create user data object after authentication
@@ -88,15 +86,15 @@ public class EffortLoggerLoginController {
 					// allow user to access the console
 					switchToConsole(stage);
 				}
-				else {
-					System.out.println(enteredUsername + " is already logged in");
-				}
+				//else {
+					//System.out.println(enteredUsername + " is already logged in");
+				//}
 
 			}
 			else {
 				System.out.println("Wrong password");
 			}
-		}
+		//}
 	}
 	
 		
