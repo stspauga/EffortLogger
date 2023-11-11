@@ -14,15 +14,14 @@ public class UserSession {
 		String file = "test.txt";
 		File readFile = new File(file);
 		if (readFile.exists()) {
-			System.out.println("yup");
+			//System.out.println("yup");
 			try {
 				Scanner scanner = new Scanner(readFile);
 				while (scanner.hasNext()) {
 					String data = scanner.nextLine();
 					if (data.contains(userName)) {
-						if (data.contains("true")) {
-							return false;
-						}
+						readFile.delete();
+						return false;
 					}
 				}
 				scanner.close();
@@ -37,7 +36,7 @@ public class UserSession {
 				File create = new File(file);
 				create.createNewFile();
 				FileWriter writer = new FileWriter(file);
-				writer.write(userName + "true");
+				writer.write(userName);
 				writer.close();
 				return true;
 			} 
