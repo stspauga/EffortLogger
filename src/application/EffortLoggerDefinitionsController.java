@@ -53,6 +53,7 @@ public class EffortLoggerDefinitionsController {
 	}
 	
 	public void addProject(ActionEvent e) throws IOException {
+<<<<<<< HEAD
 		Definition newDef = new Definition();
 		definition_list.add(newDef.setDefinitionItem(proj_name.getText(), details.getText(), life_cycle.getText()));
 		proj_name.clear();
@@ -101,4 +102,16 @@ public class EffortLoggerDefinitionsController {
 	    }
     }
 
+=======
+		
+	}
+	
+	public void searchProjects(ActionEvent e) throws IOException {
+		
+	}
+	
+	public void displayProjects(ActionEvent e) throws IOException {
+		
+	}
+>>>>>>> 5b9bba2 (Created Definitions UI)
 }
