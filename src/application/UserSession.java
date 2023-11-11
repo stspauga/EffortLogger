@@ -17,6 +17,7 @@ public class UserSession {
 		File readFile = new File(file);
 		if (readFile.exists()) {
 			//System.out.println("yup");
+<<<<<<< HEAD
 =======
 		String file = "/Users/tuliloapauga/eclipse-workspace/EffortLogger/src/application/test.txt";
 =======
@@ -26,11 +27,14 @@ public class UserSession {
 		if (readFile.exists()) {
 			System.out.println("yup");
 >>>>>>> 78ad9bc (Finished prototype)
+=======
+>>>>>>> 64977b7 (A commit)
 			try {
 				Scanner scanner = new Scanner(readFile);
 				while (scanner.hasNext()) {
 					String data = scanner.nextLine();
 					if (data.contains(userName)) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 						readFile.delete();
 						return false;
@@ -39,6 +43,10 @@ public class UserSession {
 							return false;
 						}
 >>>>>>> 78ad9bc (Finished prototype)
+=======
+						readFile.delete();
+						return false;
+>>>>>>> 64977b7 (A commit)
 					}
 				}
 				scanner.close();
@@ -55,7 +63,7 @@ public class UserSession {
 				File create = new File(file);
 				create.createNewFile();
 				FileWriter writer = new FileWriter(file);
-				writer.write(userName + "true");
+				writer.write(userName);
 				writer.close();
 				return true;
 			} 
