@@ -33,21 +33,27 @@ public class ItemWeightsController {
 	private TextArea criteriaTextArea;
 	private Stage stage;
 	private Scene scene;
-	@FXML
 	private CardDisplayController cardDisplayController;
-
+	
+	private String userStory;
+	private String itemName;
+	private String criteria;
+	private int assignedWeight;
 
 	
 	@FXML
 	private void generateCard(ActionEvent e) throws IOException
 	{
-		String userStory = userStoryTextField.getText();
-		String itemName = itemNameTextField.getText();
-		String criteria = criteriaTextArea.getText();
-		int assignedWeight = getSelectedButton();
+		userStory = userStoryTextField.getText();
+		itemName = itemNameTextField.getText();
+		criteria = criteriaTextArea.getText();
+		assignedWeight = getSelectedButton();
 		
-		//calling display card method
-		cardDisplayController.displayCard(userStory, itemName, assignedWeight, criteria, e);
+		//creating a poker card
+		PokerCard card = new PokerCard(userStory, itemName, assignedWeight, criteria);
+		//adding the poker card to the existing data
+		AllPokerCards.addElement(card);
+		loadNewFile(e);
 	}
 	
 	private int getSelectedButton()
@@ -58,5 +64,28 @@ public class ItemWeightsController {
 	        }
 		}
 		return 0;
+	}
+	
+	private void loadNewFile(ActionEvent e)
+	{
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("CardDisplay.fxml"));
+			Parent root = loader.load();
+			
+			CardDisplayController displayController = loader.getController();
+			
+			displayController.displayCard(userStory, itemName, assignedWeight, criteria, e);
+
+			//switch scenes
+			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+			
+		}
+		catch(IOException exception)
+		{
+			exception.printStackTrace();
+		}
 	}
 }

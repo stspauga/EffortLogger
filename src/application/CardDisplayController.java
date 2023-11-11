@@ -34,22 +34,7 @@ public class CardDisplayController {
 		userStoryLabel.setText(userStory);
 		assignedWeightLabel.setText(Integer.toString(weight));
 		criteriaTextArea.setText(criteria);
-		loadNewFile(e);
 		
 	}
-	
-	private void loadNewFile(ActionEvent e)
-	{
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("CardDisplay.fxml"));
-			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
-		}
-		catch(IOException exception)
-		{
-			exception.printStackTrace();
-		}
-	}
+
 }
