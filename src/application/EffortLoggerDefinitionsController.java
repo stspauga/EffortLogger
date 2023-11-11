@@ -30,4 +30,16 @@ public class EffortLoggerDefinitionsController {
 		stage.setScene(scene);
 		stage.show();
 	}
+	
+	public void addProject(ActionEvent e) throws IOException {
+		
+	}
+	
+	public void searchProjects(ActionEvent e) throws IOException {
+		
+	}
+	
+	public void displayProjects(ActionEvent e) throws IOException {
+		
+	}
 }
