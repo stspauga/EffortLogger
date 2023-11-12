@@ -1,36 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerDefinitionsController">
-   <center>
-      <ScrollPane BorderPane.alignment="CENTER">
-         <content>
-            <FlowPane prefHeight="571.0" prefWidth="919.0">
-               <children>
-                  <ListView fx:id="projectLst" editable="true" prefHeight="200.0" prefWidth="547.0" />
-               </children></FlowPane>
-         </content>
-      </ScrollPane>
-   </center>
    <top>
       <BorderPane BorderPane.alignment="CENTER">
          <left>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToConsole" text="Return to Console" BorderPane.alignment="CENTER" />
+            <Button alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToConsole" text="Return to Console" BorderPane.alignment="CENTER" />
          </left>
-         <right>
-            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Effort Logger Definitions" BorderPane.alignment="CENTER">
+         <bottom>
+            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Effort Logger Definitions" textAlignment="CENTER" BorderPane.alignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-         </right>
+         </bottom>
+         <BorderPane.margin>
+            <Insets bottom="30.0" />
+         </BorderPane.margin>
       </BorderPane>
    </top>
+   <center>
+      <VBox alignment="TOP_CENTER" maxWidth="300.0" minWidth="200.0" prefHeight="551.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="BOTTOM_CENTER" text="Search Project by Name" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="100.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="search" maxWidth="200.0" promptText="Project Name">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#searchProjects" text="Search" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="40.0" right="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </VBox>
+   </center>
+   <left>
+      <VBox alignment="TOP_CENTER" minWidth="300.0" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="TOP_RIGHT">
+         <children>
+            <Label alignment="CENTER" text="Add a Project, it's details and life cycle" />
+            <Label alignment="TOP_CENTER" text="Project Name">
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="proj_name" alignment="CENTER">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextField>
+            <Label alignment="TOP_CENTER" text="Details">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="details" alignment="CENTER" />
+            <Label alignment="TOP_CENTER" text="Life Cycle">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="life_cycle" alignment="CENTER" />
+            <Button id="add-proj" mnemonicParsing="false" onAction="#addProject" text="Add Project">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <right>
+      <VBox minWidth="400.0" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox maxHeight="20.0" minHeight="20.0" minWidth="400.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" minWidth="133.0" text="Project Name" textAlignment="CENTER" />
+                  <Label alignment="CENTER" minWidth="133.0" text="Details" />
+                  <Label alignment="CENTER" minWidth="133.0" text="Life Cycle" />
+               </children>
+            </HBox>
+            <HBox minHeight="500.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox minWidth="133.0" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextArea fx:id="proj_name_disp" minHeight="500.0" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox minWidth="133.0" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextArea fx:id="det_disp" minHeight="500.0" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox minWidth="133.0" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextArea fx:id="life_cycle_disp" minHeight="500.0" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </right>
 </BorderPane>
