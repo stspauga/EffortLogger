@@ -9,11 +9,23 @@ package application;
 import java.util.regex.Pattern;
 
 public class InputValidation {
-	
-	public InputValidation() 
+<
+String input = "";
+
+	public InputValidation(String input) 
 	{
-		
+		this.input = input;
 	}
+	
+	public static boolean isValidInput1(String input)
+	{
+		for (char c : input.toCharArray()) {
+            if (!Character.isLetter(c) && !Character.isDigit(c)) {
+                return false;
+            }
+        }
+        return true;
+	} 
 	
 	public boolean isValidInput(String input)
 	{
@@ -27,4 +39,6 @@ public class InputValidation {
         String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
         return Pattern.matches(regex, input);
     }
+
 }
+
