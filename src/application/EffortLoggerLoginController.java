@@ -17,11 +17,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-<<<<<<< HEAD
-=======
 import application.UserModel;
 import application.UserSession;
->>>>>>> e8d074e (Another)
 
 
 public class EffortLoggerLoginController {
@@ -38,12 +35,11 @@ public class EffortLoggerLoginController {
 	private InputValidation inputValidation;
 	
 	public void logIn(ActionEvent e) throws IOException {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		
 			//checking if user name is valid
 			String enteredUsername = usernameField.getText();
-			inputValidation = new InputValidation();
+			inputValidation = new InputValidation(enteredUsername);
 			
 			boolean validUsername = inputValidation.isValidInput(enteredUsername);
 			boolean validEmail = inputValidation.isValidEmail(enteredUsername);
@@ -104,29 +100,24 @@ public class EffortLoggerLoginController {
 				System.out.println("Wrong password");
 			}
 
-=======
 
 		if (true) {
-=======
+
 		UserSession userTest = new UserSession();
 		boolean test = userTest.checkUserID("TuliloaPauga");
 		if (test) {
->>>>>>> 298cb2e (Updated UserSession)
 			System.out.println("User Authenticated");
 			// do some things
 			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 			// allow user to access the console
 			switchToConsole(stage);
->>>>>>> e8d074e (Another)
+
 		}
+	}
+
+}
 	
 
-		//}
-	
-	
-		
-
-		
 	
 	public void switchToConsole(Stage stage) throws IOException {
 		System.out.println("Switching to Console");

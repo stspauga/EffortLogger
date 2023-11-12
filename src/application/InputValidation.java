@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Input validation class for checking if user input is correct or not
  * Contributions :
  * Sindhu Rallabhandi
@@ -11,10 +10,22 @@ import java.util.regex.Pattern;
 
 public class InputValidation {
 	
-	public InputValidation() 
+String input = "";
+	
+	public InputValidation(String input) 
 	{
-		
+		this.input = input;
 	}
+	
+	public static boolean isValidInput1(String input)
+	{
+		for (char c : input.toCharArray()) {
+            if (!Character.isLetter(c) && !Character.isDigit(c)) {
+                return false;
+            }
+        }
+        return true;
+	} 
 	
 	public boolean isValidInput(String input)
 	{
@@ -28,25 +39,6 @@ public class InputValidation {
         String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
         return Pattern.matches(regex, input);
     }
-=======
-package application;
 
-public class InputValidation {
-	String input = "";
-	
-	public InputValidation(String input) 
-	{
-		this.input = input;
-	}
-	
-	public static boolean isValidInput(String input)
-	{
-		for (char c : input.toCharArray()) {
-            if (!Character.isLetter(c) && !Character.isDigit(c)) {
-                return false;
-            }
-        }
-        return true;
-	}
->>>>>>> e657999 (added my input validation file (#6))
 }
+
