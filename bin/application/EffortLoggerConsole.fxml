@@ -85,7 +85,7 @@
                      </cursor>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#switchToSettings" text="Settings" />
-               </buttons>
+				</buttons>
             </ButtonBar>
          </children>
       </HBox>
