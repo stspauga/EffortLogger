@@ -6,6 +6,10 @@ package src;
 
 import java.io.IOException;
 
+import javafx.util.Duration;
+
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +25,8 @@ public class EffortLoggerConsoleController {
 	// FXML elements
 	@FXML
 	Label clockLight;
-	
+	@FXML
+	Label timeLabel;
 	
 	private Stage stage;
 	private Scene scene;
@@ -47,6 +52,16 @@ public class EffortLoggerConsoleController {
 		switchScreen(newScreenFile, e);
 		
 	}
+	
+	//Switch to the Planning poker scene
+	public void switchToPlanningPoker(ActionEvent e) throws IOException {
+		closeTutorial();
+		System.out.println("Switching to Planning Poker");
+		String newScreenFile = "PlanningPoker.fxml";
+		switchScreen(newScreenFile, e);
+	}
+	
+	
 	public void switchScreen (String newScreenFile, ActionEvent e) throws IOException{
 		Parent root = FXMLLoader.load(getClass().getResource(newScreenFile));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
@@ -68,11 +83,24 @@ public class EffortLoggerConsoleController {
 	
 	// This will need to start the activity logging
 	// or notify the user that activity is already being logged
+	Timeline timeline = new Timeline();
+	private int seconds = 0;
 	public void startActivity(ActionEvent e) {
 		if (activityCheck) {
 			System.out.println("There is already an activity started");
 			return;
 		}
+		
+		timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        seconds = 0;
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1.0), event -> {
+            seconds++;
+            timeLabel.setText("Time: " + seconds + " seconds");
+        });
+
+        timeline.getKeyFrames().add(keyFrame);
+        timeline.play();
 		System.out.println("Clicked Start an Activity Button");
 		clockLight.setStyle("-fx-background-color: green");
 		clockLight.setText("Clock is Running");
@@ -85,6 +113,9 @@ public class EffortLoggerConsoleController {
 			System.out.println("There is no activity started");
 			return;
 		}
+		if (timeline != null) {
+            timeline.stop();
+        }
 		System.out.println("Clicked Stop an Activity Button");
 		clockLight.setStyle("-fx-background-color: red");
 		clockLight.setText("Clock is Stopped");

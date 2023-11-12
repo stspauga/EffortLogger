@@ -12,17 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD:src/EffortLoggerConsole.fxml
-<<<<<<< HEAD
-<BorderPane maxHeight="-Infinity" prefHeight="496.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
-=======
-
-=======
->>>>>>> master:bin/application/EffortLoggerConsole.fxml
 <BorderPane maxHeight="-Infinity" prefHeight="492.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
->>>>>>> master
    <center>
-      <VBox alignment="CENTER" prefHeight="287.0" prefWidth="699.0" spacing="15.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="1. When you start a new activity, press the &quot;Start an Activity&quot; button." />
             <Button mnemonicParsing="false" onAction="#startActivity" prefHeight="25.0" prefWidth="150.0" text="Start an Activity" />
@@ -60,19 +52,14 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="83.0" prefWidth="766.0" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar prefHeight="83.0" prefWidth="652.0">
+            <ButtonBar prefHeight="130.0" prefWidth="545.0">
                <buttons>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Planning Poker" textAlignment="CENTER">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToEditor" text="Effort Editor" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Defect Console" textAlignment="CENTER">
+                  <Button alignment="CENTER" mnemonicParsing="false" text="Defect Console" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -87,19 +74,12 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-<<<<<<< HEAD:src/EffortLoggerConsole.fxml
-                  <Button alignment="CENTER" layoutX="459.0" layoutY="39.0" mnemonicParsing="false" onAction="#switchToSchedule" text="Schedule" textAlignment="CENTER">
-=======
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlanningPoker" text="Planning Poker" textAlignment="CENTER">
->>>>>>> master:bin/application/EffortLoggerConsole.fxml
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
                </buttons>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
             </ButtonBar>
          </children>
       </HBox>
