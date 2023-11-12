@@ -39,11 +39,16 @@ public class EffortLoggerDefinitionsController {
 	@FXML
 	private TextArea life_cycle_disp;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@FXML
 	private TextField search;
 =======
 
 >>>>>>> 3de6f5a (Fixed the definitions section)
+=======
+	@FXML
+	private TextField search;
+>>>>>>> 3bedabd (Definitions)
 	
 	// Switch to the Effort Logger Console
 	public void switchToConsole(ActionEvent e) throws IOException {
@@ -88,6 +93,9 @@ public class EffortLoggerDefinitionsController {
 	
 	public void searchProjects(ActionEvent e) throws IOException {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3bedabd (Definitions)
 		String check = search.getText();
 		for (int i = 0; i < definition_list.size(); i++) {
 			if (search.getText().equals(definition_list.get(i).getPROJ_NAME())) {
@@ -96,6 +104,7 @@ public class EffortLoggerDefinitionsController {
                 highlightText(life_cycle_disp, definition_list.get(i).getLIFE_CYCLE());				
 			}
 		}
+<<<<<<< HEAD
 	}
 	
 	private void highlightText(TextArea textArea, String searchText) {
@@ -105,6 +114,22 @@ public class EffortLoggerDefinitionsController {
 		
 	}
 >>>>>>> 90919b9 (extra changes)
+=======
+	}
+	
+	private void highlightText(TextArea textArea, String searchText) {
+		String text = textArea.getText();
+	    int start = text.indexOf(searchText);
+
+	    if (start >= 0) {
+	        int end = start + searchText.length();
+
+	        // Select the range to mimic highlighting
+	        textArea.selectRange(start, end);
+	        textArea.requestFocus(); // Optional: bring focus back to the TextArea
+	    }
+    }
+>>>>>>> 3bedabd (Definitions)
 
 	    if (start >= 0) {
 	        int end = start + searchText.length();

@@ -44,14 +44,19 @@
                </VBox.margin>
             </Label>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <TextField fx:id="search" maxWidth="200.0" promptText="Project Name">
 =======
             <TextField maxWidth="200.0" promptText="Project Name">
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+            <TextField fx:id="search" maxWidth="200.0" promptText="Project Name">
+>>>>>>> 3bedabd (Definitions)
                <VBox.margin>
                   <Insets bottom="30.0" />
                </VBox.margin>
             </TextField>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             <Button mnemonicParsing="false" onAction="#searchProjects" text="Search" />
@@ -61,6 +66,9 @@
 =======
             <Button mnemonicParsing="false" text="Search" onAction="#searchProjects"/>
 >>>>>>> 3de6f5a (Fixed the definitions section)
+=======
+            <Button mnemonicParsing="false" onAction="#searchProjects" text="Search" />
+>>>>>>> 3bedabd (Definitions)
          </children>
          <BorderPane.margin>
             <Insets left="40.0" right="10.0" />
