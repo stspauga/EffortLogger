@@ -60,5 +60,6 @@
       <Button layoutX="382.0" layoutY="297.0" mnemonicParsing="false" onAction="#generateCard" style="-fx-background-color: lavender;" text="Generate Planning Poker Card" textFill="#226532" />
       <TextField fx:id="itemNameTextField" layoutX="382.0" layoutY="95.0" promptText="Item Name" style="-fx-background-color: lavender;" />
       <TextField fx:id="userStoryTextField" layoutX="199.0" layoutY="95.0" promptText="User Story" style="-fx-background-color: lavender;" />
+      <Button layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToConsole" text="return to console" />
    </children>
 </AnchorPane>
