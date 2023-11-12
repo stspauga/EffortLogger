@@ -52,7 +52,7 @@ public class EffortLoggerConsoleController {
 		switchScreen(newScreenFile, e);
 		
 	}
-<<<<<<< HEAD
+
 	// Switch to the Effort Logger Editor Scene 
 		public void switchToScheduleCalendar(ActionEvent e) throws IOException {
 			closeTutorial();
@@ -61,7 +61,6 @@ public class EffortLoggerConsoleController {
 			switchScreen(newScreenFile, e);
 			
 		}
-=======
 	
 	//Switch to the Planning poker scene
 	public void switchToPlanningPoker(ActionEvent e) throws IOException {
@@ -72,7 +71,6 @@ public class EffortLoggerConsoleController {
 	}
 	
 	
->>>>>>> master
 	public void switchScreen (String newScreenFile, ActionEvent e) throws IOException{
 		Parent root = FXMLLoader.load(getClass().getResource(newScreenFile));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
