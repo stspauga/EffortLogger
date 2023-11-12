@@ -3,8 +3,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 871707e (Z web branch (#24))
+=======
+>>>>>>> 8c23427 (Nghiem branch1 (#21))
 true
 =======
 fasdfadsf
@@ -12,6 +15,7 @@ fasdfadsf
 =======
 hahahatrue
 >>>>>>> master
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 hahahatrue
@@ -21,3 +25,8 @@ hahahatrue
 >>>>>>> 9a91bcb (Nghiem branch1 (#21))
 =======
 >>>>>>> 871707e (Z web branch (#24))
+=======
+=======
+hahahatrue
+>>>>>>> 9f99905 (Nghiem branch1 (#21))
+>>>>>>> 8c23427 (Nghiem branch1 (#21))
