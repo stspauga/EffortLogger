@@ -22,7 +22,7 @@
             <HBox alignment="CENTER" spacing="10.0">
                <children>
                   <Label text="Project:" HBox.hgrow="NEVER" />
-                  <ComboBox fx:id="projectComboBox" prefHeight="25.0" prefWidth="180.0" />
+                  <ComboBox fx:id="projectComboBox" onAction="#loadLifeCycleStepBox" prefHeight="25.0" prefWidth="180.0" />
                   <Label text="Life Cycle Step:" />
                   <ComboBox fx:id="lifeCycleComboBox" prefHeight="25.0" prefWidth="180.0" />
                </children>
