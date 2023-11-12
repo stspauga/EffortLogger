@@ -16,7 +16,7 @@ public class ProjectData {
 	private int[] stepDeliverable = new int[50];
 	// Let us set a temporary cap of 50 effort logs for this prototype
 	private EffortLog[] effortLogArr = new EffortLog[50];
-	
+	// Effort Category Information
 	
 	// Default Constructor for new user demo
 	ProjectData() {
@@ -40,4 +40,9 @@ public class ProjectData {
 	public String[] getLifeCycleArr() {
 		return lifeCycleStepArr;
 	}
+	
+	public int[] getStepEffortCategory() {
+		return stepEffortCategory;
+	}
+	
 }

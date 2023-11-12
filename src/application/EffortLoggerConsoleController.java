@@ -18,7 +18,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 public class EffortLoggerConsoleController {
@@ -27,13 +26,13 @@ public class EffortLoggerConsoleController {
 	@FXML
 	Label clockLight;
 	@FXML
-	ComboBox projectComboBox;
+	ComboBox<String> projectComboBox;
 	@FXML
-	ComboBox lifeCycleComboBox;
+	ComboBox<String> lifeCycleComboBox;
 	@FXML
-	ComboBox effortCategoryComboBox;
+	ComboBox<String> effortCategoryComboBox;
 	@FXML
-	ComboBox effortTypeComboBox;
+	ComboBox<String> effortTypeComboBox;
 
 	Label timeLabel;
 
@@ -43,12 +42,10 @@ public class EffortLoggerConsoleController {
 	public boolean activityCheck;
 	private PopupTutorial tutor;
 	//private Parent root;
-	// temp project name array for combobox display
+	// temp project name array for comboBox display
 	private String[] projectListNames = new String[10];
 	private ProjectData currProject;
-	
-	
-	
+	private EffortCategoryData currEffort;
 	
 	// Set up Project ComboBox for display & selection
 	public void loadProjectNameBox() {
@@ -61,17 +58,36 @@ public class EffortLoggerConsoleController {
 		projectComboBox.getItems().addAll(projectListNames);
 	}
 	
+	// Set Up Life Cycle Step ComboBox for display and selection 
 	public void loadLifeCycleStepBox() {
 		ProjectData[] tempProject = Main.userData.getProjectArr();
 		
 		for (int i = 0; i < 9; i++) {
-			if (projectComboBox.getValue() == tempProject[i].getName()) {
-				lifeCycleComboBox.getItems().add(tempProject[i].getLifeCycleArr());
+			currProject = tempProject[i];
+			if (projectComboBox.getValue() == currProject.getName()) {
+				lifeCycleComboBox.getItems().addAll(tempProject[i].getLifeCycleArr());
 				break;
 			}
 		}
 	}
 	
+	// Set Up Effort Category selection ComboBox
+	public void loadEffortCategoryBox() {
+		effortCategoryComboBox.getItems().addAll(Main.userData.getEffortCategory().effortCategories);
+	}
+	
+	public void loadEffortTypeBox() {		
+		/* Change how the EffortCategoryData object stores data before continuing
+		currEffort = Main.userData.getEffortCategory().
+		for (int i = 0; i < 9; i++) {
+			currProject = [i];
+			if (projectComboBox.getValue() == currProject.getName()) {
+				lifeCycleComboBox.getItems().addAll(tempProject[i].getLifeCycleArr());
+				break;
+			}
+		}
+		*/
+	}
 	
 	// Switch to the Effort Logger Editor Scene 
 	public void switchToEditor(ActionEvent e) throws IOException {
@@ -111,6 +127,15 @@ public class EffortLoggerConsoleController {
 		if (activityCheck) {
 			System.out.println("There is already an activity started");
 			return;
+		}
+		
+		// load project selection
+		if (Main.userData.getProjectArr() != null) {
+			loadProjectNameBox();
+		}
+		// load effort category selection
+		if (Main.userData.getEffortCategory().effortCategories != null) {
+			loadEffortCategoryBox();
 		}
 		
 		timeline = new Timeline();
