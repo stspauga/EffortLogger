@@ -47,6 +47,14 @@ public class EffortLoggerConsoleController {
 		switchScreen(newScreenFile, e);
 	}
 	
+	//Switch to the Planning poker scene
+	public void switchToPlanningPoker(ActionEvent e) throws IOException {
+		closeTutorial();
+		System.out.println("Switching to Planning Poker");
+		String newScreenFile = "PlanningPoker.fxml";
+		switchScreen(newScreenFile, e);
+	}
+
 	public void switchScreen (String newScreenFile, ActionEvent e) throws IOException{
 		Parent root = FXMLLoader.load(getClass().getResource(newScreenFile));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
