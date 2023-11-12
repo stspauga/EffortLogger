@@ -16,7 +16,7 @@ public class PlanningPokerController {
 	@FXML
 	private Stage stage;
 	private Scene scene;
-	public boolean activityCheck;
+	//public boolean activityCheck;
 	
 	//method that helps navigate to a file
 	public void switchScreen (String newScreenFile, ActionEvent e) throws IOException{
