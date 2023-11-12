@@ -12,7 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <BorderPane maxHeight="-Infinity" prefHeight="550.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
+=======
+<BorderPane maxHeight="-Infinity" prefHeight="492.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
+>>>>>>> master
    <center>
       <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
@@ -74,7 +78,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Planning Poker" textAlignment="CENTER">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlanningPoker" text="Planning Poker" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -106,6 +110,11 @@
                      <font>
                         <Font size="24.0" />
                      </font>
+                  </Label>
+                  <Label fx:id="timeLabel" text="(Clock Time)">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
                   </Label>
                </children>
             </VBox>

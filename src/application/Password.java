@@ -1,3 +1,4 @@
+// Coded by Madeleinne Tan
 package application;
 //import javafx.application.Application;
 import java.util.regex.Pattern;
@@ -18,16 +19,15 @@ public class Password {
 	}
 	
 	// password must be at least 7 chars long
-	public boolean checkLength(String pswrd) {
+	public static boolean checkLength(String pswrd) {
 		if(pswrd.length() >= 7) {
 			return true;
 		}
 		return false;
 	}
 
-	// Password must be at least 7 chars and have one of the following phrases:
-	// "CSE", "360", "TH24", or "ELV2"
-	public boolean checkContents(String pswrd) {
+	// Password must be at least 7 chars and has the phrase "TH24" in it
+	public static boolean checkContents(String pswrd) {
 		String accepts = ".*TH24.*";
 		
 		Pattern pattern = Pattern.compile(accepts);
