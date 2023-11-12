@@ -54,10 +54,10 @@ public class EffortLoggerConsoleController {
 	}
 
 	// Switch to the Effort Logger Editor Scene 
-		public void switchToScheduleCalendar(ActionEvent e) throws IOException {
+		public void switchToLoginPage(ActionEvent e) throws IOException {
 			closeTutorial();
-			System.out.println("Switching to Schedule Calendar");
-			String newScreenFile = "EffortLoggerScheduleCalendar.fxml";
+			System.out.println("Switching to Login Page");
+			String newScreenFile = "EffortLoggerLogin.fxml";
 			switchScreen(newScreenFile, e);
 			
 		}
@@ -148,4 +148,5 @@ public class EffortLoggerConsoleController {
 		tutor.tutorialWindow.close();
 		return true;
 	}
+	
 }
