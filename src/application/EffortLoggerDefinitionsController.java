@@ -75,5 +75,9 @@ public class EffortLoggerDefinitionsController {
 	    det_disp.setText(detailsText.toString());
 	    life_cycle_disp.setText(lifeCycleText.toString());
 	}
+	
+	public void searchProjects(ActionEvent e) throws IOException {
+		
+	}
 
 }
