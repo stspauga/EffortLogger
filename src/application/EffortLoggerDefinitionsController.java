@@ -88,6 +88,7 @@ public class EffortLoggerDefinitionsController {
 		}
 	}
 	
+
 	private void highlightText(TextArea textArea, String searchText) {
 		String text = textArea.getText();
 	    int start = text.indexOf(searchText);
@@ -100,5 +101,4 @@ public class EffortLoggerDefinitionsController {
 	        textArea.requestFocus(); // Optional: bring focus back to the TextArea
 	    }
     }
-
 }
