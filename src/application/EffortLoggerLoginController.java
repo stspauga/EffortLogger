@@ -2,6 +2,7 @@
  * Contributions :
  * Zachary Weber
  * Sindhu Rallabhandi
+ * Madeleinne Tan
 */
 package application;
 
@@ -69,8 +70,14 @@ public class EffortLoggerLoginController {
 
 		    //if password and user name are valid
 			if (accepted && acceptedUser) {
+
 				if (check) {
 					System.out.println("User Authenticated");		
+
+				//if (check) {
+					System.out.println("User Authenticated");
+					
+
 					// Create user data object after authentication
 					// For this prototype, every user treated as new and given a demo object ------------
 					System.out.println("Demo Data for Prototype");
@@ -81,15 +88,23 @@ public class EffortLoggerLoginController {
 					// allow user to access the console
 					switchToConsole(stage);
 				}
-				else {
-					System.out.println(enteredUsername + " is already logged in");
-				}
+				//else {
+					//System.out.println(enteredUsername + " is already logged in");
+				//}
+
 			}
 			else {
 				System.out.println("Wrong password");
 			}
+
 		}
 	
+
+		//}
+	}
+	
+		
+
 		
 	
 	public void switchToConsole(Stage stage) throws IOException {
