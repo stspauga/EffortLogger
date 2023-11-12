@@ -22,7 +22,6 @@ public class UserData {
 	// 10 Projects -> 1 User
 	private ProjectData[] projectArr = new ProjectData[10];
 	
-	
 	// This constructor will be used in the case of a new user sign in
 	// lets the new user input data
 	UserData(String firstName, String LastName, String username, String password, String email) {
@@ -111,5 +110,9 @@ public class UserData {
 	}
 	public void setFileName(String newIdentity) {
 		userFileName = newIdentity;
+	}
+	
+	public ProjectData[] getProjectArr() {
+		return projectArr;
 	}
 }

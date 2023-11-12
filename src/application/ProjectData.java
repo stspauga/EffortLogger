@@ -32,4 +32,8 @@ public class ProjectData {
 		// Read from the user's file to initialize project data
 	}
 	
+	// Get/Set
+	public String getName() {
+		return projectName;
+	}
 }

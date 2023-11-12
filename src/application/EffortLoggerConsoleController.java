@@ -42,11 +42,11 @@ public class EffortLoggerConsoleController {
 	// Switch to the Effort Logger Editor Scene 
 	public void switchToDefinitions(ActionEvent e) throws IOException {
 		closeTutorial();
-		System.out.println("Switching to Definitions");
+			System.out.println("Switching to Definitions");
 		String newScreenFile = "EffortLoggerDefinitions.fxml";
 		switchScreen(newScreenFile, e);
-		
 	}
+	
 	public void switchScreen (String newScreenFile, ActionEvent e) throws IOException{
 		Parent root = FXMLLoader.load(getClass().getResource(newScreenFile));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
@@ -88,7 +88,7 @@ public class EffortLoggerConsoleController {
 		}
 		System.out.println("Creating tutorial popup");
 		
-		PopupTutorial tutor = new PopupTutorial(
+		tutor = new PopupTutorial(
 				"This is the Effort Logger Console.\n"
 				+ "Here you can select a project life cycle step to work on, \n"
 				+ "then specify what that category of work falls under.\n"
