@@ -36,12 +36,12 @@
                   <Insets bottom="30.0" top="100.0" />
                </VBox.margin>
             </Label>
-            <TextField maxWidth="200.0" promptText="Project Name">
+            <TextField fx:id="search" maxWidth="200.0" promptText="Project Name">
                <VBox.margin>
                   <Insets bottom="30.0" />
                </VBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" text="Search" onAction="#searchProjects"/>
+            <Button mnemonicParsing="false" onAction="#searchProjects" text="Search" />
          </children>
          <BorderPane.margin>
             <Insets left="40.0" right="10.0" />
