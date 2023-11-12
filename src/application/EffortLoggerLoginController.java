@@ -115,6 +115,15 @@ public class EffortLoggerLoginController {
 }
 	
 
+<<<<<<< HEAD
+=======
+		//}
+	
+	
+		
+
+		
+>>>>>>> 90919b9 (extra changes)
 	
 	public void switchToConsole(Stage stage) throws IOException {
 		System.out.println("Switching to Console");

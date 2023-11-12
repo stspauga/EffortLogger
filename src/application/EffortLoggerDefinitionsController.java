@@ -87,6 +87,7 @@ public class EffortLoggerDefinitionsController {
 	}
 	
 	public void searchProjects(ActionEvent e) throws IOException {
+<<<<<<< HEAD
 		String check = search.getText();
 		for (int i = 0; i < definition_list.size(); i++) {
 			if (search.getText().equals(definition_list.get(i).getPROJ_NAME())) {
@@ -100,6 +101,10 @@ public class EffortLoggerDefinitionsController {
 	private void highlightText(TextArea textArea, String searchText) {
 		String text = textArea.getText();
 	    int start = text.indexOf(searchText);
+=======
+		
+	}
+>>>>>>> 90919b9 (extra changes)
 
 	    if (start >= 0) {
 	        int end = start + searchText.length();
