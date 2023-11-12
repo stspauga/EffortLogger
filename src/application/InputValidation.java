@@ -9,9 +9,8 @@ package application;
 import java.util.regex.Pattern;
 
 public class InputValidation {
-	
 String input = "";
-	
+
 	public InputValidation(String input) 
 	{
 		this.input = input;

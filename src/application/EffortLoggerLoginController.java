@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import application.UserModel;
 
 
+
 public class EffortLoggerLoginController {
 	private Stage stage;
 	private Scene scene;
@@ -35,68 +36,67 @@ public class EffortLoggerLoginController {
 	
 	public void logIn(ActionEvent e) throws IOException {
 
-			//checking if user name is valid
-			String enteredUsername = usernameField.getText();
-			inputValidation = new InputValidation(enteredUsername);
+		//checking if user name is valid
+		String enteredUsername = usernameField.getText();
+		inputValidation = new InputValidation(enteredUsername);
 
-			boolean validUsername = inputValidation.isValidInput(enteredUsername);
-			boolean validEmail = inputValidation.isValidEmail(enteredUsername);
-			
-
-			boolean acceptedUser = validUsername || validEmail;
-			if(!(acceptedUser))
-			{
-				System.out.println("Wrong Username - should be valid email or username with letters, numbers, \"-\", or \"_\"");
-			}
-			
-			
-			//checking if password is right
-
-			String enteredPassword = passwordField.getText();
-		    checker = new Password(enteredPassword);
-		    boolean contentsPass = checker.checkContents(enteredPassword);
-		    
-		    // vvvvv broken down for debugging purposes vvvvv
-		    if(contentsPass) {
-		    	System.out.println("contents passed");
-		    }
-		    boolean lengthPass = checker.checkLength(enteredPassword);
-		    if(lengthPass) {
-		    	System.out.println("length passed");
-		    }
-		    boolean accepted = contentsPass && lengthPass;
-
-
-		    //if password and user name are valid
-			if (accepted && acceptedUser) {
-
-				// Create user data object after authentication
-				// For this prototype, every user treated as new and given a demo object ------------
-				System.out.println("Demo Data for Prototype");
-				Main.setNewUserData();
-				
-				// do some things
-				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-				// allow user to access the console
-				switchToConsole(stage);
-			}
-
-			else {
-				System.out.println("Wrong password");
-			}
-
+		boolean validUsername = inputValidation.isValidInput(enteredUsername);
+		boolean validEmail = inputValidation.isValidEmail(enteredUsername);
 		
-			System.out.println("User Authenticated");
+
+		boolean acceptedUser = validUsername || validEmail;
+		if(!(acceptedUser))
+		{
+			System.out.println("Wrong Username - should be valid email or username with letters, numbers, \"-\", or \"_\"");
+		}
+		
+		
+		//checking if password is right
+
+		String enteredPassword = passwordField.getText();
+	    checker = new Password(enteredPassword);
+	    boolean contentsPass = checker.checkContents(enteredPassword);
+	    
+	    // vvvvv broken down for debugging purposes vvvvv
+	    if(contentsPass) {
+	    	System.out.println("contents passed");
+	    }
+	    boolean lengthPass = checker.checkLength(enteredPassword);
+	    if(lengthPass) {
+	    	System.out.println("length passed");
+	    }
+	    boolean accepted = contentsPass && lengthPass;
+
+
+	    //if password and user name are valid
+		if (accepted && acceptedUser) {
+
+			// Create user data object after authentication
+			// For this prototype, every user treated as new and given a demo object ------------
+			System.out.println("Demo Data for Prototype");
+			Main.setNewUserData();
+			
 			// do some things
 			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 			// allow user to access the console
 			switchToConsole(stage);
+		}
+
+		else {
+			System.out.println("Wrong password");
+		}
+
+	
+		System.out.println("User Authenticated");
+		// do some things
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		// allow user to access the console
+		switchToConsole(stage);
 	}
 	
 	
 	public void switchToConsole(Stage stage) throws IOException {
 		System.out.println("Switching to Console");
-		
 		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerConsole.fxml"));
 		//stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
