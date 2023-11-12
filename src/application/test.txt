@@ -1,2 +1,0 @@
-MicJac false
-tuliloapauga false
