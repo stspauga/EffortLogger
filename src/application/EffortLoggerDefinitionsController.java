@@ -40,7 +40,6 @@ public class EffortLoggerDefinitionsController {
 	private TextArea life_cycle_disp;
 	@FXML
 	private TextField search;
-
 	
 	// Switch to the Effort Logger Console
 	public void switchToConsole(ActionEvent e) throws IOException {
@@ -89,7 +88,7 @@ public class EffortLoggerDefinitionsController {
 		}
 	}
 	
-	
+
 	private void highlightText(TextArea textArea, String searchText) {
 		String text = textArea.getText();
 	    int start = text.indexOf(searchText);

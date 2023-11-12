@@ -5,6 +5,7 @@ public class Definition {
 	String DETAILS;
 	String LIFE_CYCLE;
    
+
     Definition setDefinitionItem(String proj_name, String details, String life_cycle) {
     	this.PROJ_NAME = proj_name;
     	this.DETAILS = details;
@@ -25,4 +26,3 @@ public class Definition {
 	}
 
 }
-
