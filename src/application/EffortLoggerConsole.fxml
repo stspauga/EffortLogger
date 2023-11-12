@@ -50,9 +50,9 @@
       </VBox>
    </center>
    <bottom>
-      <HBox alignment="CENTER" prefHeight="83.0" prefWidth="766.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="82.0" prefWidth="701.0" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar prefHeight="130.0" prefWidth="545.0">
+            <ButtonBar prefHeight="82.0" prefWidth="655.0">
                <buttons>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToEditor" text="Effort Editor" textAlignment="CENTER">
                      <cursor>
@@ -75,6 +75,11 @@
                      </cursor>
                   </Button>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlanningPoker" text="Planning Poker" textAlignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="459.0" layoutY="39.0" mnemonicParsing="false" onAction="#switchToLoginPage" text="Quit" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

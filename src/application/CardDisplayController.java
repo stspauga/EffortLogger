@@ -36,5 +36,30 @@ public class CardDisplayController {
 		criteriaTextArea.setText(criteria);
 		
 	}
+	
+	//switch to console
+			public void switchToConsole(ActionEvent e) throws IOException {
+				System.out.println("Switching to Console");
+				Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerConsole.fxml"));
+				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+				scene = new Scene(root);
+				stage.setScene(scene);
+				stage.show();
+			}
+			//Switch to the Planning poker scene
+			public void switchToPlanningPoker(ActionEvent e) throws IOException {
+				System.out.println("Switching to Planning Poker");
+				String newScreenFile = "PlanningPoker.fxml";
+				switchScreen(newScreenFile, e);
+			}
+			
+			
+			public void switchScreen (String newScreenFile, ActionEvent e) throws IOException{
+				Parent root = FXMLLoader.load(getClass().getResource(newScreenFile));
+				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+				scene = new Scene(root);
+				stage.setScene(scene);
+				stage.show();
+			}
 
 }
