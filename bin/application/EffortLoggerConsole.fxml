@@ -102,6 +102,11 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
+                  <Label fx:id="timeLabel" text="(Clock Time)">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
                </children>
             </VBox>
             <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#consoleTutorial" text="Need Help?" StackPane.alignment="TOP_RIGHT">
