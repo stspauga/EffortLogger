@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -21,15 +22,48 @@ public class EffortLoggerConsoleController {
 	// FXML elements
 	@FXML
 	Label clockLight;
-	
+	@FXML
+	ComboBox projectComboBox;
+	@FXML
+	ComboBox lifeCycleComboBox;
+	@FXML
+	ComboBox effortCategoryComboBox;
+	@FXML
+	ComboBox effortTypeComboBox;
 	
 	private Stage stage;
 	private Scene scene;
 	public boolean activityCheck;
 	private PopupTutorial tutor;
 	//private Parent root;
+	// temp project name array for combobox display
+	private String[] projectListNames = new String[10];
+	private ProjectData currProject;
 	
 	
+	
+	
+	// Set up Project ComboBox for display & selection
+	public void loadProjectNameBox() {
+		for (int i = 0; i < 9; i++) {
+			if (Main.userData.getProjectArr()[i] != null) {
+				projectListNames[i] = Main.userData.getProjectArr()[i].getName();
+			}
+		}
+		
+		projectComboBox.getItems().addAll(projectListNames);
+	}
+	
+	public void loadLifeCycleStepBox() {
+		ProjectData[] tempProject = Main.userData.getProjectArr();
+		
+		for (int i = 0; i < 9; i++) {
+			if (projectComboBox.getValue() == tempProject[i].getName()) {
+				lifeCycleComboBox.getItems().add(tempProject[i].getLifeCycleArr());
+				break;
+			}
+		}
+	}
 	
 	
 	// Switch to the Effort Logger Editor Scene 

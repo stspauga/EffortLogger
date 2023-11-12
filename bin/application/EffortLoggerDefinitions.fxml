@@ -4,47 +4,15 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<<<<<<< HEAD
 <?import javafx.scene.control.ScrollPane?>
-=======
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
->>>>>>> master
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerDefinitionsController">
-<<<<<<< HEAD
-   <center>
-      <ScrollPane BorderPane.alignment="CENTER">
-         <content>
-            <VBox>
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="919.0">
-                     <children>
-                        <Label text="Projects :">
-                           <HBox.margin>
-                              <Insets right="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <ComboBox fx:id="projectList" prefHeight="25.0" prefWidth="189.0" />
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="95.0" prefWidth="919.0" />
-                  <HBox layoutX="10.0" layoutY="105.0" prefHeight="95.0" prefWidth="919.0" />
-                  <HBox layoutX="10.0" layoutY="200.0" prefHeight="95.0" prefWidth="919.0" />
-                  <HBox layoutX="10.0" layoutY="295.0" prefHeight="95.0" prefWidth="919.0" />
-                  <HBox layoutX="10.0" layoutY="390.0" prefHeight="95.0" prefWidth="919.0" />
-                  <HBox layoutX="10.0" layoutY="485.0" prefHeight="95.0" prefWidth="919.0" />
-               </children>
-            </VBox>
-         </content>
-      </ScrollPane>
-   </center>
-=======
->>>>>>> master
    <top>
       <BorderPane BorderPane.alignment="CENTER">
          <left>

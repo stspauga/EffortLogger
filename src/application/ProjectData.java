@@ -36,4 +36,8 @@ public class ProjectData {
 	public String getName() {
 		return projectName;
 	}
+	
+	public String[] getLifeCycleArr() {
+		return lifeCycleStepArr;
+	}
 }
