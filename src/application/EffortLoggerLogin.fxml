@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: Grey;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerLoginController">
    <top>
       <VBox alignment="CENTER" prefHeight="59.0" prefWidth="600.0" BorderPane.alignment="CENTER">
@@ -40,11 +39,12 @@
                </VBox.margin>
             </Label>
             <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="180.0" />
-            <Button mnemonicParsing="false" onAction="#logIn" prefHeight="19.0" prefWidth="55.0" text="Log In">
+            <Button mnemonicParsing="false" onAction="#logIn" prefHeight="25.0" prefWidth="70.0" text="Log In">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
             </Button>
+            <Button layoutX="293.0" layoutY="272.0" mnemonicParsing="false" onAction="#logIn" prefHeight="25.0" prefWidth="71.0" text="Sign Up" />
          </children>
          <BorderPane.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
