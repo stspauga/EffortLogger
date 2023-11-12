@@ -5,6 +5,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.util.Duration;
 
@@ -33,7 +34,7 @@ public class EffortLoggerConsoleController {
 	ComboBox<String> effortCategoryComboBox;
 	@FXML
 	ComboBox<String> effortTypeComboBox;
-
+	@FXML
 	Label timeLabel;
 
 	
@@ -43,7 +44,7 @@ public class EffortLoggerConsoleController {
 	private PopupTutorial tutor;
 	//private Parent root;
 	// temp project name array for comboBox display
-	private String[] projectListNames = new String[10];
+	private ArrayList<String> projectListNames = new ArrayList<String>();
 	private ProjectData currProject;
 	private EffortCategoryData currEffort;
 	
@@ -51,7 +52,7 @@ public class EffortLoggerConsoleController {
 	public void loadProjectNameBox() {
 		for (int i = 0; i < 9; i++) {
 			if (Main.userData.getProjectArr()[i] != null) {
-				projectListNames[i] = Main.userData.getProjectArr()[i].getName();
+				projectListNames.add(Main.userData.getProjectArr()[i].getName());
 			}
 		}
 		
@@ -60,13 +61,18 @@ public class EffortLoggerConsoleController {
 	
 	// Set Up Life Cycle Step ComboBox for display and selection 
 	public void loadLifeCycleStepBox() {
+		lifeCycleComboBox.getItems().clear();
 		ProjectData[] tempProject = Main.userData.getProjectArr();
 		
 		for (int i = 0; i < 9; i++) {
 			currProject = tempProject[i];
 			if (projectComboBox.getValue() == currProject.getName()) {
-				lifeCycleComboBox.getItems().addAll(tempProject[i].getLifeCycleArr());
 				break;
+			}
+		}
+		for (int i = 0; i < 49; i++) {
+			if (currProject.getLifeCycleArr()[i] != "") {
+				lifeCycleComboBox.getItems().add(currProject.getLifeCycleArr()[i]);
 			}
 		}
 	}
