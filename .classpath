@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-<<<<<<< HEAD
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> a407d3e (Update .classpath)
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JAva-SDK">
-<<<<<<< HEAD
-=======
->>>>>>> master
->>>>>>> master
-=======
->>>>>>> a407d3e (Update .classpath)
->>>>>>> ad03e17 (Update .classpath)
-=======
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
->>>>>>> 90919b9 (extra changes)
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

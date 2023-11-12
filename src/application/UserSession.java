@@ -10,43 +10,30 @@ public class UserSession {
 
 	public boolean checkUserID(String userName) {
 		userName = userName.toLowerCase();
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 		String file = "test.txt";
-		File readFile = new File(file);
-		if (readFile.exists()) {
-			//System.out.println("yup");
-<<<<<<< HEAD
-=======
-		String file = "/Users/tuliloapauga/eclipse-workspace/EffortLogger/src/application/test.txt";
-=======
-		String file = "test.txt";
->>>>>>> 3666816 (Testing)
+		
+
+		
+
 		File readFile = new File(file);
 		if (readFile.exists()) {
 			System.out.println("yup");
->>>>>>> 78ad9bc (Finished prototype)
-=======
->>>>>>> 64977b7 (A commit)
+
 			try {
 				Scanner scanner = new Scanner(readFile);
 				while (scanner.hasNext()) {
 					String data = scanner.nextLine();
 					if (data.contains(userName)) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 						readFile.delete();
 						return false;
-=======
-						if (data.contains("true")) {
-							return false;
-						}
->>>>>>> 78ad9bc (Finished prototype)
-=======
-						readFile.delete();
-						return false;
->>>>>>> 64977b7 (A commit)
+
+						
+
+		
+
 					}
 				}
 				scanner.close();
@@ -54,9 +41,7 @@ public class UserSession {
 			catch (IOException e) {
 				System.out.println("An error occured");
 				e.printStackTrace();
-<<<<<<< HEAD
-=======
-			}
+	}
 		}
 		else {
 			try {
@@ -70,7 +55,7 @@ public class UserSession {
 			catch (IOException e) {
 				System.out.println("An error occured");
 				e.printStackTrace();
->>>>>>> 78ad9bc (Finished prototype)
+
 			}
 		}
 		return false;
