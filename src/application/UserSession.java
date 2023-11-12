@@ -10,7 +10,8 @@ public class UserSession {
 
 	public boolean checkUserID(String userName) {
 		userName = userName.toLowerCase();
-		String file = "test.txt";
+
+		String file = "test.txt"; ///Users/tuliloapauga/eclipse-workspace/EffortLogger/src/application
 		File readFile = new File(file);
 		if (readFile.exists()) {
 			System.out.println("yup");
