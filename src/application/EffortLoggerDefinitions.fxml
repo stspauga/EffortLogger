@@ -4,9 +4,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?import javafx.scene.control.TextArea?>
 =======
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+<?import javafx.scene.control.TextArea?>
+>>>>>>> 3de6f5a (Fixed the definitions section)
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -49,20 +53,30 @@
                </VBox.margin>
             </TextField>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Button mnemonicParsing="false" onAction="#searchProjects" text="Search" />
 =======
             <Button mnemonicParsing="false" text="Search" />
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+            <Button mnemonicParsing="false" text="Search" onAction="#searchProjects"/>
+>>>>>>> 3de6f5a (Fixed the definitions section)
          </children>
          <BorderPane.margin>
             <Insets left="40.0" right="10.0" />
          </BorderPane.margin>
+<<<<<<< HEAD
 <<<<<<< HEAD
          <padding>
             <Insets right="20.0" />
          </padding>
 =======
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+>>>>>>> 3de6f5a (Fixed the definitions section)
       </VBox>
    </center>
    <left>
@@ -75,23 +89,32 @@
                </VBox.margin>
             </Label>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <TextField fx:id="proj_name" alignment="CENTER">
 =======
             <TextField alignment="CENTER">
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+            <TextField fx:id="proj_name" alignment="CENTER">
+>>>>>>> 3de6f5a (Fixed the definitions section)
                <VBox.margin>
                   <Insets />
                </VBox.margin>
             </TextField>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Label alignment="TOP_CENTER" text="Details">
 =======
             <Label alignment="TOP_CENTER" text="Detail">
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+            <Label alignment="TOP_CENTER" text="Details">
+>>>>>>> 3de6f5a (Fixed the definitions section)
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
+<<<<<<< HEAD
 <<<<<<< HEAD
             <TextField fx:id="details" alignment="CENTER" />
 =======
@@ -109,11 +132,15 @@
             </Label>
             <TextField />
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+            <TextField fx:id="details" alignment="CENTER" />
+>>>>>>> 3de6f5a (Fixed the definitions section)
             <Label alignment="TOP_CENTER" text="Life Cycle">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
+<<<<<<< HEAD
 <<<<<<< HEAD
             <TextField fx:id="life_cycle" alignment="CENTER" />
             <Button id="add-proj" mnemonicParsing="false" onAction="#addProject" text="Add Project">
@@ -121,6 +148,10 @@
             <TextField />
             <Button mnemonicParsing="false" text="Add Project">
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+            <TextField fx:id="life_cycle" alignment="CENTER" />
+            <Button id="add-proj" mnemonicParsing="false" onAction="#addProject" text="Add Project">
+>>>>>>> 3de6f5a (Fixed the definitions section)
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
@@ -135,10 +166,14 @@
       <VBox minWidth="400.0" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <HBox maxHeight="20.0" minHeight="20.0" minWidth="400.0" prefHeight="100.0" prefWidth="200.0">
 =======
             <HBox minWidth="400.0" prefHeight="100.0" prefWidth="200.0">
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+            <HBox maxHeight="20.0" minHeight="20.0" minWidth="400.0" prefHeight="100.0" prefWidth="200.0">
+>>>>>>> 3de6f5a (Fixed the definitions section)
                <children>
                   <Label alignment="CENTER" minWidth="133.0" text="Project Name" textAlignment="CENTER" />
                   <Label alignment="CENTER" minWidth="133.0" text="Details" />
@@ -146,6 +181,9 @@
                </children>
             </HBox>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3de6f5a (Fixed the definitions section)
             <HBox minHeight="500.0" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <VBox minWidth="133.0" prefHeight="200.0" prefWidth="100.0">
@@ -165,8 +203,11 @@
                   </VBox>
                </children>
             </HBox>
+<<<<<<< HEAD
 =======
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+>>>>>>> 3de6f5a (Fixed the definitions section)
          </children>
          <BorderPane.margin>
             <Insets />

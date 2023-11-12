@@ -2,6 +2,9 @@ package application;
 
 public class Definition {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3de6f5a (Fixed the definitions section)
 	String PROJ_NAME;
 	String DETAILS;
 	String LIFE_CYCLE;
@@ -25,6 +28,7 @@ public class Definition {
 
 	public String getLIFE_CYCLE() {
 		return LIFE_CYCLE;
+<<<<<<< HEAD
 	}
 
 }
@@ -44,3 +48,8 @@ public class Definition {
 	}
 }
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+	}
+
+}
+>>>>>>> 3de6f5a (Fixed the definitions section)

@@ -38,8 +38,12 @@ public class EffortLoggerDefinitionsController {
 	private TextArea det_disp;
 	@FXML
 	private TextArea life_cycle_disp;
+<<<<<<< HEAD
 	@FXML
 	private TextField search;
+=======
+
+>>>>>>> 3de6f5a (Fixed the definitions section)
 	
 	// Switch to the Effort Logger Console
 	public void switchToConsole(ActionEvent e) throws IOException {
@@ -54,12 +58,16 @@ public class EffortLoggerDefinitionsController {
 	
 	public void addProject(ActionEvent e) throws IOException {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3de6f5a (Fixed the definitions section)
 		Definition newDef = new Definition();
 		definition_list.add(newDef.setDefinitionItem(proj_name.getText(), details.getText(), life_cycle.getText()));
 		proj_name.clear();
 		details.clear();
 		life_cycle.clear();
 		displayProject(e);
+<<<<<<< HEAD
 	}
 	
 	public void displayProject(ActionEvent e) throws IOException {
@@ -104,14 +112,28 @@ public class EffortLoggerDefinitionsController {
 
 =======
 		
+=======
+>>>>>>> 3de6f5a (Fixed the definitions section)
 	}
 	
-	public void searchProjects(ActionEvent e) throws IOException {
-		
+	public void displayProject(ActionEvent e) throws IOException {
+	    StringBuilder projNames = new StringBuilder();
+	    StringBuilder detailsText = new StringBuilder();
+	    StringBuilder lifeCycleText = new StringBuilder();
+	    
+	    for (int i = 0; i < definition_list.size(); i++) {
+	        projNames.append(definition_list.get(i).getPROJ_NAME()).append("\n");
+	        detailsText.append(definition_list.get(i).getDETAILS()).append("\n");
+	        lifeCycleText.append(definition_list.get(i).getLIFE_CYCLE()).append("\n");
+	    }
+
+	    proj_name_disp.setText(projNames.toString());
+	    det_disp.setText(detailsText.toString());
+	    life_cycle_disp.setText(lifeCycleText.toString());
 	}
-	
-	public void displayProjects(ActionEvent e) throws IOException {
-		
-	}
+<<<<<<< HEAD
 >>>>>>> 5b9bba2 (Created Definitions UI)
+=======
+
+>>>>>>> 3de6f5a (Fixed the definitions section)
 }
