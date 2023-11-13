@@ -1,11 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX">
+=======
+=======
+>>>>>>> 964eb98 (Nghiem branch1 (#21))
+=======
+>>>>>>> 91553c6 (Some changes)
+=======
+>>>>>>> d087184 (Changes)
+=======
+>>>>>>> 8835788 (sdf)
+=======
+>>>>>>> 8c23427 (Nghiem branch1 (#21))
+=======
+>>>>>>> 0fde4d9 (Some changes)
+=======
+>>>>>>> ea8ac8c (Changes)
+>>>>>>> 094fe19 (Changes)
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-20">
+>>>>>>> 9706367 (Madie tan branch (#22))
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
+>>>>>>> 871707e (Z web branch (#24))
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
+>>>>>>> 871707e (Z web branch (#24))
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
+>>>>>>> 7e7f1e7 (Some changes)
+>>>>>>> 0fde4d9 (Some changes)
+=======
+=======
+>>>>>>> 865767d (Changes)
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
+>>>>>>> ea8ac8c (Changes)
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 9a91bcb (Nghiem branch1 (#21))
+<<<<<<< HEAD
+=======
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> 2d42485 (sdf)
+>>>>>>> a374ded (sdf)
+=======
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> 2d42485 (sdf)
+=======
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> 2d42485 (sdf)
+>>>>>>> 8c23427 (Nghiem branch1 (#21))
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 865767d (Changes)
+=======
+>>>>>>> c95f55f (Deleted node modules)
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+>>>>>>> 9a91bcb (Nghiem branch1 (#21))
+=======
+>>>>>>> 8c23427 (Nghiem branch1 (#21))
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 9a91bcb (Nghiem branch1 (#21))
+<<<<<<< HEAD
+>>>>>>> 9f99905 (Nghiem branch1 (#21))
+<<<<<<< HEAD
+>>>>>>> 964eb98 (Nghiem branch1 (#21))
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 9f99905 (Nghiem branch1 (#21))
+>>>>>>> 0fde4d9 (Some changes)
+=======
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> 7e7f1e7 (Some changes)
+>>>>>>> bd1408c (Some changes)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 91553c6 (Some changes)
+=======
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> 865767d (Changes)
+>>>>>>> d087184 (Changes)
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> c95f55f (Deleted node modules)
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-20">
+>>>>>>> 9706367 (Madie tan branch (#22))
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+>>>>>>> 9a91bcb (Nghiem branch1 (#21))
+=======
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> 2d42485 (sdf)
+>>>>>>> 8835788 (sdf)
+=======
+>>>>>>> 9a91bcb (Nghiem branch1 (#21))
+>>>>>>> 9f99905 (Nghiem branch1 (#21))
+>>>>>>> 8c23427 (Nghiem branch1 (#21))
+=======
+>>>>>>> 0fde4d9 (Some changes)
+=======
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> 865767d (Changes)
+>>>>>>> ea8ac8c (Changes)
+>>>>>>> 094fe19 (Changes)
 	<classpathentry kind="output" path="bin"/>
 </classpath>
