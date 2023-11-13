@@ -75,10 +75,17 @@ public class SettingsConsoleController {
 		stage.show();
     }
     
-    public void collectUserData(ActionEvent e) throws IOException {
-    	
-    }
-    
-    
-    
+  	//get user data from settings, store them in UserData.java
+  	//UserData(String firstName, String LastName, String username, String password, String email)
+  	public void collectUserData(ActionEvent e) throws IOException{
+  		String firstName = tfFirstName.getText();
+  		String lastName = tfLastName.getText();
+  		String displayName = textFieldDisplayName.getText();
+  		String address = tfAddress.getText();
+  		String city = tfCity.getText();
+  		String state = tfState.getText();
+  		String zip = tfZip.getText();
+  		
+  		
+  	}
 }
