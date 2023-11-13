@@ -46,7 +46,7 @@ public class EffortLoggerConsoleController {
 	// temp project name array for comboBox display
 	private ArrayList<String> projectListNames = new ArrayList<String>();
 	private ProjectData currProject;
-	private EffortCategoryData currEffort;
+	private String[] effortType;
 	
 	// Set up Project ComboBox for display & selection
 	public void loadProjectNameBox() {
@@ -79,10 +79,18 @@ public class EffortLoggerConsoleController {
 	
 	// Set Up Effort Category selection ComboBox
 	public void loadEffortCategoryBox() {
-		effortCategoryComboBox.getItems().addAll(Main.userData.getEffortCategory().effortCategories);
+		for (int i = 0; i < Main.userData.getEffortDefinitions().size(); i++) {
+			effortCategoryComboBox.getItems().add(Main.userData.getEffortDefinitions().get(i)[0]);
+		}
 	}
 	
-	public void loadEffortTypeBox() {		
+	public void loadEffortTypeBox() {	
+		effortTypeComboBox.getItems().clear();
+		String category = effortCategoryComboBox.getValue();
+		effortType = Main.userData.getEffortTypeDefinition(category);
+		//for (String entry : effortType) {System.out.println(entry);} // Debug
+		effortTypeComboBox.getItems().addAll(effortType);
+		
 		/* Change how the EffortCategoryData object stores data before continuing
 		currEffort = Main.userData.getEffortCategory().
 		for (int i = 0; i < 9; i++) {
@@ -128,6 +136,8 @@ public class EffortLoggerConsoleController {
 	}
 
 	public void switchScreen (String newScreenFile, ActionEvent e) throws IOException{
+		// prevent user from leaving during activity -- may need to change later --
+		//if (activityCheck) {System.out.println("Please conclude the activity before switching screens"); return;}
 		Parent root = FXMLLoader.load(getClass().getResource(newScreenFile));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);

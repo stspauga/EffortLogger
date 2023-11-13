@@ -33,7 +33,7 @@
             <HBox alignment="CENTER" spacing="10.0">
                <children>
                   <Label text="Effort Category:" />
-                  <ComboBox fx:id="effortCategoryComboBox" prefHeight="25.0" prefWidth="200.0" />
+                  <ComboBox fx:id="effortCategoryComboBox" onAction="#loadEffortTypeBox" prefHeight="25.0" prefWidth="200.0" />
                   <ComboBox fx:id="effortTypeComboBox" prefHeight="25.0" prefWidth="275.0" />
                </children>
                <padding>
