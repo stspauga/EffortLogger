@@ -144,7 +144,7 @@ public class EffortLoggerConsoleController {
 
 	public void switchScreen (String newScreenFile, ActionEvent e) throws IOException{
 		// prevent user from leaving during activity -- may need to change later --
-		//if (activityCheck) {System.out.println("Please conclude the activity before switching screens"); return;}
+		if (activityCheck) {System.out.println("Please conclude the activity before switching screens"); return;}
 		Parent root = FXMLLoader.load(getClass().getResource(newScreenFile));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);

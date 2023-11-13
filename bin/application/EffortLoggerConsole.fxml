@@ -84,6 +84,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
+                  <Button mnemonicParsing="false" onAction="#switchToSettings" text="Settings" />
                </buttons>
             </ButtonBar>
          </children>
