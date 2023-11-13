@@ -1,6 +1,7 @@
 /* Controller Class for the Effort Logger Console screen
  * Contributions :
  * Zachary Weber
+ * Tuliloa Pauga
 */
 package application;
 
