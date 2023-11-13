@@ -119,19 +119,26 @@ public class EffortLoggerConsoleController {
 	}
 
 	// Switch to the Effort Logger Editor Scene 
-		public void switchToLoginPage(ActionEvent e) throws IOException {
-			closeTutorial();
-			System.out.println("Switching to Login Page");
-			String newScreenFile = "EffortLoggerLogin.fxml";
-			switchScreen(newScreenFile, e);
-			
-		}
+	public void switchToLoginPage(ActionEvent e) throws IOException {
+		closeTutorial();
+		System.out.println("Switching to Login Page");
+		String newScreenFile = "EffortLoggerLogin.fxml";
+		switchScreen(newScreenFile, e);
+		
+	}
 	
 	//Switch to the Planning poker scene
 	public void switchToPlanningPoker(ActionEvent e) throws IOException {
 		closeTutorial();
 		System.out.println("Switching to Planning Poker");
 		String newScreenFile = "PlanningPoker.fxml";
+		switchScreen(newScreenFile, e);
+	}
+
+	public void switchToSettings(ActionEvent e) throws IOException{
+		closeTutorial();
+		System.out.println("Switching to Planning Poker");
+		String newScreenFile = "SettingsConsole.fxml";
 		switchScreen(newScreenFile, e);
 	}
 
