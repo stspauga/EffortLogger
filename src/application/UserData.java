@@ -18,6 +18,8 @@ public class UserData {
 	private String email;
 	private int userId;
 	private String userFileName;
+	private String userAddress;
+	private String userPhoneNumbers;
 	//~~~~~Data Structure~~~~~
 	// 10 Projects -> 1 User
 	private ProjectData[] projectArr = new ProjectData[10];
@@ -25,12 +27,14 @@ public class UserData {
 	
 	// This constructor will be used in the case of a new user sign in
 	// lets the new user input data
-	UserData(String firstName, String LastName, String username, String password, String email) {
+	UserData(String firstName, String LastName, String username, String password, String email, String userAddress, String userPhoneNumbers) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
+		this.userAddress = userAddress;
+		this.userPhoneNumbers = userPhoneNumbers;
 
 		// default demo project
 		projectArr[0] = new ProjectData();
@@ -77,6 +81,12 @@ public class UserData {
 	public String getFileName() {
 		return userFileName;
 	}
+	public String getAddress() {
+		return userAddress;
+	}
+	public String getPhoneNumbers() {
+		return userPhoneNumbers;
+	}
 	
 	// set methods for the same variables
 	public void setFirstname(String name) {
@@ -111,5 +121,11 @@ public class UserData {
 	}
 	public void setFileName(String newIdentity) {
 		userFileName = newIdentity;
+	}
+	public void setAddress (String newAddress) {
+		userAddress = newAddress;
+	}
+	public void setPhoneNumbers (String newPhoneNumbers) {
+		userPhoneNumbers = newPhoneNumbers;
 	}
 }

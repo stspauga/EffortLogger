@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import application.UserModel;
 
-public class EffortLoggerLoginController {
+public class EffortLoggerSignUpController {
 	private Stage stage;
 	private Scene scene;
 	//private Parent root;
@@ -30,7 +30,8 @@ public class EffortLoggerLoginController {
 	@FXML
 	private PasswordField passwordField;
 	private Password checker;
-	@FXML private TextField usernameField;
+	@FXML 
+	private TextField usernameField;
 	private InputValidation inputValidation;
 	@FXML
 	private TextField userFirstName;
@@ -41,16 +42,28 @@ public class EffortLoggerLoginController {
 	@FXML
 	private TextField userPhoneNumbers;
 	
-	public void logIn(ActionEvent e) throws IOException {
+	public void SignUp(ActionEvent e) throws IOException {
 		
+		//Insert first name into text field
+		String enteredFirstName = userFirstName.getText();
+		
+		//Insert last name into text field
+		String enteredLastName = userLastName.getText();
+		
+		//Insert address into text field
+		String enteredAddress = userAddress.getText();
+		
+		//Insert phone numbers into text field
+		String enteredPhoneNumbers = userPhoneNumbers.getText();
+			
 		//checking if user name is valid
 		String enteredUsername = usernameField.getText();
 		inputValidation = new InputValidation(enteredUsername);
-
+	
 		boolean validUsername = inputValidation.isValidInput(enteredUsername);
 		boolean validEmail = inputValidation.isValidEmail(enteredUsername);
 		
-
+	
 		boolean acceptedUser = validUsername || validEmail;
 		if(!(acceptedUser))
 		{
@@ -59,7 +72,7 @@ public class EffortLoggerLoginController {
 		
 		
 		//checking if password is right
-
+	
 		String enteredPassword = passwordField.getText();
 	    checker = new Password(enteredPassword);
 	    boolean contentsPass = checker.checkContents(enteredPassword);
@@ -73,11 +86,11 @@ public class EffortLoggerLoginController {
 	    	System.out.println("length passed");
 	    }
 	    boolean accepted = contentsPass && lengthPass;
-
-
+	
+	
 	    //if password and user name are valid
 		if (accepted && acceptedUser) {
-
+	
 			// Create user data object after authentication
 			// For this prototype, every user treated as new and given a demo object ------------
 			System.out.println("Demo Data for Prototype");
@@ -86,37 +99,34 @@ public class EffortLoggerLoginController {
 			// do some things
 			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 			// allow user to access the console
-			switchToConsole(stage);
+			switchToLogin(stage);
 		}
-
+	
 		else {
 			System.out.println("Wrong password");
 		}
-
-
-	
-		System.out.println("User Authenticated");
-		// do some things
-		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-		// allow user to access the console
-		switchToConsole(stage);
 	}
-	
-	public void SignUp(ActionEvent e) throws IOException {
-		System.out.println("Switching to Sign Up page");
-		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerSignUp.fxml"));
-	    stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		
+	public void switchToLogin(Stage stage) throws IOException {
+		System.out.println("Switching to Login Page");
+		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerLogin.fxml"));
+		//stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 	}
 	
-	public void switchToConsole(Stage stage) throws IOException {
-		System.out.println("Switching to Console");
-		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerConsole.fxml"));
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
