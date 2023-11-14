@@ -84,6 +84,10 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
+<<<<<<< HEAD
+=======
+                  <Button mnemonicParsing="false" onAction="#switchToSettings" text="Settings" />
+>>>>>>> master
                </buttons>
             </ButtonBar>
          </children>

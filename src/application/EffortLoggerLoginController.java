@@ -19,8 +19,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import application.UserModel;
 
-
-
 public class EffortLoggerLoginController {
 	private Stage stage;
 	private Scene scene;
@@ -35,7 +33,7 @@ public class EffortLoggerLoginController {
 	private InputValidation inputValidation;
 	
 	public void logIn(ActionEvent e) throws IOException {
-
+		
 		//checking if user name is valid
 		String enteredUsername = usernameField.getText();
 		inputValidation = new InputValidation(enteredUsername);
@@ -57,7 +55,7 @@ public class EffortLoggerLoginController {
 	    checker = new Password(enteredPassword);
 	    boolean contentsPass = checker.checkContents(enteredPassword);
 	    
-	    // vvvvv broken down for debugging purposes vvvvv
+	    // broken down for debugging purposes
 	    if(contentsPass) {
 	    	System.out.println("contents passed");
 	    }
@@ -86,6 +84,7 @@ public class EffortLoggerLoginController {
 			System.out.println("Wrong password");
 		}
 
+
 	
 		System.out.println("User Authenticated");
 		// do some things
@@ -93,7 +92,6 @@ public class EffortLoggerLoginController {
 		// allow user to access the console
 		switchToConsole(stage);
 	}
-	
 	
 	public void switchToConsole(Stage stage) throws IOException {
 		System.out.println("Switching to Console");
