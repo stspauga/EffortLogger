@@ -11,6 +11,7 @@ package application;
 import java.io.IOException;
 import java.io.*;
 import java.util.Base64;
+import java.util.Random;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -189,6 +190,21 @@ public class EffortLoggerSignUpController {
 	    passwordField.setText("");
 	}
 	
+	private String xorWithKey(String a, String b) {
+	    StringBuilder sb = new StringBuilder();
+	    for (int i = 0; i < a.length() && i < b.length(); i++) {
+	        sb.append((char) (a.charAt(i) ^ b.charAt(i)));
+	    }
+	    return sb.toString();
+	}
+
+	private String generateSecretCiphertext() {
+	    Random random = new Random();
+	    byte[] secret = new byte[64];
+	    random.nextBytes(secret);
+	    return Base64.getEncoder().encodeToString(secret);
+	}
+	
 	//write user's information to database
 	private void writeUserToFile(User user, String filename) {
 		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(filename, true)))) {
@@ -201,7 +217,17 @@ public class EffortLoggerSignUpController {
 
 			// Encode the password
 	        String encodedPassword = Base64.getEncoder().encodeToString(user.getPassword().getBytes());
-	        out.println("Password: " + encodedPassword);
+
+	        // Generate a new secret cipher-text
+	        String secretCiphertext = generateSecretCiphertext();
+
+	        // XOR the encoded password with the secret cipher-text
+	        String xorPassword = xorWithKey(encodedPassword, secretCiphertext);
+	        
+	        // Encode the XORed password in Base64 to make it readable
+	        String readablePassword = Base64.getEncoder().encodeToString(xorPassword.getBytes());
+	        
+	        out.println("Password: " + readablePassword);
 	        out.print("\n");
 	        
 		} catch (IOException e) {
