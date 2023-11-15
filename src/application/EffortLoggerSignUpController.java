@@ -220,14 +220,17 @@ public class EffortLoggerSignUpController {
 
 	        // Generate a new secret cipher-text
 	        String secretCiphertext = generateSecretCiphertext();
+	        
+	        // Encode the secret cipher-text
+	        String encodedSecretCiphertext = Base64.getEncoder().encodeToString(secretCiphertext.getBytes());
 
 	        // XOR the encoded password with the secret cipher-text
-	        String xorPassword = xorWithKey(encodedPassword, secretCiphertext);
+	        String xorPassword = xorWithKey(encodedPassword, encodedSecretCiphertext);
 	        
 	        // Encode the XORed password in Base64 to make it readable
 	        String readablePassword = Base64.getEncoder().encodeToString(xorPassword.getBytes());
-	        
-	        out.println("Password: " + readablePassword);
+	       
+	        out.println("Password: " + readablePassword + "/" + encodedSecretCiphertext);
 	        out.print("\n");
 	        
 		} catch (IOException e) {
