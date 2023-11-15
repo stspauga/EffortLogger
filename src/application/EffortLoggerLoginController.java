@@ -77,11 +77,6 @@ public class EffortLoggerLoginController {
 	    //if password and user name are valid
 		if (accepted && acceptedUser) {
 
-			// Create user data object after authentication
-			// For this prototype, every user treated as new and given a demo object ------------
-			System.out.println("Demo Data for Prototype");
-			Main.setNewUserData();
-			
 			// do some things
 			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 			// allow user to access the console
