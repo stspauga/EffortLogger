@@ -28,12 +28,8 @@ public class UserData {
 	
 	// This constructor will be used in the case of a new user sign in
 	// lets the new user input data
-<<<<<<< HEAD
-	UserData(String firstName, String LastName, String username, String password, String email, String userAddress, String userPhoneNumbers) {
-=======
 	UserData(String dispName, String firstName, String lastName, String userName, String password, String email) {
 		this.displayName = dispName;
->>>>>>> master
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;

@@ -127,8 +127,6 @@ public class EffortLoggerLoginController {
 	    }
 	}
 
-	
-<<<<<<< HEAD
 	public void SignUp(ActionEvent e) throws IOException {
 		System.out.println("Switching to Sign Up page");
 		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerSignUp.fxml"));
@@ -136,15 +134,8 @@ public class EffortLoggerLoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-=======
-		/*System.out.println("User Authenticated");
-		// do some things
-		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-		// allow user to access the console
-		switchToConsole(stage);*/
->>>>>>> master
 	}
-	
+
 	public void switchToConsole(Stage stage) throws IOException {
 		System.out.println("Switching to Console");
 		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerConsole.fxml"));
