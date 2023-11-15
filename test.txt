@@ -1,1 +1,9 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+true
+=======
+fasdfadsf
+>>>>>>> master
+=======
 hahahatrue
+>>>>>>> master
