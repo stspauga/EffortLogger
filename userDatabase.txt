@@ -5,3 +5,10 @@ Role: Member 5
 Username/email: nghiemnguyen1602
 Password: MAcMJAISD0QsByZ5NmYyJQADDxUbBQAP:RjhKcEY0NjBHS1dPVFhlUFE2OXNRODBvcEYreWdwS1hUV3JpOTVxbVh5bkY1Z2dwajhkM1AxWjdBRXg4UUZiVjN4aFpMSXVvMjVzZG8xaHBFMWUwWWc9PQ==
 
+First Name: Nghiem
+Last Name: Nguyen
+Phone Numbers: 888-888-8888
+Role: Member 5
+Username/email: nghiemnguyen
+Password: MCsULQNlJjE3EyUoLzkuSw==:RFpBb2pEaVBQazkvdThobkliK3R5b0w5UTl5OUJPeW5aTVM5MkxRV04xK3ZSU2FOQjQ4L3RlZEx0WUNVWXRyZGtnSHVFYUhHNFc0c2VSZnBEdyszbkE9PQ==
+
