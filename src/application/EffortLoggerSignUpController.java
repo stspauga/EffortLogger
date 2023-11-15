@@ -10,6 +10,7 @@ package application;
 
 import java.io.IOException;
 import java.io.*;
+import java.util.Base64;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -197,7 +198,10 @@ public class EffortLoggerSignUpController {
 			out.println("Phone Numbers: " + user.getPhoneNumbers());
 			out.println("Role: " + user.getRole());
 			out.println("Username/email: " + user.getUsername());
-			out.println("Password: " + user.getPassword());
+
+			// Encode the password
+	        String encodedPassword = Base64.getEncoder().encodeToString(user.getPassword().getBytes());
+	        out.println("Password: " + encodedPassword);
 	        out.print("\n");
 	        
 		} catch (IOException e) {
