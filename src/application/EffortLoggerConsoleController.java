@@ -43,7 +43,7 @@ public class EffortLoggerConsoleController {
 	private Scene scene;
 	public boolean activityCheck;
 	private PopupTutorial tutor;
-	//private Parent root;
+
 	//temp project name array for comboBox display
 	private ArrayList<String> projectListNames = new ArrayList<String>();
 	private ProjectData currProject;
