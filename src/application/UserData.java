@@ -186,16 +186,14 @@ public class UserData {
 	public void setFileName(String newIdentity) {
 		userFileName = newIdentity;
 	}
-<<<<<<< HEAD
 	public void setAddress (String newAddress) {
 		userAddress = newAddress;
 	}
 	public void setPhoneNumbers (String newPhoneNumbers) {
 		userPhoneNumbers = newPhoneNumbers;
-=======
+	}
 	
 	public ProjectData[] getProjectArr() {
 		return projectArr;
->>>>>>> master
 	}
 }

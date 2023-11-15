@@ -60,11 +60,6 @@ public class EffortLoggerConsoleController {
 		}
 	}
 	
-<<<<<<< HEAD
-=======
-	
-	
-	
 	// Set up Project ComboBox for display & selection
 	public void loadProjectNameBox() {
 		for (int i = 0; i < 9; i++) {
@@ -120,7 +115,6 @@ public class EffortLoggerConsoleController {
 		*/
 	}
 	
->>>>>>> master
 	// Switch to the Effort Logger Editor Scene 
 	public void switchToEditor(ActionEvent e) throws IOException {
 		closeTutorial();
