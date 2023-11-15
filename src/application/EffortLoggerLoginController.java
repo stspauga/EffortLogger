@@ -86,11 +86,11 @@ public class EffortLoggerLoginController {
 
 
 	
-		System.out.println("User Authenticated");
+		/*System.out.println("User Authenticated");
 		// do some things
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		// allow user to access the console
-		switchToConsole(stage);
+		switchToConsole(stage);*/
 	}
 	
 	public void switchToConsole(Stage stage) throws IOException {
