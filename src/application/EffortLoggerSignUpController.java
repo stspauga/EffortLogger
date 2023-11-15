@@ -4,6 +4,7 @@
  * Sindhu Rallabhandi
  * Madeleinne Tan
  * Nghiem Nguyen
+ * Thai Nguyen
 */
 package application;
 
@@ -40,8 +41,6 @@ public class EffortLoggerSignUpController {
 	@FXML
 	private TextField userRole;
 	@FXML
-	private TextField userAddress;
-	@FXML
 	private TextField userPhoneNumbers;
 
 	//create a class of user for the user's information
@@ -49,17 +48,15 @@ public class EffortLoggerSignUpController {
 		String firstName;
 		String lastName;
 		String role;
-		String address;
 		String phoneNumbers;
 		String username;
 		String password;
 
 		//constructor
-		public User(String firstName, String lastName, String role, String address, String phoneNumbers, String username, String password) {
+		public User(String firstName, String lastName, String role, String phoneNumbers, String username, String password) {
 			this.firstName = firstName;
 			this.lastName = lastName;
 			this.role = role;
-			this.address = address;
 			this.phoneNumbers = phoneNumbers;
 			this.username = username;
 			this.password = password;
@@ -76,10 +73,6 @@ public class EffortLoggerSignUpController {
 
 		public String getRole() {
 			return role;
-		}
-
-		public String getAddress() {
-			return address;
 		}
 
 		public String getPhoneNumbers() {
@@ -107,10 +100,6 @@ public class EffortLoggerSignUpController {
 			this.role = role;
 		}
 
-		public void setAddress(String address) {
-			this.address = address;
-		}
-
 		public void setPhoneNumbers(String phoneNumbers) {
 			this.phoneNumbers = phoneNumbers;
 		}
@@ -134,9 +123,6 @@ public class EffortLoggerSignUpController {
 
 		//Insert role into text field
 		String enteredRole = userRole.getText();
-		
-		//Insert address into text field
-		String enteredAddress = userAddress.getText();
 		
 		//Insert phone numbers into text field
 		String enteredPhoneNumbers = userPhoneNumbers.getText();
@@ -176,35 +162,44 @@ public class EffortLoggerSignUpController {
 	    //if password and user name are valid
 		if (accepted && acceptedUser) {
 	
-			// Create user data object after authentication
-			// For this prototype, every user treated as new and given a demo object ------------
-			System.out.println("Demo Data for Prototype");
-			Main.setNewUserData();
-
 			//write user's information to database
-			User newUser = new User(enteredFirstName, enteredLastName, enteredRole, enteredAddress, enteredPhoneNumbers, enteredUsername, enteredPassword);
+			User newUser = new User(enteredFirstName, enteredLastName, enteredRole, enteredPhoneNumbers, enteredUsername, enteredPassword);
         	writeUserToFile(newUser, "userDatabase.txt");
 			
-			// do some things
-			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-			// allow user to access the console
-			switchToLogin(stage);
+			//Navigate back to the login page
+        	Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerLogin.fxml"));
+            stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
 		}
 	
 		else {
 			System.out.println("Wrong password");
 		}
 	}
-
+	
+	private void clearFields() {
+	    userFirstName.setText("");
+	    userLastName.setText("");
+	    userRole.setText("");
+	    userPhoneNumbers.setText("");
+	    usernameField.setText("");
+	    passwordField.setText("");
+	}
+	
 	//write user's information to database
 	private void writeUserToFile(User user, String filename) {
 		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(filename, true)))) {
-			out.println(user.getFirstName());
-			out.println(user.getLastName());
-			out.println(user.getAddress());
-			out.println(user.getPhoneNumbers());
-			out.println(user.getUsername());
-			out.println(user.getPassword());
+			
+			out.println("First Name: " + user.getFirstName());
+			out.println("Last Name: " + user.getLastName());
+			out.println("Phone Numbers: " + user.getPhoneNumbers());
+			out.println("Role: " + user.getRole());
+			out.println("Username/email: " + user.getUsername());
+			out.println("Password: " + user.getPassword());
+	        out.print("\n");
+	        
 		} catch (IOException e) {
 			System.err.println(e);
 		}
@@ -227,5 +222,9 @@ public class EffortLoggerSignUpController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+	}
+	
+	public void resetField(ActionEvent e) throws IOException {
+		clearFields();
 	}
 }

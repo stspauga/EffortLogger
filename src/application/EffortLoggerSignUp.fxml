@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerSignUpController">
    <top>
       <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
          <children>
@@ -33,7 +33,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField prefHeight="6.0" prefWidth="540.0">
+            <TextField fx:id="userFirstName" prefHeight="6.0" prefWidth="540.0">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" />
                </VBox.margin>
@@ -46,7 +46,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField prefHeight="26.0" prefWidth="141.0">
+            <TextField fx:id="userLastName" prefHeight="26.0" prefWidth="141.0">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" />
                </VBox.margin>
@@ -71,7 +71,7 @@
                   <Insets left="25.0" right="5.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="usernameField">
                <VBox.margin>
                   <Insets left="25.0" right="5.0" />
                </VBox.margin>
@@ -84,7 +84,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <PasswordField>
+            <PasswordField fx:id="passwordField">
                <VBox.margin>
                   <Insets left="25.0" right="5.0" />
                </VBox.margin>
@@ -106,7 +106,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField>
+            <TextField fx:id="userRole">
                <VBox.margin>
                   <Insets left="25.0" right="5.0" />
                </VBox.margin>
@@ -119,7 +119,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="185.0">
+            <TextField fx:id="userPhoneNumbers" prefHeight="25.0" prefWidth="185.0">
                <VBox.margin>
                   <Insets left="25.0" right="5.0" />
                </VBox.margin>
@@ -133,7 +133,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #b1d0e0;" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Clear" textAlignment="CENTER">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#resetField" text="Clear" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -141,7 +141,7 @@
                   <Insets bottom="10.0" left="30.0" right="20.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Sign Up">
+            <Button mnemonicParsing="false" onAction="#SignUp" text="Sign Up">
                <font>
                   <Font size="14.0" />
                </font>
@@ -149,7 +149,7 @@
                   <Insets bottom="10.0" right="40.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Return">
+            <Button mnemonicParsing="false" onAction="#LogIn" text="Return">
                <font>
                   <Font size="14.0" />
                </font>

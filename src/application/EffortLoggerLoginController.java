@@ -93,8 +93,6 @@ public class EffortLoggerLoginController {
 			System.out.println("Wrong password");
 		}
 
-
-	
 		System.out.println("User Authenticated");
 		// do some things
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
