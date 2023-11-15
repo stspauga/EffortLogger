@@ -8,6 +8,8 @@
 package application;
 
 import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -73,25 +75,34 @@ public class EffortLoggerLoginController {
 	    }
 	    boolean accepted = contentsPass && lengthPass;
 
+	  //if password and user name are valid
+	    if (accepted && acceptedUser) {
+	        // Check if the entered user-name and password match with the ones in the file
+	        try (BufferedReader reader = new BufferedReader(new FileReader("userDatabase.txt"))) {
+	            String line;
+	            while ((line = reader.readLine()) != null) {
+	                if (line.contains("Username/email: " + enteredUsername)) {
+	                    // The next line contains the password
+	                    String passwordLine = reader.readLine();
+	                    String storedPassword = passwordLine.substring(passwordLine.indexOf(":") + 2);
 
-	    //if password and user name are valid
-		if (accepted && acceptedUser) {
+	                    if (storedPassword.equals(enteredPassword)) {
+	                        // The entered user-name and password match with the stored ones
+	                        // do some things
+	                    	System.out.println("Switching to Console");
+	                		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerConsole.fxml"));
+	                		scene = new Scene(root);
+	                		stage.setScene(scene);
+	                		stage.show();
+	                    }
+	                }
+	            }
+	        }
 
-			// do some things
-			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-			// allow user to access the console
-			switchToConsole(stage);
-		}
-
-		else {
-			System.out.println("Wrong password");
-		}
-
-		System.out.println("User Authenticated");
-		// do some things
-		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-		// allow user to access the console
-		switchToConsole(stage);
+	        System.out.println("Wrong password");
+	    } else {
+	        System.out.println("Wrong username or password");
+	    }
 	}
 	
 	public void SignUp(ActionEvent e) throws IOException {
