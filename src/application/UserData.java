@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class UserData {
 	// Personal User Data
+	private String displayName;
 	private String firstName;
 	private String lastName;
 	private String userName;
@@ -31,7 +32,9 @@ public class UserData {
 	
 	// This constructor will be used in the case of a new user sign in
 	// lets the new user input data
-	UserData(String firstName, String lastName, String userName, String password, String email) {
+
+	UserData(String dispName, String firstName, String lastName, String userName, String password, String email) {
+		this.displayName = dispName;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
@@ -43,6 +46,7 @@ public class UserData {
 	}
 	// Default constructor for tests and prototypes
 	UserData() {
+		this.displayName = "Singer1";
 		this.firstName = "Michael";
 		this.lastName = "Jackson";
 		this.userName = "MJackson";
@@ -79,7 +83,9 @@ public class UserData {
 		// TO-DO---------------------
 		return;
 	}
-	 
+	public String getDisplayName() {
+		return displayName;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -134,6 +140,9 @@ public class UserData {
 	}
 	
 	// set methods for the same variables
+	public void setDisplayName(String name) {
+		displayName = name;
+	}
 	public void setFirstname(String name) {
 		firstName = name;
 	}

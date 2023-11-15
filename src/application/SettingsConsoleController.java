@@ -54,6 +54,7 @@ public class SettingsConsoleController {
     private TextField tfState;
     @FXML
     private TextField tfZip;
+;
     @FXML
     private Text zipQ;
 
@@ -78,5 +79,16 @@ public class SettingsConsoleController {
     }
     
   	//get user data from settings, store them in UserData.java
-  	
+  	//UserData(String firstName, String LastName, String username, String password, String email)
+  	public void collectUserData(ActionEvent e) throws IOException{
+  		String firstName = tfFirstName.getText();
+  		String lastName = tfLastName.getText();
+  		String displayName = textFieldDisplayName.getText();
+  		String address = tfAddress.getText();
+  		String city = tfCity.getText();
+  		String state = tfState.getText();
+  		String zip = tfZip.getText();
+  		
+  		
+  	}
 }
