@@ -5,6 +5,7 @@
 package application;
 
 import java.io.IOException;
+import java.time.Instant;
 import java.util.ArrayList;
 
 import javafx.util.Duration;
@@ -47,6 +48,20 @@ public class EffortLoggerConsoleController {
 	private ArrayList<String> projectListNames = new ArrayList<String>();
 	private ProjectData currProject;
 	private String[] effortType;
+	
+	public void initialize() {
+		// load project selection
+		if (Main.userData.getProjectArr() != null) {
+			loadProjectNameBox();
+		}
+		// load effort category selection
+		if (Main.userData.getEffortCategory().effortCategories != null) {
+			loadEffortCategoryBox();
+		}
+	}
+	
+	
+	
 	
 	// Set up Project ComboBox for display & selection
 	public void loadProjectNameBox() {
@@ -160,15 +175,7 @@ public class EffortLoggerConsoleController {
 			System.out.println("There is already an activity started");
 			return;
 		}
-		
-		// load project selection
-		if (Main.userData.getProjectArr() != null) {
-			loadProjectNameBox();
-		}
-		// load effort category selection
-		if (Main.userData.getEffortCategory().effortCategories != null) {
-			loadEffortCategoryBox();
-		}
+		System.out.println("Start time : " + Instant.now().toString());
 		
 		timeline = new Timeline();
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -192,6 +199,9 @@ public class EffortLoggerConsoleController {
 			System.out.println("There is no activity started");
 			return;
 		}
+		
+		System.out.println("End time : " + Instant.now().toString());
+		
 		if (timeline != null) {
             timeline.stop();
         }
