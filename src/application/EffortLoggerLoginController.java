@@ -94,7 +94,13 @@ public class EffortLoggerLoginController {
 	                if (line.contains("Username/email: " + enteredUsername)) {
 	                    // The next line contains the password and secret cipher-text
 	                    String passwordLine = reader.readLine();
-	                    String[] passwordAndCiphertext = passwordLine.substring(passwordLine.indexOf("/") + 2).split("/");
+	                    String[] passwordAndCiphertext = passwordLine.substring(passwordLine.indexOf(":") + 2).split(":");
+	                    if (passwordAndCiphertext.length < 2) {
+	                        // Handle the error, e.g., by showing an error message or throwing an exception
+	                        System.err.println("Invalid password line: " + passwordLine);
+	                        return;
+	                    }
+	                    
 	                    String storedPassword = passwordAndCiphertext[0];
 	                    String storedSecretCiphertext = passwordAndCiphertext[1];
 
@@ -106,7 +112,6 @@ public class EffortLoggerLoginController {
 	                    if (storedPassword.equals(readableEnteredPassword)) {
 	                        // The entered user name and encrypted password match with the stored ones
 	                        // do some things
-	                		System.out.println("Switching to Console");
 	                        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 	                        // allow user to access the console
 	                        switchToConsole(stage);

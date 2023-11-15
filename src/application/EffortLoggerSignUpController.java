@@ -230,7 +230,7 @@ public class EffortLoggerSignUpController {
 	        // Encode the XORed password in Base64 to make it readable
 	        String readablePassword = Base64.getEncoder().encodeToString(xorPassword.getBytes());
 	       
-	        out.println("Password: " + readablePassword + "/" + encodedSecretCiphertext);
+	        out.println("Password: " + readablePassword + ":" + encodedSecretCiphertext);
 	        out.print("\n");
 	        
 		} catch (IOException e) {
