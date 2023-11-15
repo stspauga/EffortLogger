@@ -8,8 +8,11 @@
 */
 package application;
 
+import java.util.ArrayList;
+
 public class UserData {
 	// Personal User Data
+	private String displayName;
 	private String firstName;
 	private String lastName;
 	private String userName;
@@ -22,10 +25,16 @@ public class UserData {
 	// 10 Projects -> 1 User
 	private ProjectData[] projectArr = new ProjectData[10];
 	
+	private EffortCategoryData effortCategory = new EffortCategoryData();
+	
+	// Effort Category Information
+	private ArrayList<String[]> effortDefinitions = new ArrayList<String[]>();
 	
 	// This constructor will be used in the case of a new user sign in
 	// lets the new user input data
-	UserData(String firstName, String LastName, String username, String password, String email) {
+
+	UserData(String dispName, String firstName, String lastName, String userName, String password, String email) {
+		this.displayName = dispName;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
@@ -37,6 +46,7 @@ public class UserData {
 	}
 	// Default constructor for tests and prototypes
 	UserData() {
+		this.displayName = "Singer1";
 		this.firstName = "Michael";
 		this.lastName = "Jackson";
 		this.userName = "MJackson";
@@ -44,6 +54,27 @@ public class UserData {
 		this.email = "mj@gmail.com";
 		// default demo project
 		projectArr[0] = new ProjectData();
+		projectArr[1] = new ProjectData();
+		
+		//Effort Categories default setup
+		// 0th element is the title
+		// 1st-Xth elements are the definitions
+		String[] plans = new String[] 
+				{"Plans", "Project", "Risk Management", "Conceptual Design", "Detailed Design", 
+				"Implementation", "", "", "", "", ""};
+		effortDefinitions.add(plans);
+		String[] deliverables = new String[] 
+				{"Deliverables", "Conceptual Design","Detailed design","Test Cases","Solution","Reflection",
+				"Outline","Draft","Report","User Defined","Other"};
+		effortDefinitions.add(deliverables);
+		String[] interruptions = new String[] 
+				{"Interruptions", "Break","Phone","Teammate","Visitor","Other","","","","",""};
+		effortDefinitions.add(interruptions);
+		String[] defectCategories = new String[] 
+				{"Defects"};
+		String[] other = new String[] {"Others"};
+		effortDefinitions.add(other);
+		
 	}
 	
 	// This constructor will be used in the future to initialize UserData from a given file
@@ -52,7 +83,9 @@ public class UserData {
 		// TO-DO---------------------
 		return;
 	}
-	 
+	public String getDisplayName() {
+		return displayName;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -78,7 +111,38 @@ public class UserData {
 		return userFileName;
 	}
 	
+	public EffortCategoryData getEffortCategory() {
+		return effortCategory;
+	}
+	
+	public ArrayList<String[]> getEffortDefinitions() {
+		return effortDefinitions;
+	}
+	
+	public String[] getEffortTypeDefinition(String category) {
+		String[] list;
+		int i = 0;
+		while (i < effortDefinitions.size()) {
+			if (effortDefinitions.get(i)[0].compareTo(category) == 0) {
+				list = new String[effortDefinitions.get(i).length - 1];
+				for (int j = 0; j < list.length; j++) {
+					if (list[j] != "") {
+						list[j] = effortDefinitions.get(i)[j + 1];
+					}
+				}
+				return list;
+			}
+			i++;
+		}
+		//else return empty
+		list = new String[] {""};
+		return list;
+	}
+	
 	// set methods for the same variables
+	public void setDisplayName(String name) {
+		displayName = name;
+	}
 	public void setFirstname(String name) {
 		firstName = name;
 	}
@@ -111,5 +175,9 @@ public class UserData {
 	}
 	public void setFileName(String newIdentity) {
 		userFileName = newIdentity;
+	}
+	
+	public ProjectData[] getProjectArr() {
+		return projectArr;
 	}
 }

@@ -14,7 +14,11 @@ public class EffortCategoryData {
 	public String[] deliverables;
 	public String[] interruptions;
 	public String[] defectCategories;
-	
+	/*
+	 * Need to reformat structure into something more like a matrix
+	 * { EffortCategories on the first row
+	 * individual selections based on the column going down
+	 */
 	
 	
 	// Default Constructor for preset data

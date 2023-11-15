@@ -7,6 +7,8 @@
 */
 package application;
 
+import java.util.ArrayList;
+
 public class ProjectData {
 	// Project Data
 	private String projectName; 
@@ -24,12 +26,28 @@ public class ProjectData {
 		lifeCycleStepArr[0] = "Problem Understanding";
 		stepEffortCategory[0] = 1;
 		stepDeliverable[0] = 0;
+		
+		
+		
 	}
 	
 	// Constructor to read from file after authentication
 	// Not currently implemented in prototype
 	ProjectData(String userFileName) {
 		// Read from the user's file to initialize project data
+	}
+	
+	// Get/Set
+	public String getName() {
+		return projectName;
+	}
+	
+	public String[] getLifeCycleArr() {
+		return lifeCycleStepArr;
+	}
+	
+	public int[] getStepEffortCategory() {
+		return stepEffortCategory;
 	}
 	
 }

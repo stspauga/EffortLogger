@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SettingsConsoleController">
+   <children>
+      <Text fx:id="SettingsHeader" layoutX="343.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Text>
+      <TextField fx:id="textFieldDisplayName" layoutX="63.0" layoutY="129.0" prefHeight="25.0" prefWidth="427.0" promptText="&lt; Insert Name (e.g. John Smith; Engineer 3) &gt;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text fx:id="displayNameQ" layoutX="63.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What name do you want to go by?" wrappingWidth="388.28631591796875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfFirstName" layoutX="59.0" layoutY="216.0" prefHeight="41.0" prefWidth="331.0" promptText="&lt; e.g. John &gt;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfLastName" layoutX="445.0" layoutY="216.0" prefHeight="41.0" prefWidth="317.0" promptText="&lt; e.g. Smith &gt;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Text fx:id="firstNameQ" layoutX="63.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="109.68084716796875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="lastNameQ" layoutX="445.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" wrappingWidth="109.68084716796875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfAddress" layoutX="59.0" layoutY="289.0" prefHeight="38.0" prefWidth="697.0" />
+      <Text fx:id="addressQ" layoutX="63.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Street Address" wrappingWidth="161.68084716796875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfCity" layoutX="59.0" layoutY="445.0" prefHeight="38.0" prefWidth="297.0" />
+      <Text fx:id="cityQ" layoutX="63.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City" wrappingWidth="109.68084716796875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfState" layoutX="385.0" layoutY="440.0" prefHeight="40.0" prefWidth="95.0" promptText="&lt; e.g. AZ &gt;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Text fx:id="stateQ" layoutX="381.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" wrappingWidth="139.28082275390625">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfZip" layoutX="506.0" layoutY="444.0" prefHeight="32.0" prefWidth="243.0" />
+      <Text fx:id="zipQ" layoutX="506.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code" wrappingWidth="139.28082275390625">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="checkBoxConsent" graphicTextGap="6.0" layoutX="47.0" layoutY="493.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="771.0" selected="true" text="By checking this box, you agree to send the above information (excluding your display name) for company contracts" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </CheckBox>
+      <Text fx:id="phoneNoQ" layoutX="59.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" wrappingWidth="139.28082275390625">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfPhoneNo" layoutX="61.0" layoutY="365.0" prefHeight="38.0" prefWidth="224.0" promptText="(XXX)XXX-XXXX">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <Button fx:id="returnHomeButton" layoutX="309.0" layoutY="523.0" mnemonicParsing="false" onAction="#switchToEffortLogConsole" prefHeight="47.0" prefWidth="198.0" text="Return to EffortLogger">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

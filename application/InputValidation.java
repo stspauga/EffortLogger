@@ -28,6 +28,9 @@ String input = "";
 	
 	public boolean isValidInput(String input)
 	{
+		if(input.isEmpty()) {
+			return false; // Not allowing blank usernames
+		}
 		// Allow letters, numbers, underscores, and hyphens
         String regex = "^[a-zA-Z0-9_\\-]*$";
         return Pattern.matches(regex, input);
