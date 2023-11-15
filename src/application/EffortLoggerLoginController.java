@@ -12,9 +12,6 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Base64;
-import java.util.Random;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
