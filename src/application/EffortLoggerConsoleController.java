@@ -132,7 +132,6 @@ public class EffortLoggerConsoleController {
 		switchScreen(newScreenFile, e);
 	}
 
-
 	// Switch to the Effort Logger Editor Scene 
 	public void switchToLoginPage(ActionEvent e) throws IOException {
 		closeTutorial();
