@@ -52,6 +52,12 @@
                </VBox.margin>
             </TextField>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="45.0" />
+         </padding>
       </VBox>
    </left>
    <center>
@@ -84,6 +90,9 @@
                </VBox.margin>
             </PasswordField>
          </children>
+         <padding>
+            <Insets top="45.0" />
+         </padding>
       </VBox>
    </center>
    <right>
@@ -116,6 +125,9 @@
                </VBox.margin>
             </TextField>
          </children>
+         <padding>
+            <Insets top="45.0" />
+         </padding>
       </VBox>
    </right>
    <bottom>
@@ -138,6 +150,9 @@
                </HBox.margin>
             </Button>
          </children>
+         <padding>
+            <Insets bottom="20.0" />
+         </padding>
       </HBox>
    </bottom>
 </BorderPane>
