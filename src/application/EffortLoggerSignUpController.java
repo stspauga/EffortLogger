@@ -8,6 +8,7 @@
 package application;
 
 import java.io.IOException;
+import java.io.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,7 +19,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import application.UserModel;
 
 public class EffortLoggerSignUpController {
 	private Stage stage;
@@ -38,9 +38,91 @@ public class EffortLoggerSignUpController {
 	@FXML
 	private TextField userLastName;
 	@FXML
+	private TextField userRole;
+	@FXML
 	private TextField userAddress;
 	@FXML
 	private TextField userPhoneNumbers;
+
+	//create a class of user for the user's information
+	class User {
+		String firstName;
+		String lastName;
+		String role;
+		String address;
+		String phoneNumbers;
+		String username;
+		String password;
+
+		//constructor
+		public User(String firstName, String lastName, String role, String address, String phoneNumbers, String username, String password) {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.role = role;
+			this.address = address;
+			this.phoneNumbers = phoneNumbers;
+			this.username = username;
+			this.password = password;
+		}
+
+		//getters
+		public String getFirstName() {
+			return firstName;
+		}
+		
+		public String getLastName() {
+			return lastName;
+		}
+
+		public String getRole() {
+			return role;
+		}
+
+		public String getAddress() {
+			return address;
+		}
+
+		public String getPhoneNumbers() {
+			return phoneNumbers;
+		}
+
+		public String getUsername() {
+			return username;
+		}
+
+		public String getPassword() {
+			return password;
+		}
+
+		//setters
+		public void setFirstName(String firstName) {
+			this.firstName = firstName;
+		}
+
+		public void setLastName(String lastName) {
+			this.lastName = lastName;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public void setPhoneNumbers(String phoneNumbers) {
+			this.phoneNumbers = phoneNumbers;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+	}
 	
 	public void SignUp(ActionEvent e) throws IOException {
 		
@@ -49,6 +131,9 @@ public class EffortLoggerSignUpController {
 		
 		//Insert last name into text field
 		String enteredLastName = userLastName.getText();
+
+		//Insert role into text field
+		String enteredRole = userRole.getText();
 		
 		//Insert address into text field
 		String enteredAddress = userAddress.getText();
@@ -95,6 +180,10 @@ public class EffortLoggerSignUpController {
 			// For this prototype, every user treated as new and given a demo object ------------
 			System.out.println("Demo Data for Prototype");
 			Main.setNewUserData();
+
+			//write user's information to database
+			User newUser = new User(enteredFirstName, enteredLastName, enteredRole, enteredAddress, enteredPhoneNumbers, enteredUsername, enteredPassword);
+        	writeUserToFile(newUser, "userDatabase.txt");
 			
 			// do some things
 			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
@@ -106,7 +195,22 @@ public class EffortLoggerSignUpController {
 			System.out.println("Wrong password");
 		}
 	}
-		
+
+	//write user's information to database
+	private void writeUserToFile(User user, String filename) {
+		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(filename, true)))) {
+			out.println(user.getFirstName());
+			out.println(user.getLastName());
+			out.println(user.getAddress());
+			out.println(user.getPhoneNumbers());
+			out.println(user.getUsername());
+			out.println(user.getPassword());
+		} catch (IOException e) {
+			System.err.println(e);
+		}
+	}
+	
+	//put it on the return button in sign up page
 	public void switchToLogin(Stage stage) throws IOException {
 		System.out.println("Switching to Login Page");
 		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerLogin.fxml"));
@@ -114,19 +218,14 @@ public class EffortLoggerSignUpController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+    }
+	
+	public void LogIn(ActionEvent e) throws IOException {
+		System.out.println("Switching to Login page");
+		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerLogin.fxml"));
+	    stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

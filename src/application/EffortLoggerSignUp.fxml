@@ -133,12 +133,12 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #b1d0e0;" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Reset" textAlignment="CENTER">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Clear" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
                <HBox.margin>
-                  <Insets bottom="10.0" left="35.0" right="20.0" />
+                  <Insets bottom="10.0" left="30.0" right="20.0" />
                </HBox.margin>
             </Button>
             <Button mnemonicParsing="false" text="Sign Up">
@@ -147,6 +147,14 @@
                </font>
                <HBox.margin>
                   <Insets bottom="10.0" right="40.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" text="Return">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="-17.0" right="30.0" />
                </HBox.margin>
             </Button>
          </children>
