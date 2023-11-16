@@ -60,9 +60,6 @@ public class EffortLoggerConsoleController {
 		}
 	}
 	
-	
-	
-	
 	// Set up Project ComboBox for display & selection
 	public void loadProjectNameBox() {
 		for (int i = 0; i < 9; i++) {
