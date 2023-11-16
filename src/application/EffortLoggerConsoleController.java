@@ -34,8 +34,8 @@ public class EffortLoggerConsoleController {
 	ComboBox<String> effortCategoryComboBox;
 	@FXML
 	ComboBox<String> effortTypeComboBox;
-	@FXML
-	Label timeLabel;
+//	@FXML
+//	Label timeLabel;
 
 	
 	private Stage stage;
@@ -166,6 +166,13 @@ public class EffortLoggerConsoleController {
 	}
 	// This will need to start the activity logging
 	// or notify the user that activity is already being logged
+	
+	private ClockManager clockManager;
+
+    public void setClockManager(ClockManager clockManager) {
+        this.clockManager = clockManager;
+    }
+	
 	Timeline timeline = new Timeline();
 	private int seconds = 0;
 	public void startActivity(ActionEvent e) {
@@ -173,18 +180,20 @@ public class EffortLoggerConsoleController {
 			System.out.println("There is already an activity started");
 			return;
 		}
-		System.out.println("Start time : " + Instant.now().toString());
 		
-		timeline = new Timeline();
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        seconds = 0;
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1.0), event -> {
-            seconds++;
-            timeLabel.setText("Time: " + seconds + " seconds");
-        });
-
-        timeline.getKeyFrames().add(keyFrame);
-        timeline.play();
+		clockManager.startClock();
+//		System.out.println("Start time : " + Instant.now().toString());
+//		
+//		timeline = new Timeline();
+//        timeline.setCycleCount(Timeline.INDEFINITE);
+//        seconds = 0;
+//        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1.0), event -> {
+//            seconds++;
+//            timeLabel.setText("Time: " + seconds + " seconds");
+//        });
+//
+//        timeline.getKeyFrames().add(keyFrame);
+//        timeline.play();
 		System.out.println("Clicked Start an Activity Button");
 		clockLight.setStyle("-fx-background-color: green");
 		clockLight.setText("Clock is Running");
@@ -198,11 +207,13 @@ public class EffortLoggerConsoleController {
 			return;
 		}
 		
-		System.out.println("End time : " + Instant.now().toString());
+		clockManager.stopClock();
 		
-		if (timeline != null) {
-            timeline.stop();
-        }
+//		System.out.println("End time : " + Instant.now().toString());
+//		
+//		if (timeline != null) {
+//            timeline.stop();
+//        }
 		System.out.println("Clicked Stop an Activity Button");
 		clockLight.setStyle("-fx-background-color: red");
 		clockLight.setText("Clock is Stopped");

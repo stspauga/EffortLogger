@@ -13,13 +13,15 @@ public class Main extends Application {
 	// --------------------------------------------- New thing in Main -> Main.getUserData().doWhatever
 	public static UserData userData;
 	
+	private static ClockManager clockManager;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			primaryStage.setMinHeight(500);
 			primaryStage.setMinWidth(670);
 			Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerLogin.fxml"));
-			//BorderPane root = new BorderPane();
+						//BorderPane root = new BorderPane();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -29,6 +31,13 @@ public class Main extends Application {
 		}
 	}
 	
+	public static ClockManager getClockManager() {
+        if (clockManager == null) {
+            clockManager = ClockManager.getInstance();
+        }
+        return clockManager;
+    }
+
 	public static void main(String[] args) {
 		launch(args);
 	}
