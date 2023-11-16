@@ -42,8 +42,6 @@ public class UserData {
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
-		this.userAddress = userAddress;
-		this.userPhoneNumbers = userPhoneNumbers;
 
 		// default demo project
 		projectArr[0] = new ProjectData();
@@ -83,10 +81,10 @@ public class UserData {
 	
 	// This constructor will be used in the future to initialize UserData from a given file
 	// 	that is found upon authentication
-	//	UserData(String userFileName) {
-	//		// TO-DO---------------------
-	//		return;
-	//	}
+		UserData(String userFileName) {
+			// TO-DO---------------------
+			return;
+		}
 	public String getDisplayName() {
 		return displayName;
 	}
