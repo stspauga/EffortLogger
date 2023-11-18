@@ -46,11 +46,6 @@ public class EffortLoggerDefinitionsController {
 	@FXML
 	private TextField search;
 	
-	/*
-	EffortLoggerDefinitionsController() {
-		//loadProjectNames();
-	}
-	*/
 	
 	// get names of projects from userData and display in combo box
 	public void loadProjectNames() {

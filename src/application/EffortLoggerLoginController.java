@@ -31,17 +31,18 @@ public class EffortLoggerLoginController {
 	private Password checker;
 	@FXML private TextField usernameField;
 	private InputValidation inputValidation;
+
 	
 	public void logIn(ActionEvent e) throws IOException {
 		
 		//checking if user name is valid
 		String enteredUsername = usernameField.getText();
 		inputValidation = new InputValidation(enteredUsername);
-
+		Main.userSession.logAUserIn(enteredUsername);
+		Boolean userSessionCheck = Main.userSession.getUserSessionCheck();
+		Main.userSession.setUserName(enteredUsername);
 		boolean validUsername = inputValidation.isValidInput(enteredUsername);
 		boolean validEmail = inputValidation.isValidEmail(enteredUsername);
-		
-
 		boolean acceptedUser = validUsername || validEmail;
 		if(!(acceptedUser))
 		{
@@ -68,29 +69,26 @@ public class EffortLoggerLoginController {
 
 	    //if password and user name are valid
 		if (accepted && acceptedUser) {
-
-			// Create user data object after authentication
-			// For this prototype, every user treated as new and given a demo object ------------
-			System.out.println("Demo Data for Prototype");
-			Main.setNewUserData();
-			
-			// do some things
-			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-			// allow user to access the console
-			switchToConsole(stage);
+			if (userSessionCheck) {
+				// Create user data object after authentication
+				// For this prototype, every user treated das new and given a demo object ------------
+				System.out.println("Demo Data for Prototype");
+				Main.setNewUserData();
+				
+				
+				// do some things
+				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+				// allow user to access the console
+				switchToConsole(stage);
+			} else {
+				System.out.println(Main.userSession.currUser + " is already logged in");
+			}
 		}
 
 		else {
 			System.out.println("Wrong password");
 		}
 
-
-	
-		/*System.out.println("User Authenticated");
-		// do some things
-		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-		// allow user to access the console
-		switchToConsole(stage);*/
 	}
 	
 	public void switchToConsole(Stage stage) throws IOException {
