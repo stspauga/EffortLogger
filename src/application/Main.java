@@ -1,19 +1,26 @@
 package application;
 	
+import java.io.IOException;
+
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 //import javafx.scene.layout.BorderPane;
+import javafx.scene.control.TextField;
 
 
 public class Main extends Application {
 	
 	// --------------------------------------------- New thing in Main -> Main.getUserData().doWhatever
 	public static UserData userData;
+	public static UserSession userSession = new UserSession();
+	@FXML private TextField usernameField;
 	
-	private static ClockManager clockManager;
+//	private static ClockManager clockManager;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -21,7 +28,6 @@ public class Main extends Application {
 			primaryStage.setMinHeight(500);
 			primaryStage.setMinWidth(670);
 			Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerLogin.fxml"));
-						//BorderPane root = new BorderPane();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -31,15 +37,16 @@ public class Main extends Application {
 		}
 	}
 	
-	public static ClockManager getClockManager() {
-        if (clockManager == null) {
-            clockManager = ClockManager.getInstance();
-        }
-        return clockManager;
-    }
 
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	
+	
+	public void stop() throws IOException{
+		System.out.println(userSession.currUser);
+		userSession.checkUser();
 	}
 	
 	// For each scene to access User's Data

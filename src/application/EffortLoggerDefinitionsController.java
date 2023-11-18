@@ -46,17 +46,6 @@ public class EffortLoggerDefinitionsController {
 	@FXML
 	private TextField search;
 	
-	/*
-	EffortLoggerDefinitionsController() {
-		//loadProjectNames();
-	}
-	*/
-	
-	private ClockManager clockManager;
-
-    public void setClockManager(ClockManager clockManager) {
-        this.clockManager = clockManager;
-    }
 	
 	// get names of projects from userData and display in combo box
 	public void loadProjectNames() {
@@ -73,10 +62,7 @@ public class EffortLoggerDefinitionsController {
 	public void switchToConsole(ActionEvent e) throws IOException {
 		System.out.println("Switching to Console");
 		
-		FXMLLoader loader = FXMLLoader.load(getClass().getResource("EffortLoggerConsole.fxml"));
-		Parent root = loader.load();
-        EffortLoggerConsoleController consoleController = loader.getController();
-        consoleController.setClockManager(clockManager);
+		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerConsole.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
