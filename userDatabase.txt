@@ -1,7 +1,7 @@
 First Name: Nghiem
 Last Name: Nguyen
 Phone Numbers: 888-888-8888
-Role: Member 5
+Role: Member 1
 Username/email: nghiemnguyen1602
-Password: NisMASw7GCEFASFPABZ8aA==:TFhnMlNUSDF6NU9UdXhIWUl3cEtpSlpuamNmbmNaMmcxVG54d3B0ZUdNR1FFOC9SbDhmVThFUlhwNUhjTDNpM1FTT1hrbVdmQ05VQ2p4U3R5TWRQbEE9PQ==
+Password: NF4UBzMPBB0AKB8wLwULeg==:V3phRXRiVmxIaFNGVlRWT25XNVhmQVBwbmVLRkJhVzJvS2VuYnlYVkVrcGVkOXpwamtad1FsUWx1d3ZXempBeVVMYUJSNFo1SUMxUmxZbzEyUkZsYWc9PQ==
 

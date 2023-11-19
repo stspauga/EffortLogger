@@ -118,9 +118,9 @@ public class EffortLoggerLoginController {
 				System.out.println("Demo Data for Prototype");
 				Main.setNewUserData();
 				
-				
 				// do some things
 				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+				
 				// allow user to access the console
 				switchToConsole(stage);
 			} else {
@@ -128,13 +128,14 @@ public class EffortLoggerLoginController {
 			}
 		}
 
-
 	                    if (storedPassword.equals(readableEnteredPassword)) {
+	                    	// allow user to access the console
+	                        switchToConsole(stage);
+	                    	
 	                        // The entered user name and encrypted password match with the stored ones
 	                        // do some things
 	                        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-	                        // allow user to access the console
-	                        switchToConsole(stage);
+	                        
 	                        return;
 	                    }
 	                }

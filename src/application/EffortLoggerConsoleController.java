@@ -247,7 +247,7 @@ public class EffortLoggerConsoleController {
 			return false;
 		}
 		System.out.println("Closing Tutorial Window");
-		//tutor.tutorialWindow.close();
+		tutor.tutorialWindow.close();
 		return true;
 	}
 	

@@ -89,7 +89,6 @@
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
-				</buttons>
             </ButtonBar>
          </children>
       </HBox>
