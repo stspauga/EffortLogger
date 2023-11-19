@@ -1,15 +1,14 @@
 /* Controller Class for the Effort Logger Console screen
  * Contributions :
  * Zachary Weber
+ * Tuliloa Pauga
 */
 package application;
 
 import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
-
 import javafx.util.Duration;
-
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -58,6 +57,10 @@ public class EffortLoggerConsoleController {
 		if (Main.userData.getEffortCategory().effortCategories != null) {
 			loadEffortCategoryBox();
 		}
+//		Main.getClockManager();
+//		if (ClockManager.getInstance() != null) {
+//			ClockManager.getInstance();
+//		}
 	}
 	
 	// Set up Project ComboBox for display & selection
@@ -130,7 +133,6 @@ public class EffortLoggerConsoleController {
 		switchScreen(newScreenFile, e);
 	}
 
-	// Switch to the Effort Logger Editor Scene 
 	public void switchToLoginPage(ActionEvent e) throws IOException {
 		closeTutorial();
 		System.out.println("Switching to Login Page");
@@ -165,6 +167,13 @@ public class EffortLoggerConsoleController {
 	}
 	// This will need to start the activity logging
 	// or notify the user that activity is already being logged
+	
+//	private ClockManager clockManager;
+//
+//    public void setClockManager(ClockManager clockManager) {
+//        this.clockManager = clockManager;
+//    }
+	
 	Timeline timeline = new Timeline();
 	private int seconds = 0;
 	public void startActivity(ActionEvent e) {
@@ -172,6 +181,8 @@ public class EffortLoggerConsoleController {
 			System.out.println("There is already an activity started");
 			return;
 		}
+		
+//		clockManager.startClock();
 		System.out.println("Start time : " + Instant.now().toString());
 		
 		timeline = new Timeline();
@@ -196,6 +207,8 @@ public class EffortLoggerConsoleController {
 			System.out.println("There is no activity started");
 			return;
 		}
+		
+		//clockManager.stopClock();
 		
 		System.out.println("End time : " + Instant.now().toString());
 		
