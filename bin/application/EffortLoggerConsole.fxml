@@ -85,7 +85,11 @@
                      </cursor>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#switchToSettings" text="Settings" />
+<<<<<<< HEAD
                </buttons>
+=======
+				</buttons>
+>>>>>>> master
             </ButtonBar>
          </children>
       </HBox>
