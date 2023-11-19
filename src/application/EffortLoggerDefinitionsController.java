@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
@@ -22,6 +23,10 @@ import javafx.scene.control.TextField;
 
 public class EffortLoggerDefinitionsController {
 		
+	@FXML
+	ComboBox<String> projectList;
+	private String[] projectListArr = new String[10];
+	
 	private Stage stage;
 	private Scene scene;
 	private List<Definition> definition_list = new ArrayList<>();
@@ -40,6 +45,18 @@ public class EffortLoggerDefinitionsController {
 	private TextArea life_cycle_disp;
 	@FXML
 	private TextField search;
+	
+	
+	// get names of projects from userData and display in combo box
+	public void loadProjectNames() {
+	for (int i = 0; i < 9; i++) {
+		if (Main.userData.getProjectArr()[i] != null) {
+			projectListArr[i] = Main.userData.getProjectArr()[i].getName();
+		}
+	}
+	// Add newly made array of project names to combo box
+	projectList.getItems().addAll(projectListArr);
+	}
 	
 	// Switch to the Effort Logger Console
 	public void switchToConsole(ActionEvent e) throws IOException {
