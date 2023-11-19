@@ -21,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import java.time.*; // needed for getting local time
 
 public class EffortLoggerConsoleController {
 	
@@ -170,12 +171,13 @@ public class EffortLoggerConsoleController {
 	// or notify the user that activity is already being logged
 	Timeline timeline = new Timeline();
 	private int seconds = 0;
+	
 	public void startActivity(ActionEvent e) {
 		if (activityCheck) {
 			System.out.println("There is already an activity started");
 			return;
 		}
-		System.out.println("Start time : " + Instant.now().toString());
+		System.out.println("Start time : " + LocalDateTime.now());// Instant.now().toString()); now using java.time
 		
 		timeline = new Timeline();
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -200,7 +202,7 @@ public class EffortLoggerConsoleController {
 			return;
 		}
 		
-		System.out.println("End time : " + Instant.now().toString());
+		System.out.println("End time : " + LocalDateTime.now()); //Instant.now().toString()); Now using java.time
 		
 		if (timeline != null) {
             timeline.stop();
