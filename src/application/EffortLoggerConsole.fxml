@@ -85,14 +85,11 @@
                      </cursor>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#switchToSettings" text="Settings" />
-<<<<<<< HEAD
                </buttons>
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
-=======
 				</buttons>
->>>>>>> 568d08ed0dc4158d576143ca2675370b3880a315
             </ButtonBar>
          </children>
       </HBox>

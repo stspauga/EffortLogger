@@ -43,7 +43,7 @@ public class EffortLoggerConsoleController {
 	public boolean activityCheck;
 	private PopupTutorial tutor;
 	//private Parent root;
-	// temp project name array for comboBox display
+	//temp project name array for comboBox display
 	private ArrayList<String> projectListNames = new ArrayList<String>();
 	private ProjectData currProject;
 	private String[] effortType;
@@ -247,7 +247,7 @@ public class EffortLoggerConsoleController {
 			return false;
 		}
 		System.out.println("Closing Tutorial Window");
-		tutor.tutorialWindow.close();
+		//tutor.tutorialWindow.close();
 		return true;
 	}
 	
