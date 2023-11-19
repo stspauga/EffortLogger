@@ -74,15 +74,19 @@ public class EffortLoggerLoginController {
 
 		String enteredPassword = passwordField.getText();
 	    checker = new Password(enteredPassword);
-	    boolean contentsPass = checker.checkContents(enteredPassword);
+	    boolean contentsPass = Password.checkContents(enteredPassword);
 	    
 	    // broken down for debugging purposes
 	    if(contentsPass) {
-	    	System.out.println("contents passed");
+	    	System.out.println("Contents passed");
+	    } else {
+	    	System.out.println("Contents are not satisfied!");
 	    }
-	    boolean lengthPass = checker.checkLength(enteredPassword);
+	    boolean lengthPass = Password.checkLength(enteredPassword);
 	    if(lengthPass) {
-	    	System.out.println("length passed");
+	    	System.out.println("Length passed");
+	    } else {
+	    	System.out.println("Password is not satisfied!");
 	    }
 	    boolean accepted = contentsPass && lengthPass;
 
@@ -111,8 +115,16 @@ public class EffortLoggerLoginController {
 	                    String xorEnteredPassword = xorWithKey(encodedEnteredPassword, storedSecretCiphertext);
 	                    String readableEnteredPassword = Base64.getEncoder().encodeToString(xorEnteredPassword.getBytes());
 
-		if (accepted && acceptedUser) {
-			if (userSessionCheck) {
+			            if (storedPassword.equals(readableEnteredPassword)) {
+			            	// allow user to access the console
+			                switchToConsole(stage);
+			                return;
+			            }
+	                }
+	            }
+	        }
+	        
+	        if (userSessionCheck) {
 				// Create user data object after authentication
 				// For this prototype, every user treated das new and given a demo object ------------
 				System.out.println("Demo Data for Prototype");
@@ -123,27 +135,11 @@ public class EffortLoggerLoginController {
 				
 				// allow user to access the console
 				switchToConsole(stage);
+				
 			} else {
 				System.out.println(Main.userSession.currUser + " is already logged in");
 			}
-		}
 
-	                    if (storedPassword.equals(readableEnteredPassword)) {
-	                    	// allow user to access the console
-	                        switchToConsole(stage);
-	                    	
-	                        // The entered user name and encrypted password match with the stored ones
-	                        // do some things
-	                        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-	                        
-	                        return;
-	                    }
-	                }
-	            }
-	        }
-
-
-	        System.out.println("Wrong password");
 	    } else {
 	        System.out.println("Wrong username or password");
 	    }

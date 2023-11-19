@@ -140,7 +140,7 @@ public class EffortLoggerSignUpController {
 		boolean acceptedUser = validUsername || validEmail;
 		if(!(acceptedUser))
 		{
-			System.out.println("Wrong Username - should be valid email or username with letters, numbers, \"-\", or \"_\"");
+			System.out.println("Invalid Username - should be valid email or username with letters, numbers, \"-\", or \"_\"");
 		}
 		
 		
@@ -148,15 +148,19 @@ public class EffortLoggerSignUpController {
 	
 		String enteredPassword = passwordField.getText();
 	    checker = new Password(enteredPassword);
-	    boolean contentsPass = checker.checkContents(enteredPassword);
+	    boolean contentsPass = Password.checkContents(enteredPassword);
 	    
 	    // broken down for debugging purposes
 	    if(contentsPass) {
-	    	System.out.println("contents passed");
+	    	System.out.println("Contents passed");
+	    } else {
+	    	System.out.println("Contents are not satisfied!");
 	    }
-	    boolean lengthPass = checker.checkLength(enteredPassword);
+	    boolean lengthPass = Password.checkLength(enteredPassword);
 	    if(lengthPass) {
-	    	System.out.println("length passed");
+	    	System.out.println("Length passed");
+	    } else {
+	    	System.out.println("Password is not satisfied!");
 	    }
 	    boolean accepted = contentsPass && lengthPass;
 	
@@ -177,8 +181,9 @@ public class EffortLoggerSignUpController {
 		}
 	
 		else {
-			System.out.println("Wrong password");
+			System.out.println("Requirement: The length of password must be at least 7 characters, including 'TH24'!\n");
 		}
+	
 	}
 	
 	private void clearFields() {
