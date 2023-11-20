@@ -49,23 +49,20 @@ public class EffortLoggerLoginController {
 			System.out.println("Wrong Username - should be valid email or username with letters, numbers, \"-\", or \"_\"");
 		}
 		
-		
 		//checking if password is right
-
 		String enteredPassword = passwordField.getText();
 	    checker = new Password(enteredPassword);
-	    boolean contentsPass = checker.checkContents(enteredPassword);
-	    
-	    // broken down for debugging purposes
+	    boolean contentsPass = Password.checkContents(enteredPassword);
+	    boolean lengthPass = Password.checkLength(enteredPassword);
+	    /*// broken down for debugging purposes
 	    if(contentsPass) {
 	    	System.out.println("contents passed");
 	    }
-	    boolean lengthPass = checker.checkLength(enteredPassword);
+	    
 	    if(lengthPass) {
 	    	System.out.println("length passed");
-	    }
+	    }*/
 	    boolean accepted = contentsPass && lengthPass;
-
 
 	    //if password and user name are valid
 		if (accepted && acceptedUser) {
@@ -74,9 +71,6 @@ public class EffortLoggerLoginController {
 				// For this prototype, every user treated das new and given a demo object ------------
 				System.out.println("Demo Data for Prototype");
 				Main.setNewUserData();
-				
-				
-				// do some things
 				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 				// allow user to access the console
 				switchToConsole(stage);
@@ -86,7 +80,7 @@ public class EffortLoggerLoginController {
 		}
 
 		else {
-			System.out.println("Wrong password");
+			System.out.println("Wrong password - must be at least 7 characters long with the secret passphrase");
 		}
 
 	}
