@@ -43,7 +43,7 @@ public class EffortLoggerConsoleController {
 	public boolean activityCheck;
 	private PopupTutorial tutor;
 	//private Parent root;
-	// temp project name array for comboBox display
+	//temp project name array for comboBox display
 	private ArrayList<String> projectListNames = new ArrayList<String>();
 	private ProjectData currProject;
 	private String[] effortType;
@@ -62,9 +62,6 @@ public class EffortLoggerConsoleController {
 //			ClockManager.getInstance();
 //		}
 	}
-	
-	
-	
 	
 	// Set up Project ComboBox for display & selection
 	public void loadProjectNameBox() {

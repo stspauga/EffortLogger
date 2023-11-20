@@ -44,7 +44,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Button>
-            <Button layoutX="293.0" layoutY="272.0" mnemonicParsing="false" onAction="#logIn" prefHeight="25.0" prefWidth="71.0" text="Sign Up" />
+            <Button layoutX="293.0" layoutY="272.0" mnemonicParsing="false" onAction="#SignUp" prefHeight="25.0" prefWidth="71.0" text="Sign Up" />
          </children>
          <BorderPane.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
