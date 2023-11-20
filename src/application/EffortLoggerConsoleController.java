@@ -48,6 +48,8 @@ public class EffortLoggerConsoleController {
 	private ArrayList<String> projectListNames = new ArrayList<String>();
 	private ProjectData currProject;
 	private String[] effortType;
+	private EffortLog newLog;
+	
 	
 	public void initialize() {
 		// load project selection
@@ -188,10 +190,12 @@ public class EffortLoggerConsoleController {
 			System.out.println("There is already an activity started");
 			return;
 		}
-		System.out.println("Start time : " + LocalDateTime.now());// Instant.now().toString()); now using java.time
+		
+		String startTimeAndDate = LocalDateTime.now().toString();
+		newLog = new EffortLog (startTimeAndDate.substring(0,startTimeAndDate.indexOf('T') - 1), startTimeAndDate.substring(startTimeAndDate.indexOf('T') + 1,startTimeAndDate.lastIndexOf('.')));
 		
 //		clockManager.startClock();
-		System.out.println("Start time : " + Instant.now().toString());
+
 		
 		timeline = new Timeline();
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -212,12 +216,26 @@ public class EffortLoggerConsoleController {
 	// or notify the user that activity is not being logged 
 	public void stopActivity(ActionEvent e) {
 		if (!activityCheck) {
-			System.out.println("There is no activity started");
+			System.out.println("There is no activity started.");
+			return;
+		}
+		if (currProject == null || lifeCycleComboBox.getValue() == null || effortCategoryComboBox.getValue() == null || effortTypeComboBox.getValue() == null) {
+			System.out.println("Please complete step 2 before concluding the activity.");
 			return;
 		}
 		
-		System.out.println("End time : " + LocalDateTime.now()); //Instant.now().toString()); Now using java.time
-		
+		// prep selected info for EffortLog object
+		String endTimeAndDate = LocalDateTime.now().toString(); //Instant.now().toString()); Now using java.time
+		String endDate = endTimeAndDate.substring(0,endTimeAndDate.indexOf('T') - 1);
+		String endTime = endTimeAndDate.substring(endTimeAndDate.indexOf('T') + 1,endTimeAndDate.lastIndexOf('.'));
+		String lifeCycleStep = lifeCycleComboBox.getValue();
+		String effortCategory = effortCategoryComboBox.getValue();
+		String effortSubCategory = effortTypeComboBox.getValue();
+		newLog.setAll("", "", endDate, endTime, lifeCycleStep, effortCategory, effortSubCategory);
+		// add new log object to project array list
+		currProject.addLog(newLog);
+		System.out.println("A new Effort Log has been added to " + currProject.getName());
+		currProject.getEffortLogList().get(currProject.getEffortLogList().size() - 1).print();
 		//clockManager.stopClock();
 
 		
@@ -258,6 +276,13 @@ public class EffortLoggerConsoleController {
 		System.out.println("Closing Tutorial Window");
 		tutor.tutorialWindow.close();
 		return true;
+	}
+	
+	public boolean debug_printLogs() {
+		if (currProject != null) {
+			return currProject.printLogs();
+		}
+		else {return false;}
 	}
 	
 }

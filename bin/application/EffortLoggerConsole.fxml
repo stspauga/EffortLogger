@@ -85,11 +85,7 @@
                      </cursor>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#switchToSettings" text="Settings" />
-<<<<<<< HEAD
-               </buttons>
-=======
 				</buttons>
->>>>>>> master
             </ButtonBar>
          </children>
       </HBox>
@@ -122,6 +118,11 @@
             <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#consoleTutorial" text="Need Help?" StackPane.alignment="TOP_RIGHT">
                <StackPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </StackPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#debug_printLogs" text="debug_printLogs" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets top="5.0" />
                </StackPane.margin>
             </Button>
          </children>

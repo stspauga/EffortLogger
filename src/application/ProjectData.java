@@ -17,7 +17,8 @@ public class ProjectData {
 	private int[] stepEffortCategory = new int[50];
 	private int[] stepDeliverable = new int[50];
 	// Let us set a temporary cap of 50 effort logs for this prototype
-	private EffortLog[] effortLogArr = new EffortLog[50];
+	private ArrayList<EffortLog> effortLogList = new ArrayList<EffortLog>();
+	
 	
 	
 	// Default Constructor for new user demo
@@ -37,9 +38,26 @@ public class ProjectData {
 		// Read from the user's file to initialize project data
 	}
 	
-	// Get/Set
+	// add a new effort log to the project's list
+	public void addLog(EffortLog newLog) {
+		this.effortLogList.add(newLog);
+	}
+	
+	public boolean printLogs() {
+		System.out.println("Printing all _" + effortLogList.size() + "_ logs in " + projectName + " : ");
+		for(EffortLog i : effortLogList) {
+			i.print();
+		}
+		System.out.println("~~~~~~End of Print~~~~~~");
+		return true;
+	}
+	
+	// Get Set methods
 	public String getName() {
 		return projectName;
+	}
+	public void setName(String name) {
+		projectName = name;
 	}
 	
 	public String[] getLifeCycleArr() {
@@ -48,6 +66,10 @@ public class ProjectData {
 	
 	public int[] getStepEffortCategory() {
 		return stepEffortCategory;
+	}
+	
+	public ArrayList<EffortLog> getEffortLogList() {
+		return effortLogList;
 	}
 	
 }
