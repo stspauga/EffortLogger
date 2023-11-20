@@ -18,6 +18,7 @@ public class ProjectData {
 	private int[] stepDeliverable = new int[50];
 	// Let us set a temporary cap of 50 effort logs for this prototype
 	private ArrayList<EffortLog> effortLogList = new ArrayList<EffortLog>();
+	int nextLogId;
 	
 	
 	
@@ -27,9 +28,7 @@ public class ProjectData {
 		lifeCycleStepArr[0] = "Problem Understanding";
 		stepEffortCategory[0] = 1;
 		stepDeliverable[0] = 0;
-		
-		
-		
+		nextLogId = 0;		
 	}
 	
 	// Constructor to read from file after authentication
@@ -41,9 +40,11 @@ public class ProjectData {
 	// add a new effort log to the project's list
 	public void addLog(EffortLog newLog) {
 		this.effortLogList.add(newLog);
+		nextLogId++;
 	}
 	
 	public boolean printLogs() {
+		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("Printing all _" + effortLogList.size() + "_ logs in " + projectName + " : ");
 		for(EffortLog i : effortLogList) {
 			i.print();
@@ -59,17 +60,19 @@ public class ProjectData {
 	public void setName(String name) {
 		projectName = name;
 	}
-	
+	public int getNextLogId() {
+		return nextLogId;
+	}
+	public void setNextLogId(int nextId) {
+		this.nextLogId = nextId;
+	}
 	public String[] getLifeCycleArr() {
 		return lifeCycleStepArr;
 	}
-	
 	public int[] getStepEffortCategory() {
 		return stepEffortCategory;
 	}
-	
 	public ArrayList<EffortLog> getEffortLogList() {
 		return effortLogList;
 	}
-	
 }

@@ -137,7 +137,7 @@ public class EffortLoggerConsoleController {
 		String newScreenFile = "EffortLoggerDefinitions.fxml";
 		switchScreen(newScreenFile, e);
 	}
-
+	// Switch to LogIn Scene
 	public void switchToLoginPage(ActionEvent e) throws IOException {
 		closeTutorial();
 		System.out.println("Switching to Login Page");
@@ -187,9 +187,9 @@ public class EffortLoggerConsoleController {
 			System.out.println("There is already an activity started");
 			return;
 		}
-		
+		int logId = currProject.getNextLogId();
 		String startTimeAndDate = LocalDateTime.now().toString();
-		newLog = new EffortLog (startTimeAndDate.substring(0,startTimeAndDate.indexOf('T') - 1), startTimeAndDate.substring(startTimeAndDate.indexOf('T') + 1,startTimeAndDate.lastIndexOf('.')));
+		newLog = new EffortLog (logId, startTimeAndDate.substring(0,startTimeAndDate.indexOf('T') - 1), startTimeAndDate.substring(startTimeAndDate.indexOf('T') + 1,startTimeAndDate.lastIndexOf('.')));
 		
 //		clockManager.startClock();
 

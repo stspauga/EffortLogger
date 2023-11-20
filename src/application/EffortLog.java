@@ -9,13 +9,10 @@ package application;
 
 public class EffortLog {
 	/* TO-DO
-	 * Add some stuff for What each Effort Log contains :
-	 * -Start/End Times
-	 * -Date
-	 * -Life Cycle Step
-	 * -Effort Category and sub-Category
+	 * Log id
 	*/
 	
+	private int id;
 	// HH:MM:SS
 	private String startTime;
 	private String endTime;
@@ -27,7 +24,7 @@ public class EffortLog {
 	private String effortCategory;
 	private String effortSubCategory;
 	
-	// Default constructor
+	/* Default constructor
 	EffortLog() {
 		startDate = "";
 		startTime = "";
@@ -37,8 +34,10 @@ public class EffortLog {
 		effortCategory = "";
 		effortSubCategory = "";
 	}
+	*/
 	// Constructor to be called from console
-	EffortLog(String startDate, String startTime) {
+	EffortLog(int id, String startDate, String startTime) {
+		this.id = id;
 		this.startDate = startDate;
 		this.startTime = startTime;
 		endDate = "";
@@ -58,6 +57,14 @@ public class EffortLog {
 		System.out.println("Effort Category : " + effortCategory);
 		System.out.println("Effort SubCategory : " + effortSubCategory);
 	}
+	
+	public String toString() {
+		String temp;
+		temp = id + ". " + startDate + " (" + startTime + "-" + endTime + ") " + 
+				lifeCycleStep + "; " + effortCategory + "; " + effortSubCategory;
+		return temp;
+	}
+	
 	public void setAll(String startDate, String startTime, String endDate, String endTime, 
 					String lifeCycleStep, String effortCategory, String effortSubCategory) {
 		if (startDate != "") {setStartDate(startDate);}
