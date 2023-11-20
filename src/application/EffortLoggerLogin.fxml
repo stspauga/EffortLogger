@@ -46,9 +46,8 @@
                </VBox.margin>
             </Button>
             <Button layoutX="293.0" layoutY="272.0" mnemonicParsing="false" onAction="#logIn" prefHeight="25.0" prefWidth="71.0" text="Sign Up" />
-
             <Label fx:id="usernameError" text="Wrong" textFill="#f50606" visible="false" />
-            <Label fx:id="passwordError" text="Wrong Password - password must have at least 7 characters and the phassphrase" textFill="#f20303" visible="false" />
+            <Label fx:id="passwordError" text="Wrong Password - password must have at least 7 characters and the passphrase" textFill="#f20303" visible="false" />
          </children>
          <BorderPane.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

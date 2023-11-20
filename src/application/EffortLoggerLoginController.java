@@ -79,6 +79,7 @@ public class EffortLoggerLoginController {
 		}
 
 		else {
+			showPasswordError();
 			System.out.println("password wrong");
 		}
 
@@ -86,19 +87,9 @@ public class EffortLoggerLoginController {
 	
 	public void showUsernameError() throws IOException{
 		usernameError.setVisible(true);
-	/*<<<<<<< HEAD
-			usernameError.setStyle("-fx-background-color: red");
-			usernameError.setText("Wrong username -should be valid email or username with letters, numbers, \\\"-\\\", or \\\"_\\\"");
-		}
-		public void showPasswordError() throws IOException{
-			passwordError.setVisible(true);
-			passwordError.setStyle("-fx-background-color: red");
-			passwordError.setText("Wrong Password - password must have at least 7 characters and the phassphrase");
-	=======*/
 	}
 	public void showPasswordError() throws IOException{
 		passwordError.setVisible(true);
-		//>>>>>>> master
 	}
 	
 	public void switchToConsole(Stage stage) throws IOException {
