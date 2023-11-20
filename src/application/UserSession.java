@@ -12,7 +12,6 @@ import java.io.IOException;
 
 public class UserSession {
 
-	
 	public String currUser;
 	public Boolean valid;
 
