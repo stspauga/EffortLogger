@@ -143,9 +143,7 @@ public class EffortLoggerSignUpController {
 			System.out.println("Invalid Username - should be valid email or username with letters, numbers, \"-\", or \"_\"");
 		}
 		
-		
 		//checking if password is right
-	
 		String enteredPassword = passwordField.getText();
 	    checker = new Password(enteredPassword);
 	    boolean contentsPass = Password.checkContents(enteredPassword);
@@ -160,7 +158,7 @@ public class EffortLoggerSignUpController {
 	    if(lengthPass) {
 	    	System.out.println("Length passed");
 	    } else {
-	    	System.out.println("Password is not satisfied!");
+	    	System.out.println("Length is not satisfied!");
 	    }
 	    boolean accepted = contentsPass && lengthPass;
 	
@@ -173,6 +171,7 @@ public class EffortLoggerSignUpController {
         	writeUserToFile(newUser, "userDatabase.txt");
 			
 			//Navigate back to the login page
+        	System.out.println("Switch to Login Page");
         	Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerLogin.fxml"));
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);

@@ -65,13 +65,13 @@ public class EffortLoggerLoginController {
 		boolean validUsername = inputValidation.isValidInput(enteredUsername);
 		boolean validEmail = inputValidation.isValidEmail(enteredUsername);
 		boolean acceptedUser = validUsername || validEmail;
+		
 		if(!(acceptedUser))
 		{
 			System.out.println("Wrong Username - should be valid email or username with letters, numbers, \"-\", or \"_\"");
 		}
 		
 		//checking if password is right
-
 		String enteredPassword = passwordField.getText();
 	    checker = new Password(enteredPassword);
 	    boolean contentsPass = Password.checkContents(enteredPassword);
@@ -91,22 +91,21 @@ public class EffortLoggerLoginController {
 	    boolean accepted = contentsPass && lengthPass;
 
 	    //if password and user name are valid
-
 	    if (accepted && acceptedUser) {
+	    	//initialize a variable to check if user name and password match with the one in userDatabase
+	    	boolean matchFound = false;
+	    	
 	        // Check if the entered user name and encrypted password match with the ones in the file
 	        try (BufferedReader reader = new BufferedReader(new FileReader("userDatabase.txt"))) {
 	            String line;
 	            while ((line = reader.readLine()) != null) {
 	                if (line.contains("Username/email: " + enteredUsername)) {
+	                	//read the user name from database
+	                	String storedUsername = line.split(": ")[1];
+	                	
 	                    // The next line contains the password and secret cipher-text
 	                    String passwordLine = reader.readLine();
 	                    String[] passwordAndCiphertext = passwordLine.substring(passwordLine.indexOf(":") + 2).split(":");
-	                    if (passwordAndCiphertext.length < 2) {
-	                        // Handle the error, e.g., by showing an error message or throwing an exception
-	                        System.err.println("Invalid password line: " + passwordLine);
-	                        return;
-	                    }
-	                    
 	                    String storedPassword = passwordAndCiphertext[0];
 	                    String storedSecretCiphertext = passwordAndCiphertext[1];
 
@@ -114,36 +113,45 @@ public class EffortLoggerLoginController {
 	                    String encodedEnteredPassword = Base64.getEncoder().encodeToString(enteredPassword.getBytes());
 	                    String xorEnteredPassword = xorWithKey(encodedEnteredPassword, storedSecretCiphertext);
 	                    String readableEnteredPassword = Base64.getEncoder().encodeToString(xorEnteredPassword.getBytes());
-
-			            if (storedPassword.equals(readableEnteredPassword)) {
-			            	// allow user to access the console
-			                switchToConsole(stage);
-			                return;
+	                
+	                //check if the input password matches with the stored password in the database
+			        if (storedPassword.equals(readableEnteredPassword) && storedUsername.equals(enteredUsername)) {
+			            	matchFound = true;
+			            } else {
+			            	System.out.println("Wrong username or password!\n");
+	                        return;
 			            }
+			        
 	                }
+	                
 	            }
-	        }
+	       }
 	        
-	        if (userSessionCheck) {
-				// Create user data object after authentication
-				// For this prototype, every user treated das new and given a demo object ------------
-				System.out.println("Demo Data for Prototype");
-				Main.setNewUserData();
-				
-				// do some things
-				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-				
-				// allow user to access the console
-				switchToConsole(stage);
-				
-			} else {
-				System.out.println(Main.userSession.currUser + " is already logged in");
-			}
-
+	        if (matchFound == true) {
+	        	if (userSessionCheck) {
+	    			// Create user data object after authentication
+	    			// For this prototype, every user treated as new and given a demo object ------------
+	    			System.out.println("Demo Data for Prototype");
+	    			Main.setNewUserData();
+	    			
+	    			// do some things
+	    			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+	    			
+	    			// allow user to access the console
+	    			switchToConsole(stage);
+	    			
+	    			} else {
+	    				System.out.println(Main.userSession.currUser + " is already logged in");
+	    			}
+	    	
+	        } else {
+	        	System.out.println("No credentials found!\n");
+	        }
+	   
 	    } else {
-	        System.out.println("Wrong username or password");
+	        System.out.println("Wrong username or password!\n");
 	    }
-
+	       
 	}
 
 	public void SignUp(ActionEvent e) throws IOException {
