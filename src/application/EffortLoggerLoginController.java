@@ -41,8 +41,7 @@ public class EffortLoggerLoginController {
 
 	
 	public void logIn(ActionEvent e) throws IOException {
-		usernameError.setVisible(false);
-		passwordError.setVisible(false);
+		
 		//checking if user name is valid
 		String enteredUsername = usernameField.getText();
 		inputValidation = new InputValidation(enteredUsername);
@@ -54,8 +53,9 @@ public class EffortLoggerLoginController {
 		boolean acceptedUser = validUsername || validEmail;
 		if(!(acceptedUser))
 		{
-			//showUsernameError();
+			showUsernameError();
 			System.out.println("username wrong");
+			
 		}
 		
 		//checking if password is right
@@ -78,7 +78,7 @@ public class EffortLoggerLoginController {
 		}
 
 		else {
-			//showPasswordError();
+			showPasswordError();
 			System.out.println("password wrong");
 		}
 
@@ -86,13 +86,9 @@ public class EffortLoggerLoginController {
 	
 	public void showUsernameError() throws IOException{
 		usernameError.setVisible(true);
-		usernameError.setStyle("-fx-background-color: red");
-		usernameError.setText("Wrong username -should be valid email or username with letters, numbers, \\\"-\\\", or \\\"_\\\"");
 	}
 	public void showPasswordError() throws IOException{
 		passwordError.setVisible(true);
-		passwordError.setStyle("-fx-background-color: red");
-		passwordError.setText("Wrong Password - password must have at least 7 characters and the phassphrase");
 	}
 	
 	public void switchToConsole(Stage stage) throws IOException {
