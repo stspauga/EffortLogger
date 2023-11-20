@@ -1,15 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX">
+>>>>>>> 97063671eabbad07e120e11f5eff2d477a74bdbc
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+>>>>>>> master
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
+>>>>>>> 2c83e6aa70993372508f51e38203fc861b2f8fa2
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
+<<<<<<< HEAD
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JAva-SDK">
+=======
+>>>>>>> master
+>>>>>>> 27f40dec6138fca16e90a2230f2a990d0cab0fa4
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
+>>>>>>> e61ba927e4349866ad63aef53ef2d97b201f4ed7
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+=======
+>>>>>>> 568d08ed0dc4158d576143ca2675370b3880a315
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+=======
+>>>>>>> 2c83e6aa70993372508f51e38203fc861b2f8fa2
+>>>>>>> master
 	<classpathentry kind="output" path="bin"/>
 </classpath>

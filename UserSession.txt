@@ -1,6 +1,6 @@
-TuliloaPauga 0
-MadieTan 0
-ZachWeber 0
-NghiemNguyen 0
-SindhuRallabhandi 0
-ThaiNguyen 0
+TuliloaPauga 1
+MadieTan 1
+ZachWeber 1
+NghiemNguyen 1
+SindhuRallabhandi 1
+ThaiNguyen 1
