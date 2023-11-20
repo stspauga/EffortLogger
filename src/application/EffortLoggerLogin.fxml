@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: Grey;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerLoginController">
    <top>
@@ -45,6 +46,8 @@
                </VBox.margin>
             </Button>
             <Button layoutX="293.0" layoutY="272.0" mnemonicParsing="false" onAction="#logIn" prefHeight="25.0" prefWidth="71.0" text="Sign Up" />
+            <Text fx:id="usernameError" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Wrong username -should be valid email or username with letters, numbers, \&quot;-\&quot;, or \&quot;_\&quot;" />
+            <Text fx:id="passwordError" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Wrong Password - password must have at least 7 characters and the phassphrase" />
          </children>
          <BorderPane.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -31,10 +32,17 @@ public class EffortLoggerLoginController {
 	private Password checker;
 	@FXML private TextField usernameField;
 	private InputValidation inputValidation;
+	@FXML
+	Label usernameError;
+	@FXML
+	Label passwordError;
+	//boolean usernameWrong;
+	//boolean passwordWrong;
 
 	
 	public void logIn(ActionEvent e) throws IOException {
-		
+		usernameError.setVisible(false);
+		passwordError.setVisible(false);
 		//checking if user name is valid
 		String enteredUsername = usernameField.getText();
 		inputValidation = new InputValidation(enteredUsername);
@@ -46,7 +54,8 @@ public class EffortLoggerLoginController {
 		boolean acceptedUser = validUsername || validEmail;
 		if(!(acceptedUser))
 		{
-			System.out.println("Wrong Username - should be valid email or username with letters, numbers, \"-\", or \"_\"");
+			//showUsernameError();
+			System.out.println("username wrong");
 		}
 		
 		//checking if password is right
@@ -54,24 +63,13 @@ public class EffortLoggerLoginController {
 	    checker = new Password(enteredPassword);
 	    boolean contentsPass = Password.checkContents(enteredPassword);
 	    boolean lengthPass = Password.checkLength(enteredPassword);
-	    /*// broken down for debugging purposes
-	    if(contentsPass) {
-	    	System.out.println("contents passed");
-	    }
-	    
-	    if(lengthPass) {
-	    	System.out.println("length passed");
-	    }*/
 	    boolean accepted = contentsPass && lengthPass;
 
 	    //if password and user name are valid
 		if (accepted && acceptedUser) {
 			if (userSessionCheck) {
-				// Create user data object after authentication
-				// For this prototype, every user treated das new and given a demo object ------------
-				System.out.println("Demo Data for Prototype");
 				Main.setNewUserData();
-				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+				stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
 				// allow user to access the console
 				switchToConsole(stage);
 			} else {
@@ -80,9 +78,21 @@ public class EffortLoggerLoginController {
 		}
 
 		else {
-			System.out.println("Wrong password - must be at least 7 characters long with the secret passphrase");
+			//showPasswordError();
+			System.out.println("password wrong");
 		}
 
+	}
+	
+	public void showUsernameError() throws IOException{
+		usernameError.setVisible(true);
+		usernameError.setStyle("-fx-background-color: red");
+		usernameError.setText("Wrong username -should be valid email or username with letters, numbers, \\\"-\\\", or \\\"_\\\"");
+	}
+	public void showPasswordError() throws IOException{
+		passwordError.setVisible(true);
+		passwordError.setStyle("-fx-background-color: red");
+		passwordError.setText("Wrong Password - password must have at least 7 characters and the phassphrase");
 	}
 	
 	public void switchToConsole(Stage stage) throws IOException {
