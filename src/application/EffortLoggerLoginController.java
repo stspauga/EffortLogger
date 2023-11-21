@@ -191,10 +191,10 @@ public class EffortLoggerLoginController {
 		stage.show();
 	}
 	
-	public void showUsernameError() throws IOException{
+	public void showUsernameError() throws IOException {
 		usernameError.setVisible(true);
 	}
-	public void showPasswordError() throws IOException{
+	public void showPasswordError() throws IOException {
 		passwordError.setVisible(true);
 	}
 	

@@ -1,23 +1,7 @@
-<<<<<<< HEAD
 First Name: Nghiem
 Last Name: Nguyen
 Phone Numbers: 888-888-8888
-Role: Member 1
+Role: Member 5
 Username/email: nghiemnguyen
-Password: NTsMIQVmOUEDDSVLAwYPaA==:WVhNd1o5UHB2MEJUY1F1TnR1Y1VZb2thdC9JOStDdVdTMndTZ2FpTnNNbTc5QjE3aUVPeU1tYlJFTkxzTWI3WHhvckNGSjhNTGh6bVMrVldhU0pnanc9PQ==
-
-First Name: Nghiem
-Last Name: Nguyen
-Phone Numbers: 888-888-8888
-Role: Member 2
-Username/email: nghiemnguyen
-Password: LTkIAQNnBDg3LzU6FxcXcQ==:OTlnb0RLajRCYTRLUHRsNHZrSExBUG45UDVpOU42QWpxQWtvdUdWMlQxZDlENnU5ejQ4RkY4SUpEMy9rRkhpMkdHQ1I1M2ExYUxVMFdNTHlENFc2OEE9PQ==
-=======
-First Name: 
-Last Name: 
-Phone Numbers: 
-Role: 
-Username/email: nghiemnguyen
-Password: AzgMHDNlLjEBEikAKgcTZw==:aUhsR2xEWWNydDVZSi84OEEvV2YxcHJia28ra09DSHFuMm1mYm1NRUxkNXZpRmZ5aW81KytMZ1NMaWRxaitCcnNuSnVsMzhaaHJnajBUUGxpaXg0cUE9PQ==
->>>>>>> master
+Password: NSsLXjVmMQwBKyFMFBsiSw==:WFo1T1gxWnF5ZXgvSGJUV3YxQ3o2K3d1V3A1ZTNvOFBGUzY3eXg3ZVlrL2g0M0JFYnVjNDlXazNXZnd1RnBOUWhkWGxRZ2JUOERWaWtROGNKa2N5OWc9PQ==
 
