@@ -39,21 +39,38 @@ public class ItemWeightsController {
 	private String itemName;
 	private String criteria;
 	private int assignedWeight;
+	private InputValidation inputValidation;
 
 	
 	@FXML
 	private void generateCard(ActionEvent e) throws IOException
 	{
+		
 		userStory = userStoryTextField.getText();
 		itemName = itemNameTextField.getText();
 		criteria = criteriaTextArea.getText();
 		assignedWeight = getSelectedButton();
 		
-		//creating a poker card
-		PokerCard card = new PokerCard(userStory, itemName, assignedWeight, criteria);
-		//adding the poker card to the existing data
-		AllPokerCards.addElement(card);
-		loadNewFile(e);
+		//checking if input is valid
+		inputValidation = new InputValidation(userStory);
+		boolean validUserStory = inputValidation.isValidInput(userStory);
+		boolean validItemName = inputValidation.isValidInput(itemName);
+		if(!(validUserStory))
+			{
+				System.out.println("Wrong User Story input - should be valid string of numbers and alphabets, or _/- \n Try again");
+			}
+		if(!(validItemName))
+		{
+			System.out.println("Wrong Item Name input - should be valid string of numbers and alphabets, or _/- \n Try again");
+		}		
+		else
+		{
+			//creating a poker card
+			PokerCard card = new PokerCard(userStory, itemName, assignedWeight, criteria);
+			//adding the poker card to the existing data
+			AllPokerCards.addElement(card);
+			loadNewFile(e);
+		}
 	}
 	
 	private int getSelectedButton()
