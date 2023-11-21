@@ -10,12 +10,6 @@ import java.util.regex.Matcher;
 public class Password {
 	String pswrd = "";
 	
-	/*public static void main(String[] args) {
-		String pswrd = "";
-		boolean accepts = false;
-		accepts = (checkLength(pswrd) && checkContents(pswrd));
-	}*/
-	
 	public Password(String password) {
 		this.pswrd = password;
 	}
@@ -27,7 +21,6 @@ public class Password {
 		}
 		return false;
 	}
-
 
 	// Password must be at least 7 chars and has the phrase "TH24" in it
 	public static boolean checkContents(String pswrd) {

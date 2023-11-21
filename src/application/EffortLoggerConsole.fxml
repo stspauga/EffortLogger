@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" prefHeight="492.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
+<BorderPane maxHeight="-Infinity" prefHeight="531.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
    <center>
       <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
@@ -52,7 +52,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="82.0" prefWidth="701.0" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar prefHeight="82.0" prefWidth="655.0">
+            <ButtonBar prefHeight="82.0" prefWidth="756.0">
                <buttons>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToEditor" text="Effort Editor" textAlignment="CENTER">
                      <cursor>
@@ -85,7 +85,10 @@
                      </cursor>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#switchToSettings" text="Settings" />
-				</buttons>
+               </buttons>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
             </ButtonBar>
          </children>
       </HBox>
