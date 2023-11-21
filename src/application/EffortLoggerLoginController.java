@@ -19,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -36,6 +37,12 @@ public class EffortLoggerLoginController {
 	@FXML 
 	private TextField usernameField;
 	private InputValidation inputValidation;
+	@FXML
+	Label usernameError;
+	@FXML
+	Label passwordError;
+	//boolean usernameWrong;
+	//boolean passwordWrong;
 
 	@FXML
 	private TextField userFirstName;
@@ -68,7 +75,9 @@ public class EffortLoggerLoginController {
 		
 		if(!(acceptedUser))
 		{
-			System.out.println("Wrong Username - should be valid email or username with letters, numbers, \"-\", or \"_\"");
+			showUsernameError();
+			System.out.println("username wrong");
+			
 		}
 		
 		//checking if password is right
@@ -108,6 +117,25 @@ public class EffortLoggerLoginController {
 	                    String[] passwordAndCiphertext = passwordLine.substring(passwordLine.indexOf(":") + 2).split(":");
 	                    String storedPassword = passwordAndCiphertext[0];
 	                    String storedSecretCiphertext = passwordAndCiphertext[1];
+	                    //boolean lengthPass = Password.checkLength(enteredPassword);
+	                    //boolean accepted = contentsPass && lengthPass;
+
+	    //if password and user name are valid
+		if (accepted && acceptedUser) {
+			if (userSessionCheck) {
+				Main.setNewUserData();
+				stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+				// allow user to access the console
+				switchToConsole(stage);
+			} else {
+				System.out.println(Main.userSession.currUser + " is already logged in");
+			}
+		}
+
+		else {
+			showPasswordError();
+			System.out.println("password wrong");
+		}
 
 	                    // Encrypt the entered password
 	                    String encodedEnteredPassword = Base64.getEncoder().encodeToString(enteredPassword.getBytes());
@@ -162,7 +190,14 @@ public class EffortLoggerLoginController {
 		stage.setScene(scene);
 		stage.show();
 	}
-
+	
+	public void showUsernameError() throws IOException{
+		usernameError.setVisible(true);
+	}
+	public void showPasswordError() throws IOException{
+		passwordError.setVisible(true);
+	}
+	
 	public void switchToConsole(Stage stage) throws IOException {
 		System.out.println("Switching to Console");
 		Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerConsole.fxml"));
