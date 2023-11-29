@@ -41,8 +41,7 @@ public class EffortLoggerLoginController {
 
 	
 	public void logIn(ActionEvent e) throws IOException {
-		usernameError.setVisible(false);
-		passwordError.setVisible(false);
+		
 		//checking if user name is valid
 		String enteredUsername = usernameField.getText();
 		inputValidation = new InputValidation(enteredUsername);
