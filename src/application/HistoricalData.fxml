@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: ivory;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HistoricalDataController">
+   <children>
+      <Label layoutX="172.0" layoutY="14.0" text="Historical Data" textFill="#463283">
+         <font>
+            <Font name="Annai MN Regular" size="33.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="userStoryChoiceBox" layoutX="88.0" layoutY="130.0" prefWidth="150.0" />
+      <Label layoutX="88.0" layoutY="163.0" text="Item name" textFill="#543e83">
+         <font>
+            <Font name="Avenir Medium" size="14.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="352.0" layoutY="140.0" prefHeight="65.0" prefWidth="214.0" style="-fx-background-color: purple;" text="Select a user story and an item&#10; to see historical data">
+         <font>
+            <Font name="Avenir Next Medium" size="13.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="230.0" layoutY="263.0" mnemonicParsing="false" onAction="#showHistoricalData" text="Show historical data" textFill="#5e2e8c" />
+      <Label layoutX="89.0" layoutY="103.0" text="User Story" textFill="#543e83">
+         <font>
+            <Font name="Avenir Medium" size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="itemNameChoiceBox" layoutX="88.0" layoutY="188.0" prefWidth="150.0" />
+       <Button mnemonicParsing="false" style="-fx-background-color: lavender;" onAction="#switchToPlanningPoker" text="Return to Planning Poker"/>
+   </children>
+</AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: ivory;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HistoricalDataDisplayController">
+   <children>
+      <Label layoutX="121.0" layoutY="24.0" text="Historical Data - Statistics" textFill="#361b75">
+         <font>
+            <Font name="Adelle Sans Devanagari Semibold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="134.0" layoutY="183.0" text="Number of past instances :" textFill="#511d6f" />
+      <Label layoutX="135.0" layoutY="237.0" text="Average weight assigned :" textFill="#511d6f" />
+      <Label layoutX="174.0" layoutY="130.0" text="Item name :" textFill="#511d6f" />
+      <Button layoutX="228.0" layoutY="303.0" mnemonicParsing="false" onAction="#displayHistoricalCard" text="display poker card" textFill="#642285">
+         <font>
+            <Font name="Avenir Next Heavy" size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="itemNameLabel" layoutX="371.0" layoutY="130.0" text="Label">
+         <font>
+            <Font name="Avenir Medium" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberOfInstancesLabel" layoutX="371.0" layoutY="183.0" text="Label">
+         <font>
+            <Font name="Avenir Medium" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="averageWeightLabel" layoutX="370.0" layoutY="236.0" text="Label">
+         <font>
+            <Font name="Avenir Next Medium" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
