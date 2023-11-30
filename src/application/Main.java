@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import java.io.IOException;
+import javafx.scene.control.Label;
+
 //import javafx.scene.layout.BorderPane;
 import javafx.scene.control.TextField;
 
