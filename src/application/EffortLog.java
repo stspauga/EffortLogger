@@ -36,8 +36,7 @@ public class EffortLog {
 	}
 	*/
 	// Constructor to be called from console
-	EffortLog(int id, String startDate, String startTime) {
-		this.id = id;
+	EffortLog(String startDate, String startTime) {
 		this.startDate = startDate;
 		this.startTime = startTime;
 		endDate = "";
@@ -65,8 +64,9 @@ public class EffortLog {
 		return temp;
 	}
 	
-	public void setAll(String startDate, String startTime, String endDate, String endTime, 
+	public void setAll(int id, String startDate, String startTime, String endDate, String endTime, 
 					String lifeCycleStep, String effortCategory, String effortSubCategory) {
+		if (id != -1) {setId(id);}
 		if (startDate != "") {setStartDate(startDate);}
 		if (startTime != "") {setStartTime(startTime);}
 		if (endDate != "") {setEndDate(endDate);}
@@ -74,6 +74,12 @@ public class EffortLog {
 		if (lifeCycleStep != "") {setLifeCycleStep(lifeCycleStep);}
 		if (effortCategory != "") {setEffortCategory(effortCategory);}
 		if (effortSubCategory != "") {setEffortSubCategory(effortSubCategory);}
+	}
+	public int getId() {
+		return this.id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getStartDate() {
 		return startDate;

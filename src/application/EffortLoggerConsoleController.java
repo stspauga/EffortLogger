@@ -108,7 +108,6 @@ public class EffortLoggerConsoleController {
 		effortTypeComboBox.getItems().clear();
 		String category = effortCategoryComboBox.getValue();
 		effortType = Main.userData.getEffortTypeDefinition(category);
-		//for (String entry : effortType) {System.out.println(entry);} // Debug
 		effortTypeComboBox.getItems().addAll(effortType);
 		
 		/* Change how the EffortCategoryData object stores data before continuing
@@ -187,9 +186,10 @@ public class EffortLoggerConsoleController {
 			System.out.println("There is already an activity started");
 			return;
 		}
-		int logId = currProject.getNextLogId();
 		String startTimeAndDate = LocalDateTime.now().toString();
-		newLog = new EffortLog (logId, startTimeAndDate.substring(0,startTimeAndDate.indexOf('T') - 1), startTimeAndDate.substring(startTimeAndDate.indexOf('T') + 1,startTimeAndDate.lastIndexOf('.')));
+		newLog = new EffortLog (startTimeAndDate.substring(0,startTimeAndDate.indexOf('T') - 1),
+				startTimeAndDate.substring(startTimeAndDate.indexOf('T') + 1,
+				startTimeAndDate.lastIndexOf('.')));
 		
 //		clockManager.startClock();
 
@@ -216,7 +216,10 @@ public class EffortLoggerConsoleController {
 			System.out.println("There is no activity started.");
 			return;
 		}
-		if (currProject == null || lifeCycleComboBox.getValue() == null || effortCategoryComboBox.getValue() == null || effortTypeComboBox.getValue() == null) {
+		if (currProject == null || 
+				lifeCycleComboBox.getValue() == null || 
+				effortCategoryComboBox.getValue() == null || 
+				(effortCategoryComboBox.getValue() != "Others" && effortTypeComboBox.getValue() == null)) {
 			System.out.println("Please complete step 2 before concluding the activity.");
 			return;
 		}
@@ -228,7 +231,8 @@ public class EffortLoggerConsoleController {
 		String lifeCycleStep = lifeCycleComboBox.getValue();
 		String effortCategory = effortCategoryComboBox.getValue();
 		String effortSubCategory = effortTypeComboBox.getValue();
-		newLog.setAll("", "", endDate, endTime, lifeCycleStep, effortCategory, effortSubCategory);
+		int logId = currProject.getNextLogId();
+		newLog.setAll(logId, "", "", endDate, endTime, lifeCycleStep, effortCategory, effortSubCategory);
 		// add new log object to project array list
 		currProject.addLog(newLog);
 		System.out.println("A new Effort Log has been added to " + currProject.getName());

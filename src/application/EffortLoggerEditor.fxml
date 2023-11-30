@@ -35,8 +35,8 @@
                   </VBox>
                   <VBox>
                      <children>
-                        <Label text="2.a. Clear this Projec'ts Effort Log" />
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Clear This Effort Log" />
+                        <Label text="2.a. Clear this Project's Effort Log" />
+                        <Button mnemonicParsing="false" onAction="#deleteLogs" prefHeight="25.0" prefWidth="175.0" text="Clear This Effort Log" />
                      </children>
                   </VBox>
                </children>
@@ -92,7 +92,7 @@
             <VBox alignment="TOP_CENTER">
                <children>
                   <Label prefHeight="17.0" prefWidth="210.0" text="Life Cycle Step:" />
-                  <ComboBox prefHeight="25.0" prefWidth="210.0" promptText="Life Cycle Step" />
+                  <ComboBox fx:id="lifeCycleStepBox" prefHeight="25.0" prefWidth="210.0" />
                </children>
             </VBox>
             <HBox alignment="CENTER" spacing="15.0">
@@ -100,21 +100,26 @@
                   <VBox>
                      <children>
                         <Label text="Effort Category:" />
-                        <ComboBox prefHeight="25.0" prefWidth="258.0" promptText="Effort Category" />
+                        <ComboBox fx:id="effortCategoryBox" onAction="#loadEffortSubCategory" prefHeight="25.0" prefWidth="258.0" />
                      </children>
                   </VBox>
                   <VBox>
                      <children>
                         <Label prefWidth="258.0" />
-                        <ComboBox prefHeight="25.0" prefWidth="258.0" />
+                        <ComboBox fx:id="effortSubCategoryBox" prefHeight="25.0" prefWidth="258.0" />
                      </children>
                   </VBox>
                </children>
             </HBox>
             <VBox alignment="TOP_CENTER">
                <children>
+                  <Button mnemonicParsing="false" onAction="#updateLog" text="Update This Entry">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
                   <Label text="3.b. Delete the Current Effort Log Entry" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Delete This Entry" />
+                  <Button mnemonicParsing="false" onAction="#deleteLog" prefHeight="25.0" prefWidth="175.0" text="Delete This Entry" />
                </children>
             </VBox>
             <HBox alignment="CENTER" spacing="15.0">
@@ -122,7 +127,7 @@
                   <VBox alignment="TOP_CENTER">
                      <children>
                         <Label text="3.c. Split the Current Effort Log Entry into two entries" />
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="203.0" text="Split This Entry into Two Entries" />
+                        <Button mnemonicParsing="false" onAction="#splitEntries" prefHeight="25.0" prefWidth="203.0" text="Split This Entry into Two Entries" />
                      </children>
                   </VBox>
                   <VBox alignment="TOP_CENTER">
