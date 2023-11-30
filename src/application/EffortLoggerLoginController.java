@@ -120,57 +120,55 @@ public class EffortLoggerLoginController {
 	                    //boolean lengthPass = Password.checkLength(enteredPassword);
 	                    //boolean accepted = contentsPass && lengthPass;
 
-	    //if password and user name are valid
-		if (accepted && acceptedUser) {
-			if (userSessionCheck) {
-				Main.setNewUserData();
-				stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
-				// allow user to access the console
-				switchToConsole(stage);
-			} else {
-				System.out.println(Main.userSession.currUser + " is already logged in");
-			}
-		}
+//	    //if password and user name are valid
+//		if (accepted && acceptedUser) {
+//			if (userSessionCheck) {
+//				Main.setNewUserData();
+//				stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+//				// allow user to access the console
+//				switchToConsole(stage);
+//			} else {
+//				System.out.println(Main.userSession.currUser + " is already logged in");
+//			}
+//		}
+//
+//		else {
+//			showPasswordError();
+//			System.out.println("password wrong");
+//		}
 
-		else {
-			showPasswordError();
-			System.out.println("password wrong");
-		}
-
-	                    // Encrypt the entered password
-	                    String encodedEnteredPassword = Base64.getEncoder().encodeToString(enteredPassword.getBytes());
-	                    String xorEnteredPassword = xorWithKey(encodedEnteredPassword, storedSecretCiphertext);
-	                    String readableEnteredPassword = Base64.getEncoder().encodeToString(xorEnteredPassword.getBytes());
-	                
-	                //check if the input password matches with the stored password in the database
-			        if (storedPassword.equals(readableEnteredPassword) && storedUsername.equals(enteredUsername)) {
-			            	matchFound = true;
-			            } else {
-			            	System.out.println("Wrong username or password!\n");
-	                        return;
-			            }
-			        
-	                }
-	                
-	            }
-	       }
+        // Encrypt the entered password
+        String encodedEnteredPassword = Base64.getEncoder().encodeToString(enteredPassword.getBytes());
+        String xorEnteredPassword = xorWithKey(encodedEnteredPassword, storedSecretCiphertext);
+        String readableEnteredPassword = Base64.getEncoder().encodeToString(xorEnteredPassword.getBytes());
+    
+        //check if the input password matches with the stored password in the database
+        if (storedPassword.equals(readableEnteredPassword) && storedUsername.equals(enteredUsername)) {
+            	matchFound = true;
+            } else {
+            	System.out.println("Wrong username or password!\n");
+                return;
+            }
+        }            
+	  }
+	}
 	        
-	        if (matchFound == true) {
-	        	if (userSessionCheck) {
-	    			// Create user data object after authentication
-	    			// For this prototype, every user treated as new and given a demo object ------------
-	    			System.out.println("Demo Data for Prototype");
-	    			Main.setNewUserData();
-	    			
-	    			// do some things
-	    			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-	    			
-	    			// allow user to access the console
-	    			switchToConsole(stage);
-	    			
-	    			} else {
-	    				System.out.println(Main.userSession.currUser + " is already logged in");
-	    			}
+        if (matchFound == true) {
+        	if (userSessionCheck) {
+    			// Create user data object after authentication
+    			// For this prototype, every user treated as new and given a demo object ------------
+    			System.out.println("Demo Data for Prototype");
+    			Main.setNewUserData();
+    			
+    			// do some things
+    			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+    			
+    			// allow user to access the console
+    			switchToConsole(stage);
+    			
+    			} else {
+    				System.out.println(Main.userSession.currUser + " is already logged in");
+    			}
 	    	
 	        } else {
 	        	System.out.println("No credentials found!\n");
