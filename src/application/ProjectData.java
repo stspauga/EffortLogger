@@ -16,8 +16,10 @@ public class ProjectData {
 	private String[] lifeCycleStepArr = new String[50];
 	private int[] stepEffortCategory = new int[50];
 	private int[] stepDeliverable = new int[50];
-	// Let us set a temporary cap of 50 effort logs for this prototype
-	private EffortLog[] effortLogArr = new EffortLog[50];
+	private ArrayList<EffortLog> effortLogList = new ArrayList<EffortLog>();
+	int nextLogId;
+	private ArrayList<Defect> defectList = new ArrayList<Defect>();
+	int nextDefectId;
 	
 	
 	// Default Constructor for new user demo
@@ -26,9 +28,7 @@ public class ProjectData {
 		lifeCycleStepArr[0] = "Problem Understanding";
 		stepEffortCategory[0] = 1;
 		stepDeliverable[0] = 0;
-		
-		
-		
+		nextLogId = 0;		
 	}
 	
 	// Constructor to read from file after authentication
@@ -37,17 +37,66 @@ public class ProjectData {
 		// Read from the user's file to initialize project data
 	}
 	
-	// Get/Set
+	// add a new defect to the project's list
+	public void addDefect(Defect newDefect) {
+		this.defectList.add(newDefect);
+		nextDefectId++;
+	}
+	// add a new effort log to the project's list
+	public void addLog(EffortLog newLog) {
+		this.effortLogList.add(newLog);
+		nextLogId++;
+	}
+	
+	public boolean printLogs() {
+		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("Printing all _" + effortLogList.size() + "_ logs in " + projectName + " : ");
+		for(EffortLog i : effortLogList) {
+			i.print();
+		}
+		System.out.println("~~~~~~End of Print~~~~~~");
+		return true;
+	}
+	
+	// Get Set methods
 	public String getName() {
 		return projectName;
 	}
-	
+	public void setName(String name) {
+		projectName = name;
+	}
+	public int getNextLogId() {
+		return nextLogId;
+	}
+	public void setNextLogId(int nextId) {
+		this.nextLogId = nextId;
+	}
 	public String[] getLifeCycleArr() {
 		return lifeCycleStepArr;
 	}
-	
 	public int[] getStepEffortCategory() {
 		return stepEffortCategory;
 	}
+	public ArrayList<EffortLog> getEffortLogList() {
+		return effortLogList;
+	}
+	// given an id, return an Effort Log object
+	public EffortLog findEffortLog(int id) {
+		for (EffortLog log: effortLogList) {
+			if (log.getId() == id) {
+				return log;
+			}
+		}
+		System.out.println("No log with given id found in project");
+		return null;
+	}
 	
+	// Deletes all effort logs for a project
+	public void deleteEffortLogs() {
+		effortLogList.clear();
+	}
+	public void deleteEffortLog(EffortLog log) {
+		System.out.println("!!!Deleting this log!!!");
+		effortLogList.remove(effortLogList.indexOf(log));
+	}
 }
