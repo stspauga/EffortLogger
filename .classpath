@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
 =======
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
@@ -23,10 +24,14 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
 >>>>>>> 2c83e6aa70993372508f51e38203fc861b2f8fa2
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
+>>>>>>> 07e3b8f6e57e330dcfbf566025cf47878e747cd9
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
@@ -65,5 +70,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 =======
 >>>>>>> 2c83e6aa70993372508f51e38203fc861b2f8fa2
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> 07e3b8f6e57e330dcfbf566025cf47878e747cd9
 	<classpathentry kind="output" path="bin"/>
 </classpath>
