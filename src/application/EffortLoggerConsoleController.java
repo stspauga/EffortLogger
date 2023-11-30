@@ -150,6 +150,8 @@ public class EffortLoggerConsoleController {
 		closeTutorial();
 		System.out.println("Switching to Planning Poker");
 		String newScreenFile = "PlanningPoker.fxml";
+		//initializing historical data list
+		AllPokerCards.initializeList();
 		switchScreen(newScreenFile, e);
 	}
 

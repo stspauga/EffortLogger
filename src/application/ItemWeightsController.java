@@ -39,11 +39,13 @@ public class ItemWeightsController {
 	private String itemName;
 	private String criteria;
 	private int assignedWeight;
+	private InputValidation inputValidation;
 
 	
 	@FXML
 	private void generateCard(ActionEvent e) throws IOException
 	{
+		
 		userStory = userStoryTextField.getText();
 		itemName = itemNameTextField.getText();
 		criteria = criteriaTextArea.getText();
