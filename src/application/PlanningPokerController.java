@@ -43,7 +43,8 @@ public class PlanningPokerController {
 	
 	//handling the event when the historical data button is clicked
 	public void switchToHistoricalData(ActionEvent e) throws IOException {
-		System.out.println("Switching to Planning Poker Cards");
+		System.out.println("Switching to Historical Data");
+		AllPokerCards.initializeList();
 		String newScreenFile = "HistoricalData.fxml";
 		switchScreen(newScreenFile, e);
 	}
