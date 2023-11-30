@@ -29,12 +29,10 @@ public class CardDisplayController {
 	
 	public void displayCard(String userStory, String itemName, int weight, String criteria, ActionEvent e)
 	{
-		
 		itemNameLabel.setText(itemName);
 		userStoryLabel.setText(userStory);
 		assignedWeightLabel.setText(Integer.toString(weight));
 		criteriaTextArea.setText(criteria);
-		
 	}
 	
 	//switch to console

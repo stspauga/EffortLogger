@@ -27,4 +27,18 @@ public class PokerCard {
 		System.out.println("Assigned Weight: " + weight);
 		System.out.println("Criteria: " + criteria);
 	}
+	
+	//get methods
+	public String getUserStory() {
+		return userStory;
+	}
+	public String getItemName() {
+		return itemName;
+	}
+	public int getWeight() {
+		return weight;
+	}
+	public String getCriteria() {
+		return criteria;
+	}
 }
