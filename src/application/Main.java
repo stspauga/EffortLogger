@@ -1,6 +1,4 @@
 package application;
-	
-import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -9,7 +7,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import java.io.IOException;
 import javafx.scene.control.Label;
+
 //import javafx.scene.layout.BorderPane;
 import javafx.scene.control.TextField;
 
@@ -19,7 +19,8 @@ public class Main extends Application {
 	// --------------------------------------------- New thing in Main -> Main.getUserData().doWhatever
 	public static UserData userData;
 	public static UserSession userSession = new UserSession();
-	@FXML private TextField usernameField;
+	@FXML
+	private TextField usernameField;
 	
 //	private static ClockManager clockManager;
 	

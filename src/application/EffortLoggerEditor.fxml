@@ -1,6 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" />
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerEditorController">
+   <top>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label contentDisplay="CENTER" text="Effort Log Editor" textAlignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="1. Select the Project in order to edit its Effort Log" />
+                        <ComboBox fx:id="projectComboBox" onAction="#loadEffortLogBox" prefHeight="25.0" prefWidth="258.0" promptText="Project" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="2.a. Clear this Project's Effort Log" />
+                        <Button mnemonicParsing="false" onAction="#deleteLogs" prefHeight="25.0" prefWidth="175.0" text="Clear This Effort Log" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <Label text="2.b. Select the Effort Log Entry to be modified and make it the Current Effort Log Entry" />
+                  <ComboBox fx:id="effortLogComboBox" onAction="#loadEffortLogData" prefHeight="25.0" prefWidth="453.0" promptText="Effort Log" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <Label text="3.a. Modify the Current Effort Log Entry's attributes and press &quot;Update This Entry&quot; when finished." />
+                  <HBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="Date:" />
+                                    <TextField fx:id="date" />
+                                 </children>
+                              </HBox>
+                              <Label text="YYYY-MM-DD" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="Start Time:" />
+                                    <TextField fx:id="startTime" />
+                                 </children>
+                              </HBox>
+                              <Label text="HH:MM:SS" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="Stop Time:" />
+                                    <TextField fx:id="endTime" />
+                                 </children>
+                              </HBox>
+                              <Label text="HH:MM:SS" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="210.0" text="Life Cycle Step:" />
+                  <ComboBox fx:id="lifeCycleStepBox" prefHeight="25.0" prefWidth="210.0" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Effort Category:" />
+                        <ComboBox fx:id="effortCategoryBox" onAction="#loadEffortSubCategory" prefHeight="25.0" prefWidth="258.0" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label prefWidth="258.0" />
+                        <ComboBox fx:id="effortSubCategoryBox" prefHeight="25.0" prefWidth="258.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#updateLog" text="Update This Entry">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label text="3.b. Delete the Current Effort Log Entry" />
+                  <Button mnemonicParsing="false" onAction="#deleteLog" prefHeight="25.0" prefWidth="175.0" text="Delete This Entry" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label text="3.c. Split the Current Effort Log Entry into two entries" />
+                        <Button mnemonicParsing="false" onAction="#splitEntries" prefHeight="25.0" prefWidth="203.0" text="Split This Entry into Two Entries" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label text="4. Proceed to the Effort Log Console" />
+                        <Button mnemonicParsing="false" onAction="#switchToConsole" text="Proceed to Console" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</BorderPane>
