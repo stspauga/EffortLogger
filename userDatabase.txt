@@ -5,3 +5,10 @@ Role:
 Username/email: nghiemnguyen
 Password: AzgMHDNlLjEBEikAKgcTZw==:aUhsR2xEWWNydDVZSi84OEEvV2YxcHJia28ra09DSHFuMm1mYm1NRUxkNXZpRmZ5aW81KytMZ1NMaWRxaitCcnNuSnVsMzhaaHJnajBUUGxpaXg0cUE9PQ==
 
+First Name: Zachary
+Last Name: Weber
+Phone Numbers: 
+Role: Engineer
+Username/email: zw@gmail.com
+Password: B3U9Nx0BLks/LFVJ:Q0ZNSFh1emhtdzYxK21ueGEzN0E0NWNFVGw5QkhhWFZJVVNKV2drdlJHVC8zdHhpMFNuRUx2eGpsdTFSc01QU0dsR2pOcHJqQ1Z4d3kwc2t3ckRVQmc9PQ==
+

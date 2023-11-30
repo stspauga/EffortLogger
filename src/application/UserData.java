@@ -55,6 +55,7 @@ public class UserData {
 		// default demo project
 		projectArr[0] = new ProjectData();
 		projectArr[1] = new ProjectData();
+		projectArr[1].setName("Other Project");
 		
 		//Effort Categories default setup
 		// 0th element is the title

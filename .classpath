@@ -6,6 +6,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
 		<attributes>
 			<attribute name="module" value="true"/>
@@ -13,11 +14,75 @@
 	</classpathentry>
 <<<<<<< HEAD
 =======
+=======
+<<<<<<< HEAD
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
+<<<<<<< HEAD
+=======
+>>>>>>> 2c83e6aa70993372508f51e38203fc861b2f8fa2
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
+>>>>>>> 07e3b8f6e57e330dcfbf566025cf47878e747cd9
+=======
+>>>>>>> bfe815a71c15884f7b2a273b761c32e9b1c5f7ec
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jdk21.0.2">
+>>>>>>> dd6923878cdd538ac9fdb07725470a766c91351e
+>>>>>>> master
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 >>>>>>> dd6923878cdd538ac9fdb07725470a766c91351e
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
+>>>>>>> 9a91bcbbd67777d553425a36c3d243f0ce40e480
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-20">
+>>>>>>> 97063671eabbad07e120e11f5eff2d477a74bdbc
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
+>>>>>>> 568d08ed0dc4158d576143ca2675370b3880a315
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+<<<<<<< HEAD
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
+<<<<<<< HEAD
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JAva-SDK">
+=======
+>>>>>>> master
+>>>>>>> 27f40dec6138fca16e90a2230f2a990d0cab0fa4
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20.0.2">
+>>>>>>> e61ba927e4349866ad63aef53ef2d97b201f4ed7
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+=======
+>>>>>>> 568d08ed0dc4158d576143ca2675370b3880a315
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+=======
+>>>>>>> 2c83e6aa70993372508f51e38203fc861b2f8fa2
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> 07e3b8f6e57e330dcfbf566025cf47878e747cd9
+=======
+>>>>>>> dd6923878cdd538ac9fdb07725470a766c91351e
+>>>>>>> master
+>>>>>>> bfe815a71c15884f7b2a273b761c32e9b1c5f7ec
 	<classpathentry kind="output" path="bin"/>
 </classpath>
