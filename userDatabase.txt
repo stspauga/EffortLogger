@@ -12,3 +12,17 @@ Role: Engineer
 Username/email: zw@gmail.com
 Password: B3U9Nx0BLks/LFVJ:Q0ZNSFh1emhtdzYxK21ueGEzN0E0NWNFVGw5QkhhWFZJVVNKV2drdlJHVC8zdHhpMFNuRUx2eGpsdTFSc01QU0dsR2pOcHJqQ1Z4d3kwc2t3ckRVQmc9PQ==
 
+First Name: Nghiem
+Last Name: Nguyen
+Phone Numbers: 888-888-8888
+Role: Software Engineer
+Username/email: nghiemnguyen
+Password: NgAXXTBmDCIsBl1yMRAQRzQWXgwdBRdQ:Tms2Q1ZVNk9CTGF2bS9uSFRmdC9iSVdCNVArVUplTDRrQWtCVWh3SHgyMnBpWS8zandrQlpkNHFjNkZUMzQ3cU56Z3RSTERPRjl0RVJjQXVNVURpdGc9PQ==
+
+First Name: Nghiem
+Last Name: Nguyen
+Phone Numbers: 
+Role: 
+Username/email: nghiemnguyen
+Password: BzspXQAALjIxKQB9Nx8mJgMQAyAqcQAP:eVM2aWxFSDdLRHpSUUdYd2E2UFVrelBndTkwS2xVMUdiY3NMWkhGV3piQ3dDdVFTVjI3cnBWbFVOVDFmOGNTSEV3TjhxWmpxcUF0S1pBOGNkaVN3RlE9PQ==
+
