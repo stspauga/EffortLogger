@@ -37,8 +37,19 @@ public class PlanningPokerController {
 	//handling the event when the planning poker button is clicked
 	public void switchToPlanningPokerCards(ActionEvent e) throws IOException {
 		System.out.println("Switching to Planning Poker Cards");
-		String newScreenFile = "PlanningPokerCards.fxml";
-		switchScreen(newScreenFile, e);
+		AllPokerCards.initializeList();
+		PlanningPokerCardController.getRecentCards();
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("PlanningPokerCards.fxml"));
+		Parent root = loader.load();
+		
+		PlanningPokerCardController displayController = loader.getController();
+		displayController.displayCards();
+		//switch scenes
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 	
 	//handling the event when the historical data button is clicked

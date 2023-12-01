@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX20">
 <<<<<<< HEAD
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX">
+>>>>>>> eec6f346e0ed0408ead8205a0286ee741a7da8b4
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -85,5 +90,8 @@
 >>>>>>> bfe815a71c15884f7b2a273b761c32e9b1c5f7ec
 =======
 >>>>>>> 5ab8301c239a918cadacb3b78c5868cceadad525
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-20"/>
+>>>>>>> eec6f346e0ed0408ead8205a0286ee741a7da8b4
 	<classpathentry kind="output" path="bin"/>
 </classpath>
