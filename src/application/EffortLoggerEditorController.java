@@ -92,7 +92,6 @@ public class EffortLoggerEditorController {
 		effortCategoryBox.getItems().clear();
 		effortSubCategoryBox.getItems().clear();
 		lifeCycleStepBox.getItems().clear();
-		
 		currLog = null;
 		effortLogList.clear();
 		
@@ -145,7 +144,6 @@ public class EffortLoggerEditorController {
 
 	public void loadEffortCategory() {
 		effortCategoryBox.getItems().clear();
-		
 		
 		for (int i = 0; i < Main.userData.getEffortDefinitions().size(); i++) {
 			effortCategoryBox.getItems().add(Main.userData.getEffortDefinitions().get(i)[0]);

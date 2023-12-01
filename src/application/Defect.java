@@ -15,6 +15,7 @@ public class Defect {
 	private String endStep;
 	private String category;
 	
+
 	public Defect(int id) {
 		this.setId(id);
 		setName("new-defect-" + Integer.toString(id));
@@ -67,7 +68,6 @@ public class Defect {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
 	public String toString() {
 		return Integer.toString(id) + "." + name; 
 	}

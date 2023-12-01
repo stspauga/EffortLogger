@@ -83,6 +83,7 @@ public class ProjectData {
 	public ArrayList<EffortLog> getEffortLogList() {
 		return effortLogList;
 	}
+
 	public ArrayList<Defect> getDefectList() {
 		return defectList;
 	}

@@ -110,6 +110,7 @@ public class EffortLoggerConsoleController {
 	public void loadEffortTypeBox() {	
 		effortTypeComboBox.getItems().clear();
 		String category = effortCategoryComboBox.getValue();
+		
 		if (category == "Defects" && currProject != null && currProject.getDefectList().size() != 0) {
 			effortType = currProject.getDefectArr();
 		}
