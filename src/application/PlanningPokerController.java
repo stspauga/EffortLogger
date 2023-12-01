@@ -37,7 +37,9 @@ public class PlanningPokerController {
 	//handling the event when the planning poker button is clicked
 	public void switchToPlanningPokerCards(ActionEvent e) throws IOException {
 		System.out.println("Switching to Planning Poker Cards");
+		AllPokerCards.initializeList();
 		PlanningPokerCardController.getRecentCards();
+		//PlanningPokerCardController.displayCards();
 		String newScreenFile = "PlanningPokerCards.fxml";
 		switchScreen(newScreenFile, e);
 	}

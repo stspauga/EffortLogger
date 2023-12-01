@@ -21,17 +21,17 @@ import javafx.stage.Stage;
 
 public class PlanningPokerCardController {
  	@FXML
-    private Label assignedWeightLabel;
+    private static Label assignedWeightLabel;
     @FXML
-    private Label assignedWeightLabel1;
+    private static Label assignedWeightLabel1;
     @FXML
-    private Label assignedWeightLabel2;
+    private static Label assignedWeightLabel2;
     @FXML
-    private Label assignedWeightLabel3;
+    private static Label assignedWeightLabel3;
     @FXML
-    private Label assignedWeightLabel4;
+    private static Label assignedWeightLabel4;
     @FXML
-    private Label assignedWeightLabel5;
+    private static Label assignedWeightLabel5;
     @FXML
     private Pane cardFive;
     @FXML
@@ -45,17 +45,17 @@ public class PlanningPokerCardController {
     @FXML
     private Pane cardTwo;
     @FXML
-    private Label itemNameLabel;
+    private static Label itemNameLabel;
     @FXML
-    private Label itemNameLabel1;
+    private static Label itemNameLabel1;
     @FXML
-    private Label itemNameLabel2;
+    private static Label itemNameLabel2;
     @FXML
-    private Label itemNameLabel3;
+    private static Label itemNameLabel3;
     @FXML
-    private Label itemNameLabel4;
+    private static Label itemNameLabel4;
     @FXML
-    private Label itemNameLabel5;
+    private static Label itemNameLabel5;
     @FXML
     private Button returnToPlanPokHome;
 	
@@ -74,17 +74,20 @@ public class PlanningPokerCardController {
 	
 	// get the last 6 cards in the array (from most recent to least recent)
 	public static void getRecentCards() {
-		ArrayList<PokerCard> allCards = new ArrayList<PokerCard>();
+		ArrayList<PokerCard> allCards = AllPokerCards.getAllCards();
+		
 		card1 = allCards.get(allCards.size()-1);
 		card2 = allCards.get(allCards.size()-2);
 		card3 = allCards.get(allCards.size()-3);
 		card4 = allCards.get(allCards.size()-4);
 		card5 = allCards.get(allCards.size()-5);
 		card6 = allCards.get(allCards.size()-6);
+		displayCards();
+		
 	}
 	
 	// DISPLAY CARDS WITH APPROPRIATE TITLES - INSPIRED BY CARDDISPLAYCONTROLLER.JAVA
-	public void displayCards(ActionEvent e)
+	public static void displayCards()
 	{
 		itemNameLabel.setText(card1.getItemName());
 		assignedWeightLabel.setText(Integer.toString(card1.getWeight()));
@@ -124,6 +127,7 @@ public class PlanningPokerCardController {
 	// FIX THIS SO THAT IT SWITCHES FOR EACH CARD
 	public void switchToCard(ActionEvent e)throws IOException{
 		System.out.println("Switching to a Card Display");
+		
 		String newScreenFile = "CardDisplay.fxml";
 		switchScreen(newScreenFile, e);
 	}
