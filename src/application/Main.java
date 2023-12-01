@@ -44,8 +44,6 @@ public class Main extends Application {
 		launch(args);
 	}
 
-	
-	
 	public void stop() throws IOException{
 		System.out.println(userSession.currUser);
 		userSession.checkUser();

@@ -21,17 +21,17 @@ import javafx.stage.Stage;
 
 public class PlanningPokerCardController {
  	@FXML
-    private static Label assignedWeightLabel;
+    private Label assignedWeightLabel;
     @FXML
-    private static Label assignedWeightLabel1;
+    private Label assignedWeightLabel1;
     @FXML
-    private static Label assignedWeightLabel2;
+    private Label assignedWeightLabel2;
     @FXML
-    private static Label assignedWeightLabel3;
+    private Label assignedWeightLabel3;
     @FXML
-    private static Label assignedWeightLabel4;
+    private Label assignedWeightLabel4;
     @FXML
-    private static Label assignedWeightLabel5;
+    private Label assignedWeightLabel5;
     @FXML
     private Pane cardFive;
     @FXML
@@ -45,17 +45,17 @@ public class PlanningPokerCardController {
     @FXML
     private Pane cardTwo;
     @FXML
-    private static Label itemNameLabel;
+    private Label itemNameLabel;
     @FXML
-    private static Label itemNameLabel1;
+    private Label itemNameLabel1;
     @FXML
-    private static Label itemNameLabel2;
+    private Label itemNameLabel2;
     @FXML
-    private static Label itemNameLabel3;
+    private Label itemNameLabel3;
     @FXML
-    private static Label itemNameLabel4;
+    private Label itemNameLabel4;
     @FXML
-    private static Label itemNameLabel5;
+    private Label itemNameLabel5;
     @FXML
     private Button returnToPlanPokHome;
 	
@@ -70,7 +70,7 @@ public class PlanningPokerCardController {
 	private Stage stage;
 	private Scene scene;
 	public boolean activityCheck;
-	
+
 	
 	// get the last 6 cards in the array (from most recent to least recent)
 	public static void getRecentCards() {
@@ -82,12 +82,11 @@ public class PlanningPokerCardController {
 		card4 = allCards.get(allCards.size()-4);
 		card5 = allCards.get(allCards.size()-5);
 		card6 = allCards.get(allCards.size()-6);
-		displayCards();
 		
 	}
 	
 	// DISPLAY CARDS WITH APPROPRIATE TITLES - INSPIRED BY CARDDISPLAYCONTROLLER.JAVA
-	public static void displayCards()
+	public void displayCards()
 	{
 		itemNameLabel.setText(card1.getItemName());
 		assignedWeightLabel.setText(Integer.toString(card1.getWeight()));
@@ -124,11 +123,88 @@ public class PlanningPokerCardController {
 	}
 	
 	//handling the event when a card is clicked
-	// FIX THIS SO THAT IT SWITCHES FOR EACH CARD
-	public void switchToCard(ActionEvent e)throws IOException{
+	public void switchToCardOne(ActionEvent e)throws IOException{
 		System.out.println("Switching to a Card Display");
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("CardDisplay.fxml"));
+		Parent root = loader.load();
+		CardDisplayController displayController = loader.getController();
 		
-		String newScreenFile = "CardDisplay.fxml";
-		switchScreen(newScreenFile, e);
+		displayController.displayCard(card1.getUserStory(), card1.getItemName(), card1.getWeight(), card1.getCriteria(), e);
+
+		//switch scenes
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	public void switchToCardTwo(ActionEvent e)throws IOException{
+		System.out.println("Switching to a Card Display");
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("CardDisplay.fxml"));
+		Parent root = loader.load();
+		CardDisplayController displayController = loader.getController();
+		
+		displayController.displayCard(card2.getUserStory(), card2.getItemName(), card2.getWeight(), card2.getCriteria(), e);
+
+		//switch scenes
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	public void switchToCardThree(ActionEvent e)throws IOException{
+		System.out.println("Switching to a Card Display");
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("CardDisplay.fxml"));
+		Parent root = loader.load();
+		CardDisplayController displayController = loader.getController();
+		
+		displayController.displayCard(card3.getUserStory(), card3.getItemName(), card3.getWeight(), card3.getCriteria(), e);
+
+		//switch scenes
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	public void switchToCardFour(ActionEvent e)throws IOException{
+		System.out.println("Switching to a Card Display");
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("CardDisplay.fxml"));
+		Parent root = loader.load();
+		CardDisplayController displayController = loader.getController();
+		
+		displayController.displayCard(card4.getUserStory(), card4.getItemName(), card4.getWeight(), card4.getCriteria(), e);
+
+		//switch scenes
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	public void switchToCardFive(ActionEvent e)throws IOException{
+		System.out.println("Switching to a Card Display");
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("CardDisplay.fxml"));
+		Parent root = loader.load();
+		CardDisplayController displayController = loader.getController();
+		
+		displayController.displayCard(card5.getUserStory(), card5.getItemName(), card5.getWeight(), card5.getCriteria(), e);
+
+		//switch scenes
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	public void switchToCardSix(ActionEvent e)throws IOException{
+		System.out.println("Switching to a Card Display");
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("CardDisplay.fxml"));
+		Parent root = loader.load();
+		CardDisplayController displayController = loader.getController();
+		
+		displayController.displayCard(card6.getUserStory(), card6.getItemName(), card6.getWeight(), card6.getCriteria(), e);
+
+		//switch scenes
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 }
