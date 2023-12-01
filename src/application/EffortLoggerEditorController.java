@@ -64,11 +64,11 @@ public class EffortLoggerEditorController {
 		String endDate = currLog.getEndDate();
 		String midTime = endTime.getText();
 		String newEndTime = currProject.getEffortLogList().get(currProject.getEffortLogList().indexOf(currLog)).getEndTime();
-		
-		updateLog();
-		EffortLog dupLog = new EffortLog(startDate, midTime);
 		String step = lifeCycleStepBox.getValue();
 		String category = effortCategoryBox.getValue();
+		updateLog();
+		EffortLog dupLog = new EffortLog(startDate, midTime);
+		
 		String subCategory = effortSubCategoryBox.getValue();
 		dupLog.setAll(currProject.getNextLogId(), "", "", endDate, newEndTime, step, category, subCategory);
 		currProject.addLog(dupLog);
