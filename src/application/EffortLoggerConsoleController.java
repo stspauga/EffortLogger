@@ -95,6 +95,9 @@ public class EffortLoggerConsoleController {
 				lifeCycleComboBox.getItems().add(currProject.getLifeCycleArr()[i]);
 			}
 		}
+		if (effortCategoryComboBox.getValue() != null) {
+			loadEffortTypeBox();
+		}
 	}
 	
 	// Set Up Effort Category selection ComboBox
@@ -107,7 +110,12 @@ public class EffortLoggerConsoleController {
 	public void loadEffortTypeBox() {	
 		effortTypeComboBox.getItems().clear();
 		String category = effortCategoryComboBox.getValue();
-		effortType = Main.userData.getEffortTypeDefinition(category);
+		if (category == "Defects" && currProject != null && currProject.getDefectList().size() != 0) {
+			effortType = currProject.getDefectArr();
+		}
+		else {
+			effortType = Main.userData.getEffortTypeDefinition(category);
+		}
 		effortTypeComboBox.getItems().addAll(effortType);
 		
 		/* Change how the EffortCategoryData object stores data before continuing
@@ -129,6 +137,13 @@ public class EffortLoggerConsoleController {
 		String newScreenFile = "EffortLoggerEditor.fxml";
 		switchScreen(newScreenFile, e);
 	}
+	// Switch to the Effort Logger Defects Scene 
+		public void switchToDefect(ActionEvent e) throws IOException {
+			closeTutorial();
+			System.out.println("Switching to Defect Console");
+			String newScreenFile = "EffortLoggerDefect.fxml";
+			switchScreen(newScreenFile, e);
+		}
 	// Switch to the Effort Logger Editor Scene 
 	public void switchToDefinitions(ActionEvent e) throws IOException {
 		closeTutorial();
