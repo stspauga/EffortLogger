@@ -50,22 +50,6 @@ public class PlanningPokerController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-		/*try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("PlanningPokerCards.fxml"));
-			Parent root = loader.load();
-			
-			PlanningPokerCardController displayController = loader.getController();
-			displayController.displayCards();
-			//switch scenes
-			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();	
-		}
-		catch(IOException exception)
-		{
-			exception.printStackTrace();
-		}*/
 	}
 	
 	//handling the event when the historical data button is clicked

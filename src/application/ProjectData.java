@@ -18,7 +18,7 @@ public class ProjectData {
 	private int[] stepDeliverable = new int[50];
 	private ArrayList<EffortLog> effortLogList = new ArrayList<EffortLog>();
 	int nextLogId;
-	//private ArrayList<Defect> defectList = new ArrayList<Defect>();
+	private ArrayList<Defect> defectList = new ArrayList<Defect>();
 	int nextDefectId;
 	
 	
@@ -38,10 +38,10 @@ public class ProjectData {
 	}
 	
 	// add a new defect to the project's list
-	/*public void addDefect(Defect newDefect) {
+	public void addDefect(Defect newDefect) {
 		this.defectList.add(newDefect);
 		nextDefectId++;
-	}*/
+	}
 	// add a new effort log to the project's list
 	public void addLog(EffortLog newLog) {
 		this.effortLogList.add(newLog);
@@ -71,6 +71,9 @@ public class ProjectData {
 	public void setNextLogId(int nextId) {
 		this.nextLogId = nextId;
 	}
+	public int getNextDefectId() {
+		return nextDefectId;
+	}
 	public String[] getLifeCycleArr() {
 		return lifeCycleStepArr;
 	}
@@ -80,6 +83,11 @@ public class ProjectData {
 	public ArrayList<EffortLog> getEffortLogList() {
 		return effortLogList;
 	}
+
+	public ArrayList<Defect> getDefectList() {
+		return defectList;
+	}
+	
 	// given an id, return an Effort Log object
 	public EffortLog findEffortLog(int id) {
 		for (EffortLog log: effortLogList) {
@@ -90,7 +98,26 @@ public class ProjectData {
 		System.out.println("No log with given id found in project");
 		return null;
 	}
-	
+	// given an id, return an Effort Log object
+		public Defect findDefect(int id) {
+			for (Defect log: defectList) {
+				if (log.getId() == id) {
+					return log;
+				}
+			}
+			System.out.println("No defect with given id found in project");
+			return null;
+		}
+	// return a list of defect log names
+	public String[] getDefectArr() {
+		String[] defects = new String[defectList.size()];
+		int i = 0;
+		for (Defect log : defectList) {
+			defects[i] = log.toString();			
+			i++;
+		}
+		return defects;
+	}
 	// Deletes all effort logs for a project
 	public void deleteEffortLogs() {
 		effortLogList.clear();
@@ -98,5 +125,13 @@ public class ProjectData {
 	public void deleteEffortLog(EffortLog log) {
 		System.out.println("!!!Deleting this log!!!");
 		effortLogList.remove(effortLogList.indexOf(log));
+	}
+	// Deletes all defect logs for a project
+	public void deleteDefectLogs() {
+		defectList.clear();
+	}
+	public void deleteDefectLog(Defect log) {
+		System.out.println("!!!Deleting this Defect!!!");
+		defectList.remove(defectList.indexOf(log));
 	}
 }
