@@ -30,6 +30,8 @@ public class UserData {
 	// Effort Category Information
 	private ArrayList<String[]> effortDefinitions = new ArrayList<String[]>();
 	
+	private String[] defectDefinitions;
+	
 	// This constructor will be used in the case of a new user sign in
 	// lets the new user input data
 
@@ -71,11 +73,14 @@ public class UserData {
 		String[] interruptions = new String[] 
 				{"Interruptions", "Break","Phone","Teammate","Visitor","Other","","","","",""};
 		effortDefinitions.add(interruptions);
-		String[] defectCategories = new String[] 
-				{"Defects"};
 		String[] other = new String[] {"Others"};
+		String[] defects = new String[] {"Defects"};
+		effortDefinitions.add(defects);
 		effortDefinitions.add(other);
-		
+		defectDefinitions = new String[] 
+				{"Not Specified", "Documentation", "Syntax", "Build/Package", "Assignment", 
+						"Interface", "Checking", "Data", "Function", "System", 
+						"Environment", "", "", "", ""};
 	}
 	
 	// This constructor will be used in the future to initialize UserData from a given file
@@ -119,12 +124,14 @@ public class UserData {
 	public ArrayList<String[]> getEffortDefinitions() {
 		return effortDefinitions;
 	}
-	
+	public String[] getDefectDefinitions() {
+		return defectDefinitions;
+	}
 	public String[] getEffortTypeDefinition(String category) {
 		String[] list;
 		int i = 0;
 		while (i < effortDefinitions.size()) {
-			if (effortDefinitions.get(i)[0].compareTo(category) == 0) {
+			if (effortDefinitions.get(i)[0] == category) {
 				list = new String[effortDefinitions.get(i).length - 1];
 				for (int j = 0; j < list.length; j++) {
 					if (list[j] != "") {

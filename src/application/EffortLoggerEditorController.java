@@ -64,11 +64,11 @@ public class EffortLoggerEditorController {
 		String endDate = currLog.getEndDate();
 		String midTime = endTime.getText();
 		String newEndTime = currProject.getEffortLogList().get(currProject.getEffortLogList().indexOf(currLog)).getEndTime();
-		
-		updateLog();
-		EffortLog dupLog = new EffortLog(startDate, midTime);
 		String step = lifeCycleStepBox.getValue();
 		String category = effortCategoryBox.getValue();
+		updateLog();
+		EffortLog dupLog = new EffortLog(startDate, midTime);
+		
 		String subCategory = effortSubCategoryBox.getValue();
 		dupLog.setAll(currProject.getNextLogId(), "", "", endDate, newEndTime, step, category, subCategory);
 		currProject.addLog(dupLog);
@@ -89,6 +89,9 @@ public class EffortLoggerEditorController {
 	// Set up Project's Effort log list data into comboBox
 	public void loadEffortLogBox() {
 		effortLogComboBox.getItems().clear();
+		effortCategoryBox.getItems().clear();
+		effortSubCategoryBox.getItems().clear();
+		lifeCycleStepBox.getItems().clear();
 		currLog = null;
 		effortLogList.clear();
 		
@@ -141,6 +144,7 @@ public class EffortLoggerEditorController {
 
 	public void loadEffortCategory() {
 		effortCategoryBox.getItems().clear();
+		
 		for (int i = 0; i < Main.userData.getEffortDefinitions().size(); i++) {
 			effortCategoryBox.getItems().add(Main.userData.getEffortDefinitions().get(i)[0]);
 		}
@@ -152,10 +156,16 @@ public class EffortLoggerEditorController {
 		
 		String category = effortCategoryBox.getValue();
 		if (category != "Others") {
+			if (currProject != null && currProject.getDefectList().size() != 0 && effortCategoryBox.getValue() == "Defects") {
+				effortSubCategoryBox.getItems().addAll(currProject.getDefectArr());
+				effortSubCategoryBox.setValue(currLog.getEffortSubCategory());
+			}
+			else {
 			effortSubCategoryList = Main.userData.getEffortTypeDefinition(category);
 			effortSubCategoryBox.getItems().addAll(effortSubCategoryList);
 		
 			effortSubCategoryBox.setValue(currLog.getEffortSubCategory());
+			}
 		}
 	}
 
