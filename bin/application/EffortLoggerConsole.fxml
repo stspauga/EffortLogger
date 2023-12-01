@@ -52,24 +52,19 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="82.0" prefWidth="701.0" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar prefHeight="82.0" prefWidth="756.0">
+            <ButtonBar prefHeight="82.0">
                <buttons>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToEditor" text="Effort Editor" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Defect Console" textAlignment="CENTER">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToDefect" text="Defect Console" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToDefinitions" text="Definitions" textAlignment="CENTER">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Logs" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -118,12 +113,12 @@
                   </Label>
                </children>
             </VBox>
-            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#consoleTutorial" text="Need Help?" StackPane.alignment="TOP_RIGHT">
+            <Button contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#consoleTutorial" text="Need Help?" visible="false" StackPane.alignment="TOP_RIGHT">
                <StackPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </StackPane.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#debug_printLogs" text="debug_printLogs" StackPane.alignment="TOP_LEFT">
+            <Button disable="true" mnemonicParsing="false" onAction="#debug_printLogs" text="debug_printLogs" visible="false" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
                   <Insets top="5.0" />
                </StackPane.margin>

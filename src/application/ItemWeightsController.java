@@ -45,7 +45,6 @@ public class ItemWeightsController {
 	@FXML
 	private void generateCard(ActionEvent e) throws IOException
 	{
-		
 		userStory = userStoryTextField.getText();
 		itemName = itemNameTextField.getText();
 		criteria = criteriaTextArea.getText();

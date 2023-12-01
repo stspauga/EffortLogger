@@ -1,3 +1,9 @@
+/*
+ * Structure to store data on each individual defect
+ * Contributions :
+ * Zachary Weber
+ */
+
 package application;
 
 public class Defect {
@@ -9,12 +15,13 @@ public class Defect {
 	private String endStep;
 	private String category;
 	
-	public Defect(int id, String startStep) {
+
+	public Defect(int id) {
 		this.setId(id);
-		setName("new-log-" + Integer.toString(id));
+		setName("new-defect-" + Integer.toString(id));
 		setStatus(true);
 		setDescription("");
-		startStep = null;
+		setStartStep(null);
 		setEndStep(null);
 		setCategory("Not Specified");
 	}
@@ -61,6 +68,7 @@ public class Defect {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
-	
+	public String toString() {
+		return Integer.toString(id) + "." + name; 
+	}
 }

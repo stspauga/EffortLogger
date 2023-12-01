@@ -12,6 +12,7 @@ Role: Engineer
 Username/email: zw@gmail.com
 Password: B3U9Nx0BLks/LFVJ:Q0ZNSFh1emhtdzYxK21ueGEzN0E0NWNFVGw5QkhhWFZJVVNKV2drdlJHVC8zdHhpMFNuRUx2eGpsdTFSc01QU0dsR2pOcHJqQ1Z4d3kwc2t3ckRVQmc9PQ==
 
+<<<<<<< HEAD
 First Name: Nghiem
 Last Name: Nguyen
 Phone Numbers: 888-888-8888
@@ -25,4 +26,19 @@ Phone Numbers:
 Role: 
 Username/email: nghiemnguyen
 Password: BzspXQAALjIxKQB9Nx8mJgMQAyAqcQAP:eVM2aWxFSDdLRHpSUUdYd2E2UFVrelBndTkwS2xVMUdiY3NMWkhGV3piQ3dDdVFTVjI3cnBWbFVOVDFmOGNTSEV3TjhxWmpxcUF0S1pBOGNkaVN3RlE9PQ==
+=======
+First Name: Zachary
+Last Name: Weber
+Phone Numbers: 
+Role: Engineer
+Username/email: zw@gmail.com
+Password: B3U9Nx0BLks/LFVJ:Q0ZNSFh1emhtdzYxK21ueGEzN0E0NWNFVGw5QkhhWFZJVVNKV2drdlJHVC8zdHhpMFNuRUx2eGpsdTFSc01QU0dsR2pOcHJqQ1Z4d3kwc2t3ckRVQmc9PQ==
+
+First Name: Madie
+Last Name: Tan
+Phone Numbers: 000
+Role: Engineer1
+Username/email: mdtan
+Password: NwBmCTEQWmAxATEGHwVZew==:VG0zSWc5bEx6VTdFc0VaWVNYOGpyOUROYTM2TGdEN2ZybGp3YVc2MU5HT1diRkxRT3pKY2FOM1BTN1hGMGMzUC9SWE1WYTYvQnE0MkFHR0tiZXhjSEE9PQ==
+>>>>>>> master
 

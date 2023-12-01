@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PlanningPokerCardController">
+   <children>
+      <Text fill="#6256a4" layoutX="127.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Planning Poker Cards">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Text>
+      <Button fx:id="returnToPlanPokHome" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#switchToPlanningPokerConsole" prefHeight="56.0" prefWidth="94.0" text="Return to Planning Poker Home" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Pane fx:id="cardOne" layoutX="48.0" layoutY="92.0" onMouseClicked="#switchToCardOne" prefHeight="133.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-width: 3; -fx-border-color: #6256a4;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button layoutX="6.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToCardOne" prefHeight="124.0" prefWidth="108.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="assignedWeightLabel" contentDisplay="CENTER" layoutX="20.0" layoutY="42.0" prefHeight="25.0" prefWidth="84.0" text="Weight1">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="itemNameLabel" layoutX="11.0" layoutY="93.0" prefHeight="17.0" prefWidth="101.0" text="text1" />
+         </children>
+      </Pane>
+      <Pane fx:id="cardTwo" layoutX="240.0" layoutY="92.0" onMouseClicked="#switchToCardTwo" prefHeight="133.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-width: 3; -fx-border-color: #6256a4;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button layoutX="6.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToCardTwo" prefHeight="124.0" prefWidth="108.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="assignedWeightLabel1" layoutX="20.0" layoutY="42.0" prefHeight="25.0" prefWidth="84.0" text="Weight2" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="itemNameLabel1" layoutX="11.0" layoutY="93.0" prefHeight="17.0" prefWidth="101.0" text="text1" />
+         </children>
+      </Pane>
+      <Pane fx:id="cardThree" layoutX="433.0" layoutY="92.0" onMouseClicked="#switchToCardThree" prefHeight="133.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-width: 3; -fx-border-color: #6256a4;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button layoutX="6.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToCardThree" prefHeight="124.0" prefWidth="108.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="assignedWeightLabel2" layoutX="20.0" layoutY="42.0" prefHeight="17.0" prefWidth="84.0" text="Weight3" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="itemNameLabel2" layoutX="11.0" layoutY="93.0" prefHeight="17.0" prefWidth="101.0" text="text1" />
+         </children>
+      </Pane>
+      <Pane fx:id="cardFour" layoutX="48.0" layoutY="240.0" onMouseClicked="#switchToCardFour" prefHeight="133.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-width: 3; -fx-border-color: #6256a4;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button layoutX="6.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToCardFour" prefHeight="124.0" prefWidth="108.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="assignedWeightLabel3" layoutX="18.0" layoutY="36.0" prefHeight="17.0" prefWidth="84.0" text="Weight4" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="itemNameLabel3" layoutX="11.0" layoutY="93.0" prefHeight="17.0" prefWidth="101.0" text="text1" />
+         </children>
+      </Pane>
+      <Pane fx:id="cardFive" layoutX="240.0" layoutY="240.0" onMouseClicked="#switchToCardFive" prefHeight="133.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-width: 3; -fx-border-color: #6256a4;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button layoutX="6.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToCardFive" prefHeight="124.0" prefWidth="108.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="assignedWeightLabel4" layoutX="20.0" layoutY="36.0" prefHeight="7.0" prefWidth="84.0" text="Weight5" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="itemNameLabel4" layoutX="11.0" layoutY="93.0" prefHeight="17.0" prefWidth="101.0" text="text1" />
+         </children>
+      </Pane>
+      <Pane fx:id="cardSix" layoutX="433.0" layoutY="240.0" onMouseClicked="#switchToCardSix" prefHeight="133.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-width: 3; -fx-border-color: #6256a4;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button layoutX="6.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToCardSix" prefHeight="124.0" prefWidth="108.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="assignedWeightLabel5" layoutX="18.0" layoutY="36.0" prefHeight="17.0" prefWidth="84.0" text="Weight6">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="itemNameLabel5" layoutX="12.0" layoutY="93.0" prefHeight="17.0" prefWidth="101.0" text="text1" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
