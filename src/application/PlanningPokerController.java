@@ -37,13 +37,15 @@ public class PlanningPokerController {
 	//handling the event when the planning poker button is clicked
 	public void switchToPlanningPokerCards(ActionEvent e) throws IOException {
 		System.out.println("Switching to Planning Poker Cards");
+		PlanningPokerCardController.getRecentCards();
 		String newScreenFile = "PlanningPokerCards.fxml";
 		switchScreen(newScreenFile, e);
 	}
 	
 	//handling the event when the historical data button is clicked
 	public void switchToHistoricalData(ActionEvent e) throws IOException {
-		System.out.println("Switching to Planning Poker Cards");
+		System.out.println("Switching to Historical Data");
+		AllPokerCards.initializeList();
 		String newScreenFile = "HistoricalData.fxml";
 		switchScreen(newScreenFile, e);
 	}

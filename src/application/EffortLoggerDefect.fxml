@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label contentDisplay="CENTER" text="Defect Console" textAlignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="1. Select the Project" />
+                        <ComboBox prefHeight="25.0" prefWidth="258.0" promptText="Project" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="2.a. Clear this Project's Defect Log" />
+                        <Button mnemonicParsing="false" onAction="#deleteLogs" prefHeight="25.0" prefWidth="175.0" text="Clear This Defect Log" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="2.b. Select one of the following defects to make it the Current Defect or press &quot;Create a New Defect&quot;." />
+                        <HBox alignment="CENTER" spacing="15.0">
+                           <children>
+                              <ComboBox fx:id="projectComboBox1" onAction="#loadEffortLogBox" prefHeight="25.0" prefWidth="258.0" promptText="Select existing Defect" />
+                              <Button mnemonicParsing="false" onAction="#deleteLogs" prefHeight="25.0" prefWidth="175.0" text="Create a new Defect" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER">
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label text="3. Define or update the following Current Defect attributes:" />
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" text="Num : " textAlignment="CENTER">
+                                 <padding>
+                                    <Insets right="20.0" />
+                                 </padding>
+                              </Label>
+                              <ComboBox fx:id="effortLogComboBox" onAction="#loadEffortLogData" prefHeight="25.0" prefWidth="195.0" promptText="Defect Name" />
+                              <Label text="Status: ">
+                                 <padding>
+                                    <Insets right="50.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Close Defect" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <Label text="Defect Symptoms or Cause/Resolution" />
+                  <TextArea prefHeight="97.0" prefWidth="531.0" />
+               </children>
+            </VBox>
+            <HBox spacing="10.0">
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="210.0" text="Step when injected" />
+                        <ComboBox fx:id="lifeCycleStepBox" prefHeight="25.0" prefWidth="210.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="210.0" text="Step when removed" />
+                        <ComboBox fx:id="lifeCycleStepBox1" prefHeight="25.0" prefWidth="210.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="210.0" text="Defect Category" />
+                        <ComboBox fx:id="lifeCycleStepBox2" prefHeight="25.0" prefWidth="210.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label text="4. Press the &quot;Update the Current Defect&quot; to save the changes made above." />
+                        <HBox spacing="15.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#splitEntries" prefHeight="25.0" prefWidth="160.0" text="Update the Current Defect" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Delete the Current Defect" />
+                              <Button mnemonicParsing="false" onAction="#switchToConsole" prefHeight="25.0" prefWidth="160.0" text="Proceed to Console" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</BorderPane>

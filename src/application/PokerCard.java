@@ -28,17 +28,23 @@ public class PokerCard {
 		System.out.println("Criteria: " + criteria);
 	}
 	
-	//get methods
-	public String getUserStory() {
-		return userStory;
+	public String getUserStory()
+	{
+		return this.userStory;
 	}
-	public String getItemName() {
-		return itemName;
+	
+	public String getItemName()
+	{
+		return this.itemName;
 	}
-	public int getWeight() {
-		return weight;
+	
+	public int getWeight()
+	{
+		return this.weight;
 	}
-	public String getCriteria() {
-		return criteria;
+	
+	public String getCriteria()
+	{
+		return this.criteria;
 	}
 }

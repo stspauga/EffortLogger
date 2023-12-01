@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import java.time.*; // needed for getting local time
 
 public class EffortLoggerConsoleController {
 	
@@ -47,6 +48,8 @@ public class EffortLoggerConsoleController {
 	private ArrayList<String> projectListNames = new ArrayList<String>();
 	private ProjectData currProject;
 	private String[] effortType;
+	private EffortLog newLog;
+	
 	
 	public void initialize() {
 		// load project selection
@@ -57,10 +60,12 @@ public class EffortLoggerConsoleController {
 		if (Main.userData.getEffortCategory().effortCategories != null) {
 			loadEffortCategoryBox();
 		}
+		
 //		Main.getClockManager();
 //		if (ClockManager.getInstance() != null) {
 //			ClockManager.getInstance();
 //		}
+
 	}
 	
 	// Set up Project ComboBox for display & selection
@@ -103,7 +108,6 @@ public class EffortLoggerConsoleController {
 		effortTypeComboBox.getItems().clear();
 		String category = effortCategoryComboBox.getValue();
 		effortType = Main.userData.getEffortTypeDefinition(category);
-		//for (String entry : effortType) {System.out.println(entry);} // Debug
 		effortTypeComboBox.getItems().addAll(effortType);
 		
 		/* Change how the EffortCategoryData object stores data before continuing
@@ -132,7 +136,7 @@ public class EffortLoggerConsoleController {
 		String newScreenFile = "EffortLoggerDefinitions.fxml";
 		switchScreen(newScreenFile, e);
 	}
-
+	// Switch to LogIn Scene
 	public void switchToLoginPage(ActionEvent e) throws IOException {
 		closeTutorial();
 		System.out.println("Switching to Login Page");
@@ -146,6 +150,8 @@ public class EffortLoggerConsoleController {
 		closeTutorial();
 		System.out.println("Switching to Planning Poker");
 		String newScreenFile = "PlanningPoker.fxml";
+		//initializing historical data list
+		AllPokerCards.initializeList();
 		switchScreen(newScreenFile, e);
 	}
 
@@ -176,14 +182,19 @@ public class EffortLoggerConsoleController {
 	
 	Timeline timeline = new Timeline();
 	private int seconds = 0;
+	
 	public void startActivity(ActionEvent e) {
 		if (activityCheck) {
 			System.out.println("There is already an activity started");
 			return;
 		}
+		String startTimeAndDate = LocalDateTime.now().toString();
+		newLog = new EffortLog (startTimeAndDate.substring(0,startTimeAndDate.indexOf('T') - 1),
+				startTimeAndDate.substring(startTimeAndDate.indexOf('T') + 1,
+				startTimeAndDate.lastIndexOf('.')));
 		
 //		clockManager.startClock();
-		System.out.println("Start time : " + Instant.now().toString());
+
 		
 		timeline = new Timeline();
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -204,13 +215,32 @@ public class EffortLoggerConsoleController {
 	// or notify the user that activity is not being logged 
 	public void stopActivity(ActionEvent e) {
 		if (!activityCheck) {
-			System.out.println("There is no activity started");
+			System.out.println("There is no activity started.");
+			return;
+		}
+		if (currProject == null || 
+				lifeCycleComboBox.getValue() == null || 
+				effortCategoryComboBox.getValue() == null || 
+				(effortCategoryComboBox.getValue() != "Others" && effortTypeComboBox.getValue() == null)) {
+			System.out.println("Please complete step 2 before concluding the activity.");
 			return;
 		}
 		
+		// prep selected info for EffortLog object
+		String endTimeAndDate = LocalDateTime.now().toString(); //Instant.now().toString()); Now using java.time
+		String endDate = endTimeAndDate.substring(0,endTimeAndDate.indexOf('T') - 1);
+		String endTime = endTimeAndDate.substring(endTimeAndDate.indexOf('T') + 1,endTimeAndDate.lastIndexOf('.'));
+		String lifeCycleStep = lifeCycleComboBox.getValue();
+		String effortCategory = effortCategoryComboBox.getValue();
+		String effortSubCategory = effortTypeComboBox.getValue();
+		int logId = currProject.getNextLogId();
+		newLog.setAll(logId, "", "", endDate, endTime, lifeCycleStep, effortCategory, effortSubCategory);
+		// add new log object to project array list
+		currProject.addLog(newLog);
+		System.out.println("A new Effort Log has been added to " + currProject.getName());
+		currProject.getEffortLogList().get(currProject.getEffortLogList().size() - 1).print();
 		//clockManager.stopClock();
-		
-		System.out.println("End time : " + Instant.now().toString());
+
 		
 		if (timeline != null) {
             timeline.stop();
@@ -249,6 +279,13 @@ public class EffortLoggerConsoleController {
 		System.out.println("Closing Tutorial Window");
 		tutor.tutorialWindow.close();
 		return true;
+	}
+	
+	public boolean debug_printLogs() {
+		if (currProject != null) {
+			return currProject.printLogs();
+		}
+		else {return false;}
 	}
 	
 }

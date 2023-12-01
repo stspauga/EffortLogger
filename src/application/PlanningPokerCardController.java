@@ -73,7 +73,7 @@ public class PlanningPokerCardController {
 	
 	
 	// get the last 6 cards in the array (from most recent to least recent)
-	public void getRecentCards() {
+	public static void getRecentCards() {
 		ArrayList<PokerCard> allCards = new ArrayList<PokerCard>();
 		card1 = allCards.get(allCards.size()-1);
 		card2 = allCards.get(allCards.size()-2);
